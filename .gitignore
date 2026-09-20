@@ -56,3 +56,6 @@ verif_tmp.ts
 # OS / editor
 Thumbs.db
 .idea/
+
+# staging area for files Claude could not delete (safe to remove manually)
+/_to_delete/
