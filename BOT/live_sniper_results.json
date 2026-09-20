@@ -1,0 +1,28 @@
+{
+  "scanTimestamp": "2026-09-12T14:32:50.539Z",
+  "liveMatchesEvaluated": 4,
+  "snipeOpportunitiesCount": 1,
+  "opportunities": [
+    {
+      "id": "snipe-1002-over-goals",
+      "fixtureId": 1002,
+      "matchName": "Real Madrid vs Barcelona",
+      "leagueName": "La Liga",
+      "elapsedMinute": 58,
+      "status": "2H",
+      "currentScore": "1-0",
+      "dominantTeam": "Real Madrid",
+      "momentumPercent": 71,
+      "totalXg": 2.1,
+      "totalShotsOnTarget": 7,
+      "recommendedBet": "Peste 1.5 Goluri Live",
+      "marketType": "LIVE_OVER",
+      "bookmakerOdd": 1.33,
+      "fairOdd": 1.47,
+      "edgePercent": 20,
+      "urgency": "HIGH",
+      "confidenceScore": 82,
+      "reasoning": "Discrepanță uriașă între xG-ul cumulat (2.10) și golurile marcate (1) în min 58'. Regresia statistică la medie indică gol iminent."
+    }
+  ]
+}

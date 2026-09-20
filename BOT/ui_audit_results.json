@@ -1,0 +1,129 @@
+{
+  "timestamp": "2026-09-12T12:59:17.736Z",
+  "totalTests": 15,
+  "passedTests": 15,
+  "failedTests": 0,
+  "allInteractiveButtonsWorking": true,
+  "results": [
+    {
+      "category": "Header Navigation",
+      "testName": "Schimbare Tab la Meciuri LIVE",
+      "buttonOrAction": "Header > Tab \"live\"",
+      "status": "PASSED",
+      "details": "Filtreaza corect meciurile live (1H, HT, 2H) si actualizeaza starea activa.",
+      "durationMs": 0.07
+    },
+    {
+      "category": "Header Navigation",
+      "testName": "Schimbare Tab la Predictii AI",
+      "buttonOrAction": "Header > Tab \"predictions\"",
+      "status": "PASSED",
+      "details": "Reseteaza filtrul si afiseaza toate meciurile din ziua selectata.",
+      "durationMs": 0.04
+    },
+    {
+      "category": "Header Navigation",
+      "testName": "Deschidere Modal Paper Trading",
+      "buttonOrAction": "Header > Tab \"papertrading\"",
+      "status": "PASSED",
+      "details": "Deschide modalul de Paper Trading si incarca portofoliul virtual cu 100u start.",
+      "durationMs": 0.59
+    },
+    {
+      "category": "Header Navigation",
+      "testName": "Deschidere Modal Combo / Bilet",
+      "buttonOrAction": "Header > Tab \"tickets\"",
+      "status": "PASSED",
+      "details": "Deschide constructorul de bilete combinate / Same-Game Parlay.",
+      "durationMs": 0.02
+    },
+    {
+      "category": "Header Navigation",
+      "testName": "Deschidere Modal Steam Scanner",
+      "buttonOrAction": "Header > Buton \"Steam Scanner\"",
+      "status": "PASSED",
+      "details": "Deschide scannerul de miscari bruste de cote (Steam moves).",
+      "durationMs": 0.01
+    },
+    {
+      "category": "Filtre de Liga",
+      "testName": "Filtrare Premier League (E0 / id: 39)",
+      "buttonOrAction": "Sidebar > Buton \"Premier League\"",
+      "status": "PASSED",
+      "details": "Selecteaza si afiseaza doar meciurile din Premier League.",
+      "durationMs": 0.04
+    },
+    {
+      "category": "Filtre de Liga",
+      "testName": "Filtrare La Liga (SP1 / id: 140)",
+      "buttonOrAction": "Sidebar > Buton \"La Liga\"",
+      "status": "PASSED",
+      "details": "Selecteaza si afiseaza doar meciurile din La Liga.",
+      "durationMs": 0.03
+    },
+    {
+      "category": "Filtre de Liga",
+      "testName": "Filtrare Superliga Romania (RO1 / id: 283)",
+      "buttonOrAction": "Sidebar > Buton \"Superliga Romania\"",
+      "status": "PASSED",
+      "details": "Selecteaza si afiseaza doar meciurile din Superliga Romaniei.",
+      "durationMs": 0.03
+    },
+    {
+      "category": "Filtre de Categorie",
+      "testName": "Filtrare Meciuri Incheiate (archive)",
+      "buttonOrAction": "Table Filters > Buton \"Incheiate\"",
+      "status": "PASSED",
+      "details": "Afiseaza meciurile terminate (FT) cu scorul final complet.",
+      "durationMs": 0.04
+    },
+    {
+      "category": "Filtre de Categorie",
+      "testName": "Comutare Meciuri Favorite (Star Toggle)",
+      "buttonOrAction": "Match Row > Buton \"★ Favorite\"",
+      "status": "PASSED",
+      "details": "Adauga si elimina meciurile din lista de favorite cu persistenta.",
+      "durationMs": 0.05
+    },
+    {
+      "category": "Selectie & Analiza Meci",
+      "testName": "Selectare Meci din Tabela (Click Rand)",
+      "buttonOrAction": "MatchesTable > Rand Meci",
+      "status": "PASSED",
+      "details": "Actualizeaza panoul central de analiza tactica si matricea de probabilitati.",
+      "durationMs": 0.02
+    },
+    {
+      "category": "Selectie & Analiza Meci",
+      "testName": "Deschidere Modal Detaliat Meci",
+      "buttonOrAction": "SelectedMatchAnalysis > Buton \"Detalii Complete\"",
+      "status": "PASSED",
+      "details": "Deschide modalul complet cu H2H, xG, ELO si factori de motivatie.",
+      "durationMs": 0.02
+    },
+    {
+      "category": "Combo Builder",
+      "testName": "Adaugare Selectii pe Bilet & Calcul Marja Compusa",
+      "buttonOrAction": "ComboBuilder > Buton \"Adauga pe bilet\"",
+      "status": "PASSED",
+      "details": "Calculeaza probabilitatea cumulata, cota totala (3.78) si avertismentul de marja compusa.",
+      "durationMs": 0.39
+    },
+    {
+      "category": "Paper Trading",
+      "testName": "Verificare Functionare Kill-Switch Automat",
+      "buttonOrAction": "PaperTradingModal > Sistem Kill-Switch",
+      "status": "PASSED",
+      "details": "Activeaza protectia la -15% (24h) si -25% (permanent) fara posibilitate de override.",
+      "durationMs": 27.23
+    },
+    {
+      "category": "Cautare & Filtrare Text",
+      "testName": "Cautare dupa Nume Echipa (Madrid)",
+      "buttonOrAction": "Header > Input Cautare",
+      "status": "PASSED",
+      "details": "Filtreaza instantaneu lista de meciuri in functie de textul cautat.",
+      "durationMs": 0.12
+    }
+  ]
+}

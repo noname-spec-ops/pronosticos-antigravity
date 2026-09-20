@@ -1,0 +1,786 @@
+[
+  {
+    "id": 2001,
+    "date": "2026-09-13T13:30:00.000Z",
+    "timestamp": 1789402200,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 78,
+      "name": "Bundesliga",
+      "country": "Germania",
+      "countryCode": "DE",
+      "flag": "🇩🇪",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 173,
+      "name": "RB Leipzig",
+      "logo": "https://media.api-sports.io/football/teams/173.png",
+      "shortCode": "RBL"
+    },
+    "awayTeam": {
+      "id": 174,
+      "name": "Hamburgo",
+      "logo": "https://media.api-sports.io/football/teams/174.png",
+      "shortCode": "HSV"
+    },
+    "score": {
+      "halftime": { "home": 2, "away": 0 },
+      "fulltime": { "home": 5, "away": 0 },
+      "current": { "home": 5, "away": 0 }
+    },
+    "stats": {
+      "possession": { "home": 68, "away": 32 },
+      "shotsOnTarget": { "home": 11, "away": 2 },
+      "shotsTotal": { "home": 21, "away": 5 },
+      "corners": { "home": 9, "away": 2 },
+      "fouls": { "home": 7, "away": 14 },
+      "yellowCards": { "home": 1, "away": 3 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 4.12, "away": 0.35 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T12:00:00.000Z",
+      "match1X2": { "home": 1.25, "draw": 6.20, "away": 11.00 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.45, "under": 2.65 },
+        { "line": 3.5, "over": 2.10, "under": 1.70 }
+      ],
+      "btts": { "yes": 1.95, "no": 1.80 }
+    }
+  },
+  {
+    "id": 2002,
+    "date": "2026-09-13T15:30:00.000Z",
+    "timestamp": 1789409400,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 78,
+      "name": "Bundesliga",
+      "country": "Germania",
+      "countryCode": "DE",
+      "flag": "🇩🇪",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 175,
+      "name": "Elversberg",
+      "logo": "https://media.api-sports.io/football/teams/175.png",
+      "shortCode": "ELV"
+    },
+    "awayTeam": {
+      "id": 157,
+      "name": "Bayern Munich",
+      "logo": "https://media.api-sports.io/football/teams/157.png",
+      "shortCode": "BAY"
+    },
+    "score": {
+      "halftime": { "home": 0, "away": 1 },
+      "fulltime": { "home": 0, "away": 3 },
+      "current": { "home": 0, "away": 3 }
+    },
+    "stats": {
+      "possession": { "home": 28, "away": 72 },
+      "shotsOnTarget": { "home": 1, "away": 9 },
+      "shotsTotal": { "home": 4, "away": 18 },
+      "corners": { "home": 2, "away": 8 },
+      "fouls": { "home": 12, "away": 6 },
+      "yellowCards": { "home": 2, "away": 1 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 0.28, "away": 2.85 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:30:00.000Z",
+      "match1X2": { "home": 14.00, "draw": 7.50, "away": 1.18 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.35, "under": 3.10 },
+        { "line": 3.5, "over": 1.90, "under": 1.90 }
+      ],
+      "btts": { "yes": 2.10, "no": 1.68 }
+    }
+  },
+  {
+    "id": 2003,
+    "date": "2026-09-13T12:00:00.000Z",
+    "timestamp": 1789396800,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 140,
+      "name": "La Liga",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 538,
+      "name": "Celta de Vigo",
+      "logo": "https://media.api-sports.io/football/teams/538.png",
+      "shortCode": "CEL"
+    },
+    "awayTeam": {
+      "id": 539,
+      "name": "Málaga",
+      "logo": "https://media.api-sports.io/football/teams/539.png",
+      "shortCode": "MAL"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 0 },
+      "fulltime": { "home": 1, "away": 1 },
+      "current": { "home": 1, "away": 1 }
+    },
+    "stats": {
+      "possession": { "home": 54, "away": 46 },
+      "shotsOnTarget": { "home": 5, "away": 4 },
+      "shotsTotal": { "home": 14, "away": 10 },
+      "corners": { "home": 6, "away": 5 },
+      "fouls": { "home": 13, "away": 15 },
+      "yellowCards": { "home": 2, "away": 3 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.45, "away": 1.10 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T11:00:00.000Z",
+      "match1X2": { "home": 1.85, "draw": 3.40, "away": 4.50 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.05, "under": 1.75 }
+      ],
+      "btts": { "yes": 1.90, "no": 1.90 }
+    }
+  },
+  {
+    "id": 2004,
+    "date": "2026-09-13T14:15:00.000Z",
+    "timestamp": 1789404900,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 140,
+      "name": "La Liga",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 537,
+      "name": "Levante",
+      "logo": "https://media.api-sports.io/football/teams/537.png",
+      "shortCode": "LEV"
+    },
+    "awayTeam": {
+      "id": 529,
+      "name": "Barcelona",
+      "logo": "https://media.api-sports.io/football/teams/529.png",
+      "shortCode": "FCB"
+    },
+    "score": {
+      "halftime": { "home": 0, "away": 2 },
+      "fulltime": { "home": 0, "away": 4 },
+      "current": { "home": 0, "away": 4 }
+    },
+    "stats": {
+      "possession": { "home": 34, "away": 66 },
+      "shotsOnTarget": { "home": 2, "away": 11 },
+      "shotsTotal": { "home": 7, "away": 20 },
+      "corners": { "home": 3, "away": 9 },
+      "fouls": { "home": 14, "away": 7 },
+      "yellowCards": { "home": 4, "away": 1 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 0.42, "away": 3.45 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T13:30:00.000Z",
+      "match1X2": { "home": 6.50, "draw": 4.60, "away": 1.45 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.55, "under": 2.40 },
+        { "line": 3.5, "over": 2.35, "under": 1.55 }
+      ],
+      "btts": { "yes": 1.75, "no": 2.05 }
+    }
+  },
+  {
+    "id": 2005,
+    "date": "2026-09-13T16:30:00.000Z",
+    "timestamp": 1789413000,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 140,
+      "name": "La Liga",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 546,
+      "name": "Getafe",
+      "logo": "https://media.api-sports.io/football/teams/546.png",
+      "shortCode": "GET"
+    },
+    "awayTeam": {
+      "id": 547,
+      "name": "Deportivo de La Coruña",
+      "logo": "https://media.api-sports.io/football/teams/547.png",
+      "shortCode": "DEP"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 0 },
+      "fulltime": { "home": 2, "away": 0 },
+      "current": { "home": 2, "away": 0 }
+    },
+    "stats": {
+      "possession": { "home": 52, "away": 48 },
+      "shotsOnTarget": { "home": 6, "away": 2 },
+      "shotsTotal": { "home": 12, "away": 8 },
+      "corners": { "home": 5, "away": 3 },
+      "fouls": { "home": 16, "away": 13 },
+      "yellowCards": { "home": 3, "away": 2 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.65, "away": 0.55 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 2.05, "draw": 3.10, "away": 3.90 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.30, "under": 1.60 }
+      ],
+      "btts": { "yes": 2.05, "no": 1.70 }
+    }
+  },
+  {
+    "id": 2006,
+    "date": "2026-09-13T19:00:00.000Z",
+    "timestamp": 1789422000,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 140,
+      "name": "La Liga",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 548,
+      "name": "Real Sociedad",
+      "logo": "https://media.api-sports.io/football/teams/548.png",
+      "shortCode": "RSO"
+    },
+    "awayTeam": {
+      "id": 530,
+      "name": "Atlético de Madrid",
+      "logo": "https://media.api-sports.io/football/teams/530.png",
+      "shortCode": "ATM"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 1 },
+      "fulltime": { "home": 1, "away": 2 },
+      "current": { "home": 1, "away": 2 }
+    },
+    "stats": {
+      "possession": { "home": 51, "away": 49 },
+      "shotsOnTarget": { "home": 4, "away": 6 },
+      "shotsTotal": { "home": 11, "away": 13 },
+      "corners": { "home": 6, "away": 5 },
+      "fouls": { "home": 14, "away": 12 },
+      "yellowCards": { "home": 3, "away": 3 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.30, "away": 1.75 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 3.10, "draw": 3.20, "away": 2.40 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.15, "under": 1.68 }
+      ],
+      "btts": { "yes": 1.90, "no": 1.85 }
+    }
+  },
+  {
+    "id": 2007,
+    "date": "2026-09-13T12:00:00.000Z",
+    "timestamp": 1789396800,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 141,
+      "name": "LaLiga Hypermotion",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 5"
+    },
+    "homeTeam": {
+      "id": 550,
+      "name": "Real Sporting",
+      "logo": "https://media.api-sports.io/football/teams/550.png",
+      "shortCode": "SPO"
+    },
+    "awayTeam": {
+      "id": 551,
+      "name": "Eldense",
+      "logo": "https://media.api-sports.io/football/teams/551.png",
+      "shortCode": "ELD"
+    },
+    "score": {
+      "halftime": { "home": 0, "away": 1 },
+      "fulltime": { "home": 0, "away": 1 },
+      "current": { "home": 0, "away": 1 }
+    },
+    "stats": {
+      "possession": { "home": 58, "away": 42 },
+      "shotsOnTarget": { "home": 4, "away": 2 },
+      "shotsTotal": { "home": 12, "away": 6 },
+      "corners": { "home": 7, "away": 3 },
+      "fouls": { "home": 12, "away": 16 },
+      "yellowCards": { "home": 2, "away": 4 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.10, "away": 0.65 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T11:00:00.000Z",
+      "match1X2": { "home": 1.80, "draw": 3.25, "away": 4.80 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.35, "under": 1.55 }
+      ],
+      "btts": { "yes": 2.20, "no": 1.60 }
+    }
+  },
+  {
+    "id": 2008,
+    "date": "2026-09-13T14:15:00.000Z",
+    "timestamp": 1789404900,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 141,
+      "name": "LaLiga Hypermotion",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 5"
+    },
+    "homeTeam": {
+      "id": 552,
+      "name": "Real Valladolid",
+      "logo": "https://media.api-sports.io/football/teams/552.png",
+      "shortCode": "VLD"
+    },
+    "awayTeam": {
+      "id": 553,
+      "name": "Real Oviedo",
+      "logo": "https://media.api-sports.io/football/teams/553.png",
+      "shortCode": "OVI"
+    },
+    "score": {
+      "halftime": { "home": 0, "away": 2 },
+      "fulltime": { "home": 0, "away": 3 },
+      "current": { "home": 0, "away": 3 }
+    },
+    "stats": {
+      "possession": { "home": 49, "away": 51 },
+      "shotsOnTarget": { "home": 3, "away": 7 },
+      "shotsTotal": { "home": 9, "away": 13 },
+      "corners": { "home": 4, "away": 5 },
+      "fouls": { "home": 14, "away": 10 },
+      "yellowCards": { "home": 3, "away": 1 },
+      "redCards": { "home": 1, "away": 0 },
+      "expectedGoals": { "home": 0.65, "away": 2.45 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T13:30:00.000Z",
+      "match1X2": { "home": 2.10, "draw": 3.10, "away": 3.75 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.25, "under": 1.62 }
+      ],
+      "btts": { "yes": 2.05, "no": 1.70 }
+    }
+  },
+  {
+    "id": 2009,
+    "date": "2026-09-13T16:30:00.000Z",
+    "timestamp": 1789413000,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 141,
+      "name": "LaLiga Hypermotion",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 5"
+    },
+    "homeTeam": {
+      "id": 554,
+      "name": "Mallorca",
+      "logo": "https://media.api-sports.io/football/teams/554.png",
+      "shortCode": "MLL"
+    },
+    "awayTeam": {
+      "id": 555,
+      "name": "Sabadell",
+      "logo": "https://media.api-sports.io/football/teams/555.png",
+      "shortCode": "SAB"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 0 },
+      "fulltime": { "home": 2, "away": 0 },
+      "current": { "home": 2, "away": 0 }
+    },
+    "stats": {
+      "possession": { "home": 58, "away": 42 },
+      "shotsOnTarget": { "home": 7, "away": 1 },
+      "shotsTotal": { "home": 15, "away": 4 },
+      "corners": { "home": 6, "away": 2 },
+      "fouls": { "home": 10, "away": 12 },
+      "yellowCards": { "home": 1, "away": 2 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.95, "away": 0.40 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 1.70, "draw": 3.50, "away": 5.25 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.10, "under": 1.70 }
+      ],
+      "btts": { "yes": 2.10, "no": 1.68 }
+    }
+  },
+  {
+    "id": 2010,
+    "date": "2026-09-13T19:00:00.000Z",
+    "timestamp": 1789422000,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 141,
+      "name": "LaLiga Hypermotion",
+      "country": "Spania",
+      "countryCode": "ES",
+      "flag": "🇪🇸",
+      "season": 2026,
+      "round": "Etapa 5"
+    },
+    "homeTeam": {
+      "id": 556,
+      "name": "Tenerife",
+      "logo": "https://media.api-sports.io/football/teams/556.png",
+      "shortCode": "TEN"
+    },
+    "awayTeam": {
+      "id": 557,
+      "name": "Leganés",
+      "logo": "https://media.api-sports.io/football/teams/557.png",
+      "shortCode": "LEG"
+    },
+    "score": {
+      "halftime": { "home": 0, "away": 0 },
+      "fulltime": { "home": 1, "away": 1 },
+      "current": { "home": 1, "away": 1 }
+    },
+    "stats": {
+      "possession": { "home": 51, "away": 49 },
+      "shotsOnTarget": { "home": 4, "away": 3 },
+      "shotsTotal": { "home": 10, "away": 9 },
+      "corners": { "home": 4, "away": 5 },
+      "fouls": { "home": 13, "away": 14 },
+      "yellowCards": { "home": 2, "away": 2 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.15, "away": 1.05 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 2.60, "draw": 3.00, "away": 2.90 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.45, "under": 1.50 }
+      ],
+      "btts": { "yes": 2.15, "no": 1.65 }
+    }
+  },
+  {
+    "id": 2011,
+    "date": "2026-09-13T13:00:00.000Z",
+    "timestamp": 1789400400,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 61,
+      "name": "Ligue 1",
+      "country": "Franța",
+      "countryCode": "FR",
+      "flag": "🇫🇷",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 79,
+      "name": "Lille",
+      "logo": "https://media.api-sports.io/football/teams/79.png",
+      "shortCode": "LIL"
+    },
+    "awayTeam": {
+      "id": 110,
+      "name": "Troyes",
+      "logo": "https://media.api-sports.io/football/teams/110.png",
+      "shortCode": "TRO"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 0 },
+      "fulltime": { "home": 2, "away": 0 },
+      "current": { "home": 2, "away": 0 }
+    },
+    "stats": {
+      "possession": { "home": 62, "away": 38 },
+      "shotsOnTarget": { "home": 7, "away": 1 },
+      "shotsTotal": { "home": 17, "away": 4 },
+      "corners": { "home": 8, "away": 2 },
+      "fouls": { "home": 9, "away": 12 },
+      "yellowCards": { "home": 1, "away": 2 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 2.30, "away": 0.28 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T12:00:00.000Z",
+      "match1X2": { "home": 1.40, "draw": 4.75, "away": 7.50 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.70, "under": 2.10 }
+      ],
+      "btts": { "yes": 1.95, "no": 1.80 }
+    }
+  },
+  {
+    "id": 2012,
+    "date": "2026-09-13T15:00:00.000Z",
+    "timestamp": 1789407600,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 61,
+      "name": "Ligue 1",
+      "country": "Franța",
+      "countryCode": "FR",
+      "flag": "🇫🇷",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 111,
+      "name": "Le Mans",
+      "logo": "https://media.api-sports.io/football/teams/111.png",
+      "shortCode": "LEM"
+    },
+    "awayTeam": {
+      "id": 116,
+      "name": "Lens",
+      "logo": "https://media.api-sports.io/football/teams/116.png",
+      "shortCode": "RCL"
+    },
+    "score": {
+      "halftime": { "home": 0, "away": 1 },
+      "fulltime": { "home": 0, "away": 2 },
+      "current": { "home": 0, "away": 2 }
+    },
+    "stats": {
+      "possession": { "home": 41, "away": 59 },
+      "shotsOnTarget": { "home": 2, "away": 6 },
+      "shotsTotal": { "home": 6, "away": 14 },
+      "corners": { "home": 2, "away": 6 },
+      "fouls": { "home": 11, "away": 8 },
+      "yellowCards": { "home": 2, "away": 1 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 0.45, "away": 1.85 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 4.50, "draw": 3.60, "away": 1.78 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.95, "under": 1.85 }
+      ],
+      "btts": { "yes": 1.85, "no": 1.90 }
+    }
+  },
+  {
+    "id": 2013,
+    "date": "2026-09-13T18:45:00.000Z",
+    "timestamp": 1789421100,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 39,
+      "name": "Premier League",
+      "country": "Anglia",
+      "countryCode": "GB",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "season": 2026,
+      "round": "Etapa 5"
+    },
+    "homeTeam": {
+      "id": 50,
+      "name": "Manchester City",
+      "logo": "https://media.api-sports.io/football/teams/50.png",
+      "shortCode": "MCI"
+    },
+    "awayTeam": {
+      "id": 42,
+      "name": "Arsenal",
+      "logo": "https://media.api-sports.io/football/teams/42.png",
+      "shortCode": "ARS"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 1 },
+      "fulltime": { "home": 2, "away": 1 },
+      "current": { "home": 2, "away": 1 }
+    },
+    "stats": {
+      "possession": { "home": 58, "away": 42 },
+      "shotsOnTarget": { "home": 7, "away": 4 },
+      "shotsTotal": { "home": 16, "away": 10 },
+      "corners": { "home": 7, "away": 4 },
+      "fouls": { "home": 11, "away": 13 },
+      "yellowCards": { "home": 2, "away": 3 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 2.15, "away": 1.35 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 1.95, "draw": 3.60, "away": 3.80 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.72, "under": 2.10 },
+        { "line": 3.5, "over": 2.80, "under": 1.44 }
+      ],
+      "btts": { "yes": 1.65, "no": 2.15 }
+    }
+  },
+  {
+    "id": 2014,
+    "date": "2026-09-13T19:45:00.000Z",
+    "timestamp": 1789424700,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 135,
+      "name": "Serie A",
+      "country": "Italia",
+      "countryCode": "IT",
+      "flag": "🇮🇹",
+      "season": 2026,
+      "round": "Etapa 4"
+    },
+    "homeTeam": {
+      "id": 505,
+      "name": "Inter",
+      "logo": "https://media.api-sports.io/football/teams/505.png",
+      "shortCode": "INT"
+    },
+    "awayTeam": {
+      "id": 489,
+      "name": "AC Milan",
+      "logo": "https://media.api-sports.io/football/teams/489.png",
+      "shortCode": "MIL"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 0 },
+      "fulltime": { "home": 2, "away": 1 },
+      "current": { "home": 2, "away": 1 }
+    },
+    "stats": {
+      "possession": { "home": 52, "away": 48 },
+      "shotsOnTarget": { "home": 6, "away": 5 },
+      "shotsTotal": { "home": 14, "away": 12 },
+      "corners": { "home": 6, "away": 5 },
+      "fouls": { "home": 15, "away": 14 },
+      "yellowCards": { "home": 3, "away": 3 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.80, "away": 1.40 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 2.00, "draw": 3.50, "away": 3.70 },
+      "overUnder": [
+        { "line": 2.5, "over": 1.80, "under": 2.00 }
+      ],
+      "btts": { "yes": 1.70, "no": 2.05 }
+    }
+  },
+  {
+    "id": 2015,
+    "date": "2026-09-13T20:30:00.000Z",
+    "timestamp": 1789427400,
+    "status": "FT",
+    "elapsedMinute": 90,
+    "league": {
+      "id": 283,
+      "name": "SuperLiga",
+      "country": "România",
+      "countryCode": "RO",
+      "flag": "🇷🇴",
+      "season": 2026,
+      "round": "Etapa 9"
+    },
+    "homeTeam": {
+      "id": 558,
+      "name": "FCSB",
+      "logo": "https://media.api-sports.io/football/teams/558.png",
+      "shortCode": "FCS"
+    },
+    "awayTeam": {
+      "id": 559,
+      "name": "CFR Cluj",
+      "logo": "https://media.api-sports.io/football/teams/559.png",
+      "shortCode": "CFR"
+    },
+    "score": {
+      "halftime": { "home": 1, "away": 0 },
+      "fulltime": { "home": 2, "away": 1 },
+      "current": { "home": 2, "away": 1 }
+    },
+    "stats": {
+      "possession": { "home": 53, "away": 47 },
+      "shotsOnTarget": { "home": 5, "away": 4 },
+      "shotsTotal": { "home": 13, "away": 10 },
+      "corners": { "home": 6, "away": 4 },
+      "fouls": { "home": 14, "away": 16 },
+      "yellowCards": { "home": 3, "away": 4 },
+      "redCards": { "home": 0, "away": 0 },
+      "expectedGoals": { "home": 1.65, "away": 1.20 }
+    },
+    "odds": {
+      "bookmaker": "Bet365",
+      "timestamp": "2026-09-13T14:00:00.000Z",
+      "match1X2": { "home": 2.20, "draw": 3.20, "away": 3.40 },
+      "overUnder": [
+        { "line": 2.5, "over": 2.10, "under": 1.70 }
+      ],
+      "btts": { "yes": 1.85, "no": 1.90 }
+    }
+  }
+]

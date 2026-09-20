@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-09-18T02:32:21.961Z",
+  "periodLabel": "Săptămâna 18.09.2026",
+  "sevenDays": {
+    "totalBets": 0,
+    "roiPercent": 0,
+    "avgClvPercent": 0,
+    "winRatePercent": 0
+  },
+  "thirtyDays": {
+    "totalBets": 5,
+    "roiPercent": 46.05,
+    "avgClvPercent": 4.92,
+    "winRatePercent": 75
+  },
+  "allTime": {
+    "totalBets": 5,
+    "roiPercent": 46.05,
+    "avgClvPercent": 4.92,
+    "maxDrawdownPercent": 1.92
+  },
+  "killSwitchStatus": "✅ Sistem Activ: Managementul riscului în parametri optimi.",
+  "leagueVerdicts": [
+    {
+      "marketOrLeague": "Bundesliga",
+      "totalBets": 1,
+      "winRatePercent": 100,
+      "roiPercent": 88,
+      "avgClvPercent": 6.82,
+      "verdict": "MENTINE_STABIL",
+      "recommendation": "Eșantion insuficient (1/100 pariuri). Niciun verdict statistic valid."
+    },
+    {
+      "marketOrLeague": "Eredivisie",
+      "totalBets": 1,
+      "winRatePercent": 100,
+      "roiPercent": 82,
+      "avgClvPercent": 5.81,
+      "verdict": "MENTINE_STABIL",
+      "recommendation": "Eșantion insuficient (1/100 pariuri). Niciun verdict statistic valid."
+    },
+    {
+      "marketOrLeague": "Championship",
+      "totalBets": 1,
+      "winRatePercent": 0,
+      "roiPercent": -100,
+      "avgClvPercent": 5.13,
+      "verdict": "MENTINE_STABIL",
+      "recommendation": "Eșantion insuficient (1/100 pariuri). Niciun verdict statistic valid."
+    },
+    {
+      "marketOrLeague": "Jupiler Pro League",
+      "totalBets": 1,
+      "winRatePercent": 100,
+      "roiPercent": 85,
+      "avgClvPercent": 4.52,
+      "verdict": "MENTINE_STABIL",
+      "recommendation": "Eșantion insuficient (1/100 pariuri). Niciun verdict statistic valid."
+    },
+    {
+      "marketOrLeague": "Premier League",
+      "totalBets": 1,
+      "winRatePercent": 0,
+      "roiPercent": 0,
+      "avgClvPercent": 2.3,
+      "verdict": "MENTINE_STABIL",
+      "recommendation": "Eșantion insuficient (1/100 pariuri). Niciun verdict statistic valid."
+    }
+  ],
+  "marketVerdicts": [
+    {
+      "marketOrLeague": "OU",
+      "totalBets": 5,
+      "winRatePercent": 75,
+      "roiPercent": 46.05,
+      "avgClvPercent": 4.92,
+      "verdict": "MENTINE_STABIL",
+      "recommendation": "Eșantion insuficient (5/100 pariuri). Niciun verdict statistic valid."
+    }
+  ],
+  "executiveSummary": "Audit săptămânal finalizat. Total 5 tranzacții simulate, CLV mediu: 4.92%, ROI: 46.05%. Drawdown maxim: 1.92%."
+}

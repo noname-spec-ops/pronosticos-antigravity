@@ -1,0 +1,7835 @@
+{
+  "overallBrierScore": 0.6078,
+  "overallBookmakerBrierScore": 0.5949,
+  "overallLogLoss": 1.0195,
+  "overallRoiPercent": -7.16,
+  "overallRoiCi95": [
+    -10.84,
+    -3.48
+  ],
+  "isOverallRoiSignificant": true,
+  "overallClvMetrics": {
+    "avgClvPercent": 0.2,
+    "positiveClvRatePercent": 47.35,
+    "ci95": [
+      0,
+      0.41
+    ],
+    "isSignificant": false
+  },
+  "overallMaxDrawdownPercent": 99.7,
+  "totalMatchesBacktested": 35310,
+  "totalBetsPlaced": 4636,
+  "bettingRatePercent": 13.13,
+  "isOverallProfitable": false,
+  "lastBacktestRun": "2026-09-18T19:08:42.096Z",
+  "oddsBandsBreakdown": [
+    {
+      "band": "1.01-1.50",
+      "betsCount": 60,
+      "winRatePercent": 76.67,
+      "predictedWinRatePercent": 75.46,
+      "roiPercent": 10.68,
+      "avgClvPercent": 1.01,
+      "roiCi95": [
+        -4.91,
+        26.28
+      ],
+      "isRoiSignificant": false,
+      "clvCi95": [
+        -0.29,
+        2.32
+      ],
+      "isClvSignificant": false
+    },
+    {
+      "band": "1.50-2.00",
+      "betsCount": 1390,
+      "winRatePercent": 52.23,
+      "predictedWinRatePercent": 60.86,
+      "roiPercent": -6.47,
+      "avgClvPercent": 1.05,
+      "roiCi95": [
+        -11.2,
+        -1.74
+      ],
+      "isRoiSignificant": true,
+      "clvCi95": [
+        0.73,
+        1.37
+      ],
+      "isClvSignificant": true
+    },
+    {
+      "band": "2.00-3.00",
+      "betsCount": 1541,
+      "winRatePercent": 40.95,
+      "predictedWinRatePercent": 47.87,
+      "roiPercent": -7.14,
+      "avgClvPercent": -0.27,
+      "roiCi95": [
+        -12.82,
+        -1.46
+      ],
+      "isRoiSignificant": true,
+      "clvCi95": [
+        -0.62,
+        0.08
+      ],
+      "isClvSignificant": false
+    },
+    {
+      "band": "3.00-5.00",
+      "betsCount": 1563,
+      "winRatePercent": 25.21,
+      "predictedWinRatePercent": 29.74,
+      "roiPercent": -9.84,
+      "avgClvPercent": 0.03,
+      "roiCi95": [
+        -17.91,
+        -1.76
+      ],
+      "isRoiSignificant": true,
+      "clvCi95": [
+        -0.36,
+        0.42
+      ],
+      "isClvSignificant": false
+    },
+    {
+      "band": "5.00+",
+      "betsCount": 82,
+      "winRatePercent": 14.63,
+      "predictedWinRatePercent": 21.14,
+      "roiPercent": -14.54,
+      "avgClvPercent": -2.5,
+      "roiCi95": [
+        -54.88,
+        25.81
+      ],
+      "isRoiSignificant": false,
+      "clvCi95": [
+        -4.51,
+        -0.49
+      ],
+      "isClvSignificant": true
+    }
+  ],
+  "marketBreakdown": [
+    {
+      "market": "1X2",
+      "betsCount": 2536,
+      "winRatePercent": 31.59,
+      "predictedWinRatePercent": 36.65,
+      "roiPercent": -6.82,
+      "avgClvPercent": -0.33,
+      "roiCi95": [
+        -12.57,
+        -1.07
+      ],
+      "isRoiSignificant": true
+    },
+    {
+      "market": "OU",
+      "betsCount": 2100,
+      "winRatePercent": 48,
+      "predictedWinRatePercent": 56.27,
+      "roiPercent": -7.41,
+      "avgClvPercent": 0.85,
+      "roiCi95": [
+        -11.62,
+        -3.2
+      ],
+      "isRoiSignificant": true
+    }
+  ],
+  "walkForwardWindows": [
+    {
+      "windowName": "Fereastra 2022-23 (Sondă CLV - fără mize)",
+      "trainingSeasons": [
+        "<= 2021-22"
+      ],
+      "testSeason": "2022-23",
+      "matchesCount": 11649,
+      "betsCount": 0,
+      "bettingRatePercent": 0,
+      "brierScore": 0.6071,
+      "bookmakerBrierScore": 0.597,
+      "roiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "avgClvPercent": 0,
+      "positiveClvRatePercent": 0,
+      "maxDrawdownPercent": 0
+    },
+    {
+      "windowName": "Fereastra 2023-24",
+      "trainingSeasons": [
+        "<= 2022-23"
+      ],
+      "testSeason": "2023-24",
+      "matchesCount": 11818,
+      "betsCount": 2600,
+      "bettingRatePercent": 22,
+      "brierScore": 0.6052,
+      "bookmakerBrierScore": 0.5937,
+      "roiPercent": -2.88,
+      "roiCi95": [
+        -7.86,
+        2.11
+      ],
+      "isRoiSignificant": false,
+      "avgClvPercent": 0.57,
+      "positiveClvRatePercent": 50.27,
+      "maxDrawdownPercent": 82.18
+    },
+    {
+      "windowName": "Fereastra 2024-25",
+      "trainingSeasons": [
+        "<= 2023-24"
+      ],
+      "testSeason": "2024-25",
+      "matchesCount": 11843,
+      "betsCount": 2036,
+      "bettingRatePercent": 17.19,
+      "brierScore": 0.6112,
+      "bookmakerBrierScore": 0.5938,
+      "roiPercent": -12.52,
+      "roiCi95": [
+        -17.96,
+        -7.09
+      ],
+      "isRoiSignificant": true,
+      "avgClvPercent": -0.26,
+      "positiveClvRatePercent": 43.61,
+      "maxDrawdownPercent": 98.51
+    }
+  ],
+  "leagueHealthMap": {
+    "2": {
+      "leagueId": 2,
+      "leagueName": "UEFA Champions League",
+      "matchesCount": 269,
+      "brierScore1X2": 0.5647,
+      "bookmakerBrierScore1X2": null,
+      "beatsBookmakerBrier": null,
+      "logLoss1X2": 0.9515,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0658,
+          "observedFrequency": 0.0714,
+          "sampleCount": 14
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1622,
+          "observedFrequency": 0.15,
+          "sampleCount": 80
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2485,
+          "observedFrequency": 0.1765,
+          "sampleCount": 357
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3498,
+          "observedFrequency": 0.4409,
+          "sampleCount": 127
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4573,
+          "observedFrequency": 0.5175,
+          "sampleCount": 114
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5392,
+          "observedFrequency": 0.6667,
+          "sampleCount": 63
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6356,
+          "observedFrequency": 0.625,
+          "sampleCount": 32
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7379,
+          "observedFrequency": 0.7143,
+          "sampleCount": 14
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8267,
+          "observedFrequency": 1,
+          "sampleCount": 4
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9447,
+          "observedFrequency": 1,
+          "sampleCount": 2
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "39": {
+      "leagueId": 39,
+      "leagueName": "Premier League",
+      "matchesCount": 1134,
+      "brierScore1X2": 0.5745,
+      "bookmakerBrierScore1X2": 0.5619,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0177,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0155,
+          "observedFrequency": 0.0973,
+          "sampleCount": 257
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1586,
+          "observedFrequency": 0.1321,
+          "sampleCount": 280
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2687,
+          "observedFrequency": 0.2379,
+          "sampleCount": 1404
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3451,
+          "observedFrequency": 0.349,
+          "sampleCount": 533
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.453,
+          "observedFrequency": 0.5273,
+          "sampleCount": 495
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5477,
+          "observedFrequency": 0.5685,
+          "sampleCount": 197
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6362,
+          "observedFrequency": 0.7302,
+          "sampleCount": 63
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7532,
+          "observedFrequency": 0.6111,
+          "sampleCount": 54
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8409,
+          "observedFrequency": 0.875,
+          "sampleCount": 40
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9865,
+          "observedFrequency": 0.8228,
+          "sampleCount": 79
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "40": {
+      "leagueId": 40,
+      "leagueName": "Championship",
+      "matchesCount": 1642,
+      "brierScore1X2": 0.6252,
+      "bookmakerBrierScore1X2": 0.6208,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0387,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0422,
+          "observedFrequency": 0,
+          "sampleCount": 27
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1742,
+          "observedFrequency": 0.1546,
+          "sampleCount": 207
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2628,
+          "observedFrequency": 0.2538,
+          "sampleCount": 2151
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.353,
+          "observedFrequency": 0.3403,
+          "sampleCount": 1434
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4352,
+          "observedFrequency": 0.4831,
+          "sampleCount": 770
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.544,
+          "observedFrequency": 0.5541,
+          "sampleCount": 222
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.636,
+          "observedFrequency": 0.6744,
+          "sampleCount": 86
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7456,
+          "observedFrequency": 0.7368,
+          "sampleCount": 19
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8461,
+          "observedFrequency": 0.875,
+          "sampleCount": 8
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9205,
+          "observedFrequency": 1,
+          "sampleCount": 2
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "41": {
+      "leagueId": 41,
+      "leagueName": "League 1",
+      "matchesCount": 1638,
+      "brierScore1X2": 0.6165,
+      "bookmakerBrierScore1X2": 0.6082,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0317,
+      "simulatedRoiPercent": -10.33,
+      "roiCi95": [
+        -19.03,
+        -1.64
+      ],
+      "isRoiSignificant": true,
+      "clvMetrics": {
+        "avgClvPercent": 0.69,
+        "positiveClvRatePercent": 50.76,
+        "ci95": [
+          0.28,
+          1.09
+        ],
+        "isSignificant": true
+      },
+      "totalBetsPlaced": 851,
+      "winRate": 35.72,
+      "maxDrawdownPercent": 74.59,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0276,
+          "observedFrequency": 0.0714,
+          "sampleCount": 42
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.17,
+          "observedFrequency": 0.1814,
+          "sampleCount": 204
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2608,
+          "observedFrequency": 0.2297,
+          "sampleCount": 1859
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3344,
+          "observedFrequency": 0.3364,
+          "sampleCount": 1757
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4414,
+          "observedFrequency": 0.5182,
+          "sampleCount": 606
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5447,
+          "observedFrequency": 0.5623,
+          "sampleCount": 313
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6255,
+          "observedFrequency": 0.6627,
+          "sampleCount": 83
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7544,
+          "observedFrequency": 0.6296,
+          "sampleCount": 27
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8308,
+          "observedFrequency": 0.7222,
+          "sampleCount": 18
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9396,
+          "observedFrequency": 1,
+          "sampleCount": 5
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 6,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 74.48,
+          "roiPercent": 45.67,
+          "avgClvPercent": -0.49,
+          "roiCi95": [
+            43.42,
+            47.91
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -2.9,
+            1.92
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 251,
+          "winRatePercent": 54.58,
+          "predictedWinRatePercent": 60.12,
+          "roiPercent": -1.31,
+          "avgClvPercent": 2.36,
+          "roiCi95": [
+            -12.53,
+            9.9
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            1.71,
+            3
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 193,
+          "winRatePercent": 41.45,
+          "predictedWinRatePercent": 49.04,
+          "roiPercent": -6.32,
+          "avgClvPercent": -0.22,
+          "roiCi95": [
+            -22.16,
+            9.52
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.07,
+            0.64
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 378,
+          "winRatePercent": 19.84,
+          "predictedWinRatePercent": 30.01,
+          "roiPercent": -32.58,
+          "avgClvPercent": 0.28,
+          "roiCi95": [
+            -47.58,
+            -17.58
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -0.35,
+            0.9
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 23,
+          "winRatePercent": 26.09,
+          "predictedWinRatePercent": 20.93,
+          "roiPercent": 75.87,
+          "avgClvPercent": -2.92,
+          "roiCi95": [
+            -20.36,
+            172.1
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -6.38,
+            0.53
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "42": {
+      "leagueId": 42,
+      "leagueName": "League 2",
+      "matchesCount": 1642,
+      "brierScore1X2": 0.6377,
+      "bookmakerBrierScore1X2": 0.6346,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0569,
+      "simulatedRoiPercent": -5.09,
+      "roiCi95": [
+        -14.84,
+        4.65
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0.18,
+        "positiveClvRatePercent": 47.42,
+        "ci95": [
+          -0.28,
+          0.65
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 660,
+      "winRate": 41.82,
+      "maxDrawdownPercent": 65.29,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0695,
+          "observedFrequency": 0,
+          "sampleCount": 11
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1813,
+          "observedFrequency": 0.191,
+          "sampleCount": 356
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2647,
+          "observedFrequency": 0.2709,
+          "sampleCount": 2097
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3521,
+          "observedFrequency": 0.3544,
+          "sampleCount": 1346
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4451,
+          "observedFrequency": 0.4214,
+          "sampleCount": 655
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5385,
+          "observedFrequency": 0.5347,
+          "sampleCount": 404
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.631,
+          "observedFrequency": 0.6111,
+          "sampleCount": 36
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7378,
+          "observedFrequency": 0.7222,
+          "sampleCount": 18
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.839,
+          "observedFrequency": 0.6667,
+          "sampleCount": 3
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 6,
+          "winRatePercent": 50,
+          "predictedWinRatePercent": 75.21,
+          "roiPercent": -28.67,
+          "avgClvPercent": 1.39,
+          "roiCi95": [
+            -91.2,
+            33.86
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.9,
+            4.68
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 222,
+          "winRatePercent": 51.35,
+          "predictedWinRatePercent": 59.31,
+          "roiPercent": -5.92,
+          "avgClvPercent": 0.47,
+          "roiCi95": [
+            -18.02,
+            6.18
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.2,
+            1.14
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 266,
+          "winRatePercent": 37.22,
+          "predictedWinRatePercent": 48.07,
+          "roiPercent": -18.26,
+          "avgClvPercent": 0.01,
+          "roiCi95": [
+            -31.55,
+            -4.98
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -0.68,
+            0.71
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 164,
+          "winRatePercent": 36.59,
+          "predictedWinRatePercent": 30.07,
+          "roiPercent": 39.97,
+          "avgClvPercent": 0.1,
+          "roiCi95": [
+            12.33,
+            67.6
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -1.02,
+            1.22
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 2,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 20.12,
+          "roiPercent": -100,
+          "avgClvPercent": -5.86,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -38.32,
+            26.6
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "43": {
+      "leagueId": 43,
+      "leagueName": "National League",
+      "matchesCount": 1641,
+      "brierScore1X2": 0.6209,
+      "bookmakerBrierScore1X2": 0.6152,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0334,
+      "simulatedRoiPercent": -7.1,
+      "roiCi95": [
+        -15.72,
+        1.53
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -0.07,
+        "positiveClvRatePercent": 43.46,
+        "ci95": [
+          -0.65,
+          0.52
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 665,
+      "winRate": 43.16,
+      "maxDrawdownPercent": 69.76,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0739,
+          "observedFrequency": 0.0339,
+          "sampleCount": 59
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1661,
+          "observedFrequency": 0.1205,
+          "sampleCount": 224
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2415,
+          "observedFrequency": 0.2663,
+          "sampleCount": 1874
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3541,
+          "observedFrequency": 0.3228,
+          "sampleCount": 1493
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4317,
+          "observedFrequency": 0.4246,
+          "sampleCount": 855
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5509,
+          "observedFrequency": 0.5867,
+          "sampleCount": 271
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6362,
+          "observedFrequency": 0.7071,
+          "sampleCount": 99
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.723,
+          "observedFrequency": 0.7647,
+          "sampleCount": 34
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8465,
+          "observedFrequency": 0.9,
+          "sampleCount": 10
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9558,
+          "observedFrequency": 1,
+          "sampleCount": 4
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 13,
+          "winRatePercent": 84.62,
+          "predictedWinRatePercent": 75.76,
+          "roiPercent": 23,
+          "avgClvPercent": 2.27,
+          "roiCi95": [
+            -6.72,
+            52.72
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0.12,
+            4.43
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 273,
+          "winRatePercent": 55.31,
+          "predictedWinRatePercent": 62.24,
+          "roiPercent": -2.69,
+          "avgClvPercent": 0.42,
+          "roiCi95": [
+            -13.14,
+            7.76
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.19,
+            1.04
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 248,
+          "winRatePercent": 37.9,
+          "predictedWinRatePercent": 46.69,
+          "roiPercent": -11.88,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            -26.25,
+            2.49
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.96,
+            0.95
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 124,
+          "winRatePercent": 25,
+          "predictedWinRatePercent": 30.95,
+          "roiPercent": -13.22,
+          "avgClvPercent": -1.66,
+          "roiCi95": [
+            -40.86,
+            14.43
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -3.7,
+            0.38
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 7,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 21.81,
+          "roiPercent": -100,
+          "avgClvPercent": 2.47,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -3.31,
+            8.26
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "61": {
+      "leagueId": 61,
+      "leagueName": "Ligue 1",
+      "matchesCount": 987,
+      "brierScore1X2": 0.593,
+      "bookmakerBrierScore1X2": 0.5843,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0013,
+      "simulatedRoiPercent": -12.28,
+      "roiCi95": [
+        -25.04,
+        0.48
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -0.4,
+        "positiveClvRatePercent": 46.68,
+        "ci95": [
+          -1.12,
+          0.33
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 437,
+      "winRate": 34.1,
+      "maxDrawdownPercent": 60.43,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.04,
+          "observedFrequency": 0.0924,
+          "sampleCount": 119
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1612,
+          "observedFrequency": 0.1801,
+          "sampleCount": 261
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2561,
+          "observedFrequency": 0.2411,
+          "sampleCount": 1207
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3342,
+          "observedFrequency": 0.3292,
+          "sampleCount": 559
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4507,
+          "observedFrequency": 0.4756,
+          "sampleCount": 349
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5509,
+          "observedFrequency": 0.5631,
+          "sampleCount": 293
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6424,
+          "observedFrequency": 0.7045,
+          "sampleCount": 88
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7441,
+          "observedFrequency": 0.6829,
+          "sampleCount": 41
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8396,
+          "observedFrequency": 0.6563,
+          "sampleCount": 32
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9677,
+          "observedFrequency": 1,
+          "sampleCount": 12
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 4,
+          "winRatePercent": 75,
+          "predictedWinRatePercent": 74.46,
+          "roiPercent": 7.75,
+          "avgClvPercent": 2.89,
+          "roiCi95": [
+            -62.7,
+            78.2
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -7.71,
+            13.5
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 97,
+          "winRatePercent": 45.36,
+          "predictedWinRatePercent": 60.27,
+          "roiPercent": -16.05,
+          "avgClvPercent": -0.17,
+          "roiCi95": [
+            -34.33,
+            2.22
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.67,
+            1.33
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 136,
+          "winRatePercent": 40.44,
+          "predictedWinRatePercent": 48.91,
+          "roiPercent": -11.14,
+          "avgClvPercent": -0.52,
+          "roiCi95": [
+            -29.9,
+            7.62
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.7,
+            0.66
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 189,
+          "winRatePercent": 23.81,
+          "predictedWinRatePercent": 28.77,
+          "roiPercent": -11.09,
+          "avgClvPercent": -0.54,
+          "roiCi95": [
+            -34.58,
+            12.4
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.7,
+            0.63
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 11,
+          "winRatePercent": 18.18,
+          "predictedWinRatePercent": 21.18,
+          "roiPercent": 1.92,
+          "avgClvPercent": 0.34,
+          "roiCi95": [
+            -124.61,
+            128.45
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -5.24,
+            5.91
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "62": {
+      "leagueId": 62,
+      "leagueName": "Ligue 2",
+      "matchesCount": 1054,
+      "brierScore1X2": 0.6356,
+      "bookmakerBrierScore1X2": 0.6267,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0629,
+      "simulatedRoiPercent": -7.74,
+      "roiCi95": [
+        -25.27,
+        9.79
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -0.38,
+        "positiveClvRatePercent": 43.53,
+        "ci95": [
+          -1.42,
+          0.66
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 232,
+      "winRate": 37.5,
+      "maxDrawdownPercent": 38.76,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0399,
+          "observedFrequency": 0.2353,
+          "sampleCount": 34
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1593,
+          "observedFrequency": 0.2031,
+          "sampleCount": 64
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2697,
+          "observedFrequency": 0.2549,
+          "sampleCount": 1283
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3415,
+          "observedFrequency": 0.3252,
+          "sampleCount": 1104
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4426,
+          "observedFrequency": 0.4831,
+          "sampleCount": 561
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5419,
+          "observedFrequency": 0.6557,
+          "sampleCount": 61
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6398,
+          "observedFrequency": 0.6471,
+          "sampleCount": 34
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7485,
+          "observedFrequency": 0.6471,
+          "sampleCount": 17
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8062,
+          "observedFrequency": 1,
+          "sampleCount": 2
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.998,
+          "observedFrequency": 0.5,
+          "sampleCount": 2
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 1,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 75.49,
+          "roiPercent": 44,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            44,
+            44
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 46,
+          "winRatePercent": 50,
+          "predictedWinRatePercent": 60.31,
+          "roiPercent": -9.8,
+          "avgClvPercent": -0.03,
+          "roiCi95": [
+            -35.76,
+            16.15
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -2.03,
+            1.97
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 85,
+          "winRatePercent": 38.82,
+          "predictedWinRatePercent": 46.37,
+          "roiPercent": -11.45,
+          "avgClvPercent": -1.27,
+          "roiCi95": [
+            -35.55,
+            12.65
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -2.96,
+            0.42
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 98,
+          "winRatePercent": 30.61,
+          "predictedWinRatePercent": 30.54,
+          "roiPercent": -0.39,
+          "avgClvPercent": 0.25,
+          "roiCi95": [
+            -34.01,
+            33.23
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.42,
+            1.92
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 2,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 20.97,
+          "roiPercent": -100,
+          "avgClvPercent": -1.85,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -33.13,
+            29.42
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "71": {
+      "leagueId": 71,
+      "leagueName": "Serie A",
+      "matchesCount": 1133,
+      "brierScore1X2": 0.6093,
+      "bookmakerBrierScore1X2": 0.6009,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0185,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0762,
+          "observedFrequency": 0.0667,
+          "sampleCount": 15
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1692,
+          "observedFrequency": 0.1538,
+          "sampleCount": 260
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2629,
+          "observedFrequency": 0.2352,
+          "sampleCount": 1246
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3339,
+          "observedFrequency": 0.3414,
+          "sampleCount": 1078
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4411,
+          "observedFrequency": 0.4201,
+          "sampleCount": 388
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5391,
+          "observedFrequency": 0.6328,
+          "sampleCount": 335
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.629,
+          "observedFrequency": 0.7333,
+          "sampleCount": 75
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7218,
+          "observedFrequency": 0.5,
+          "sampleCount": 2
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "78": {
+      "leagueId": 78,
+      "leagueName": "Bundesliga",
+      "matchesCount": 912,
+      "brierScore1X2": 0.5956,
+      "bookmakerBrierScore1X2": 0.5826,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0102,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0359,
+          "observedFrequency": 0.1212,
+          "sampleCount": 66
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1543,
+          "observedFrequency": 0.168,
+          "sampleCount": 506
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2575,
+          "observedFrequency": 0.262,
+          "sampleCount": 897
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3447,
+          "observedFrequency": 0.3502,
+          "sampleCount": 574
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4453,
+          "observedFrequency": 0.445,
+          "sampleCount": 191
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5417,
+          "observedFrequency": 0.5067,
+          "sampleCount": 223
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6505,
+          "observedFrequency": 0.5462,
+          "sampleCount": 130
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7304,
+          "observedFrequency": 0.7647,
+          "sampleCount": 119
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8458,
+          "observedFrequency": 0.7667,
+          "sampleCount": 30
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "79": {
+      "leagueId": 79,
+      "leagueName": "2. Bundesliga",
+      "matchesCount": 906,
+      "brierScore1X2": 0.6321,
+      "bookmakerBrierScore1X2": 0.6218,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0499,
+      "simulatedRoiPercent": 102.87,
+      "roiCi95": [
+        44.07,
+        161.67
+      ],
+      "isRoiSignificant": true,
+      "clvMetrics": {
+        "avgClvPercent": -11.88,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          -31.97,
+          8.22
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 2,
+      "winRate": 100,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0538,
+          "observedFrequency": 0,
+          "sampleCount": 10
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1682,
+          "observedFrequency": 0.1745,
+          "sampleCount": 149
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2629,
+          "observedFrequency": 0.2627,
+          "sampleCount": 1066
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3508,
+          "observedFrequency": 0.3326,
+          "sampleCount": 914
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4419,
+          "observedFrequency": 0.4679,
+          "sampleCount": 389
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5335,
+          "observedFrequency": 0.5686,
+          "sampleCount": 153
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.637,
+          "observedFrequency": 0.7222,
+          "sampleCount": 18
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.744,
+          "observedFrequency": 0.75,
+          "sampleCount": 16
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8543,
+          "observedFrequency": 0.6667,
+          "sampleCount": 3
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 1,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 60.96,
+          "roiPercent": 83,
+          "avgClvPercent": -22.13,
+          "roiCi95": [
+            83,
+            83
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -22.13,
+            -22.13
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 1,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 43.49,
+          "roiPercent": 143,
+          "avgClvPercent": -1.62,
+          "roiCi95": [
+            143,
+            143
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -1.62,
+            -1.62
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "88": {
+      "leagueId": 88,
+      "leagueName": "Eredivisie",
+      "matchesCount": 912,
+      "brierScore1X2": 0.5527,
+      "bookmakerBrierScore1X2": 0.5483,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9486,
+      "simulatedRoiPercent": -10.85,
+      "roiCi95": [
+        -23.92,
+        2.22
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0.13,
+        "positiveClvRatePercent": 49.73,
+        "ci95": [
+          -0.68,
+          0.94
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 376,
+      "winRate": 37.23,
+      "maxDrawdownPercent": 55.45,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0475,
+          "observedFrequency": 0.0621,
+          "sampleCount": 306
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1443,
+          "observedFrequency": 0.1875,
+          "sampleCount": 336
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2652,
+          "observedFrequency": 0.2491,
+          "sampleCount": 823
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3463,
+          "observedFrequency": 0.3274,
+          "sampleCount": 559
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4405,
+          "observedFrequency": 0.5166,
+          "sampleCount": 271
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5532,
+          "observedFrequency": 0.4783,
+          "sampleCount": 92
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6404,
+          "observedFrequency": 0.6385,
+          "sampleCount": 130
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7497,
+          "observedFrequency": 0.7191,
+          "sampleCount": 89
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8515,
+          "observedFrequency": 0.8312,
+          "sampleCount": 77
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9681,
+          "observedFrequency": 0.8868,
+          "sampleCount": 53
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 14,
+          "winRatePercent": 64.29,
+          "predictedWinRatePercent": 76,
+          "roiPercent": -7.64,
+          "avgClvPercent": 1.39,
+          "roiCi95": [
+            -45.08,
+            29.8
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.48,
+            4.25
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 126,
+          "winRatePercent": 53.17,
+          "predictedWinRatePercent": 64.23,
+          "roiPercent": -9.37,
+          "avgClvPercent": 0.52,
+          "roiCi95": [
+            -24.41,
+            5.66
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.62,
+            1.67
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 82,
+          "winRatePercent": 36.59,
+          "predictedWinRatePercent": 46.78,
+          "roiPercent": -15.81,
+          "avgClvPercent": 0.2,
+          "roiCi95": [
+            -40.49,
+            8.87
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.65,
+            2.06
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 150,
+          "winRatePercent": 22,
+          "predictedWinRatePercent": 28.27,
+          "roiPercent": -10.89,
+          "avgClvPercent": -0.41,
+          "roiCi95": [
+            -37.11,
+            15.33
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.83,
+            1.01
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 4,
+          "winRatePercent": 25,
+          "predictedWinRatePercent": 20.68,
+          "roiPercent": 81.1,
+          "avgClvPercent": 1.92,
+          "roiCi95": [
+            -180.56,
+            342.76
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -9.39,
+            13.24
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "94": {
+      "leagueId": 94,
+      "leagueName": "Primeira Liga",
+      "matchesCount": 912,
+      "brierScore1X2": 0.5432,
+      "bookmakerBrierScore1X2": 0.5295,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9341,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0371,
+          "observedFrequency": 0.0728,
+          "sampleCount": 371
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1681,
+          "observedFrequency": 0.1521,
+          "sampleCount": 263
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2512,
+          "observedFrequency": 0.2518,
+          "sampleCount": 703
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3558,
+          "observedFrequency": 0.3781,
+          "sampleCount": 640
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4405,
+          "observedFrequency": 0.3802,
+          "sampleCount": 405
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.56,
+          "observedFrequency": 0.5357,
+          "sampleCount": 56
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6453,
+          "observedFrequency": 0.7143,
+          "sampleCount": 49
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7515,
+          "observedFrequency": 0.7667,
+          "sampleCount": 120
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8471,
+          "observedFrequency": 0.8571,
+          "sampleCount": 42
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9491,
+          "observedFrequency": 0.908,
+          "sampleCount": 87
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "98": {
+      "leagueId": 98,
+      "leagueName": "J1 League",
+      "matchesCount": 989,
+      "brierScore1X2": 0.6406,
+      "bookmakerBrierScore1X2": 0.6352,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0628,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1791,
+          "observedFrequency": 0.16,
+          "sampleCount": 75
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2558,
+          "observedFrequency": 0.2689,
+          "sampleCount": 1324
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.349,
+          "observedFrequency": 0.3291,
+          "sampleCount": 869
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4473,
+          "observedFrequency": 0.4455,
+          "sampleCount": 505
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5328,
+          "observedFrequency": 0.5436,
+          "sampleCount": 149
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6297,
+          "observedFrequency": 0.6444,
+          "sampleCount": 45
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "103": {
+      "leagueId": 103,
+      "leagueName": "Eliteserien",
+      "matchesCount": 719,
+      "brierScore1X2": 0.5936,
+      "bookmakerBrierScore1X2": 0.5849,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9963,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0463,
+          "observedFrequency": 0,
+          "sampleCount": 14
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1659,
+          "observedFrequency": 0.1672,
+          "sampleCount": 293
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2606,
+          "observedFrequency": 0.2309,
+          "sampleCount": 836
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3286,
+          "observedFrequency": 0.3551,
+          "sampleCount": 352
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4336,
+          "observedFrequency": 0.4442,
+          "sampleCount": 403
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5465,
+          "observedFrequency": 0.6415,
+          "sampleCount": 106
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.641,
+          "observedFrequency": 0.6471,
+          "sampleCount": 102
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.729,
+          "observedFrequency": 0.7333,
+          "sampleCount": 45
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8574,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9277,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "106": {
+      "leagueId": 106,
+      "leagueName": "Ekstraklasa",
+      "matchesCount": 909,
+      "brierScore1X2": 0.6359,
+      "bookmakerBrierScore1X2": 0.6198,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0552,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0671,
+          "observedFrequency": 0,
+          "sampleCount": 3
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1737,
+          "observedFrequency": 0.2143,
+          "sampleCount": 28
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2651,
+          "observedFrequency": 0.256,
+          "sampleCount": 1328
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3412,
+          "observedFrequency": 0.3238,
+          "sampleCount": 627
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.448,
+          "observedFrequency": 0.4785,
+          "sampleCount": 675
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5246,
+          "observedFrequency": 0.5345,
+          "sampleCount": 58
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6378,
+          "observedFrequency": 0.7143,
+          "sampleCount": 7
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.705,
+          "observedFrequency": 1,
+          "sampleCount": 1
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "113": {
+      "leagueId": 113,
+      "leagueName": "Allsvenskan",
+      "matchesCount": 717,
+      "brierScore1X2": 0.5979,
+      "bookmakerBrierScore1X2": 0.5885,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0022,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0505,
+          "observedFrequency": 0,
+          "sampleCount": 22
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1742,
+          "observedFrequency": 0.1878,
+          "sampleCount": 197
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2549,
+          "observedFrequency": 0.2364,
+          "sampleCount": 901
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3506,
+          "observedFrequency": 0.3116,
+          "sampleCount": 430
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4411,
+          "observedFrequency": 0.4986,
+          "sampleCount": 359
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5412,
+          "observedFrequency": 0.5924,
+          "sampleCount": 157
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6391,
+          "observedFrequency": 0.6557,
+          "sampleCount": 61
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7392,
+          "observedFrequency": 0.8235,
+          "sampleCount": 17
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.842,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9388,
+          "observedFrequency": 1,
+          "sampleCount": 4
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "119": {
+      "leagueId": 119,
+      "leagueName": "Superliga",
+      "matchesCount": 574,
+      "brierScore1X2": 0.6131,
+      "bookmakerBrierScore1X2": 0.6084,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0227,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1738,
+          "observedFrequency": 0.1446,
+          "sampleCount": 83
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2617,
+          "observedFrequency": 0.2409,
+          "sampleCount": 801
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3469,
+          "observedFrequency": 0.3483,
+          "sampleCount": 422
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4506,
+          "observedFrequency": 0.4839,
+          "sampleCount": 279
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5424,
+          "observedFrequency": 0.6,
+          "sampleCount": 100
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6349,
+          "observedFrequency": 0.7222,
+          "sampleCount": 36
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7266,
+          "observedFrequency": 1,
+          "sampleCount": 1
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "128": {
+      "leagueId": 128,
+      "leagueName": "Liga Profesional",
+      "matchesCount": 1127,
+      "brierScore1X2": 0.6385,
+      "bookmakerBrierScore1X2": 0.6311,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0623,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0386,
+          "observedFrequency": 0.25,
+          "sampleCount": 4
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1638,
+          "observedFrequency": 0.2041,
+          "sampleCount": 49
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2727,
+          "observedFrequency": 0.2562,
+          "sampleCount": 1444
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3429,
+          "observedFrequency": 0.3354,
+          "sampleCount": 1154
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4349,
+          "observedFrequency": 0.4747,
+          "sampleCount": 632
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5341,
+          "observedFrequency": 0.5714,
+          "sampleCount": 84
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6526,
+          "observedFrequency": 0.8,
+          "sampleCount": 10
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7394,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8897,
+          "observedFrequency": 0,
+          "sampleCount": 1
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "135": {
+      "leagueId": 135,
+      "leagueName": "Serie A",
+      "matchesCount": 1133,
+      "brierScore1X2": 0.5831,
+      "bookmakerBrierScore1X2": 0.5773,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9791,
+      "simulatedRoiPercent": 0.85,
+      "roiCi95": [
+        -13.2,
+        14.9
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -0.75,
+        "positiveClvRatePercent": 39.6,
+        "ci95": [
+          -1.43,
+          -0.07
+        ],
+        "isSignificant": true
+      },
+      "totalBetsPlaced": 346,
+      "winRate": 43.06,
+      "maxDrawdownPercent": 19.57,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0529,
+          "observedFrequency": 0.0672,
+          "sampleCount": 119
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1636,
+          "observedFrequency": 0.1307,
+          "sampleCount": 306
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.253,
+          "observedFrequency": 0.2451,
+          "sampleCount": 1440
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3434,
+          "observedFrequency": 0.3328,
+          "sampleCount": 652
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4586,
+          "observedFrequency": 0.4843,
+          "sampleCount": 318
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.542,
+          "observedFrequency": 0.5862,
+          "sampleCount": 319
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6357,
+          "observedFrequency": 0.6667,
+          "sampleCount": 147
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7504,
+          "observedFrequency": 0.7778,
+          "sampleCount": 72
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8423,
+          "observedFrequency": 0.7826,
+          "sampleCount": 23
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.933,
+          "observedFrequency": 0.6667,
+          "sampleCount": 3
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 8,
+          "winRatePercent": 62.5,
+          "predictedWinRatePercent": 74.86,
+          "roiPercent": -9.5,
+          "avgClvPercent": -2.06,
+          "roiCi95": [
+            -61.45,
+            42.45
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -5.66,
+            1.54
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 85,
+          "winRatePercent": 55.29,
+          "predictedWinRatePercent": 61.36,
+          "roiPercent": -3.25,
+          "avgClvPercent": 0.54,
+          "roiCi95": [
+            -22.17,
+            15.67
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.9,
+            1.99
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 146,
+          "winRatePercent": 47.95,
+          "predictedWinRatePercent": 48.4,
+          "roiPercent": 7.76,
+          "avgClvPercent": -1.3,
+          "roiCi95": [
+            -10.96,
+            26.48
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -2.21,
+            -0.38
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 87,
+          "winRatePercent": 29.89,
+          "predictedWinRatePercent": 27.65,
+          "roiPercent": 2.48,
+          "avgClvPercent": -0.02,
+          "roiCi95": [
+            -37.34,
+            42.3
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.41,
+            1.37
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 20,
+          "winRatePercent": 5,
+          "predictedWinRatePercent": 21.3,
+          "roiPercent": -78.26,
+          "avgClvPercent": -4.93,
+          "roiCi95": [
+            -128.93,
+            -27.59
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -8.74,
+            -1.13
+          ],
+          "isClvSignificant": true
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "136": {
+      "leagueId": 136,
+      "leagueName": "Serie B",
+      "matchesCount": 1123,
+      "brierScore1X2": 0.6635,
+      "bookmakerBrierScore1X2": 0.638,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0955,
+      "simulatedRoiPercent": -11.8,
+      "roiCi95": [
+        -27.59,
+        4
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -0.23,
+        "positiveClvRatePercent": 48.51,
+        "ci95": [
+          -1.07,
+          0.61
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 235,
+      "winRate": 37.45,
+      "maxDrawdownPercent": 38.47,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0583,
+          "observedFrequency": 0.1176,
+          "sampleCount": 17
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1827,
+          "observedFrequency": 0.2816,
+          "sampleCount": 316
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2467,
+          "observedFrequency": 0.2574,
+          "sampleCount": 1018
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3458,
+          "observedFrequency": 0.3379,
+          "sampleCount": 1237
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4467,
+          "observedFrequency": 0.4878,
+          "sampleCount": 533
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5494,
+          "observedFrequency": 0.4273,
+          "sampleCount": 110
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6215,
+          "observedFrequency": 0.3106,
+          "sampleCount": 132
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7392,
+          "observedFrequency": 0.6667,
+          "sampleCount": 3
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8134,
+          "observedFrequency": 1,
+          "sampleCount": 2
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9106,
+          "observedFrequency": 0,
+          "sampleCount": 1
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 59,
+          "winRatePercent": 47.46,
+          "predictedWinRatePercent": 60.9,
+          "roiPercent": -16.92,
+          "avgClvPercent": 1.39,
+          "roiCi95": [
+            -39.92,
+            6.07
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.1,
+            2.87
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 97,
+          "winRatePercent": 41.24,
+          "predictedWinRatePercent": 47.44,
+          "roiPercent": -6.4,
+          "avgClvPercent": -1.18,
+          "roiCi95": [
+            -29.8,
+            16.99
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -2.49,
+            0.12
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 78,
+          "winRatePercent": 25.64,
+          "predictedWinRatePercent": 31.84,
+          "roiPercent": -14.44,
+          "avgClvPercent": -0.24,
+          "roiCi95": [
+            -47.97,
+            19.1
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.8,
+            1.32
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 1,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 20.87,
+          "roiPercent": -100,
+          "avgClvPercent": -1.79,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -1.79,
+            -1.79
+          ],
+          "isClvSignificant": true
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "140": {
+      "leagueId": 140,
+      "leagueName": "La Liga",
+      "matchesCount": 1135,
+      "brierScore1X2": 0.578,
+      "bookmakerBrierScore1X2": 0.5706,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9734,
+      "simulatedRoiPercent": -22.99,
+      "roiCi95": [
+        -73.23,
+        27.26
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -0.61,
+        "positiveClvRatePercent": 45.45,
+        "ci95": [
+          -3.78,
+          2.56
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 22,
+      "winRate": 27.27,
+      "maxDrawdownPercent": 7.66,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.062,
+          "observedFrequency": 0.0918,
+          "sampleCount": 207
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1403,
+          "observedFrequency": 0.1429,
+          "sampleCount": 329
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2652,
+          "observedFrequency": 0.2474,
+          "sampleCount": 1233
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3373,
+          "observedFrequency": 0.3329,
+          "sampleCount": 715
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4409,
+          "observedFrequency": 0.4922,
+          "sampleCount": 512
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5485,
+          "observedFrequency": 0.5,
+          "sampleCount": 118
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6485,
+          "observedFrequency": 0.6522,
+          "sampleCount": 115
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.747,
+          "observedFrequency": 0.7586,
+          "sampleCount": 87
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8507,
+          "observedFrequency": 0.8088,
+          "sampleCount": 68
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9497,
+          "observedFrequency": 0.9048,
+          "sampleCount": 21
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 2,
+          "winRatePercent": 50,
+          "predictedWinRatePercent": 65.99,
+          "roiPercent": -16.5,
+          "avgClvPercent": 7.21,
+          "roiCi95": [
+            -180.16,
+            147.16
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.87,
+            15.29
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 10,
+          "winRatePercent": 40,
+          "predictedWinRatePercent": 47.68,
+          "roiPercent": 1.85,
+          "avgClvPercent": -3.08,
+          "roiCi95": [
+            -79.06,
+            82.75
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -6.44,
+            0.28
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 10,
+          "winRatePercent": 10,
+          "predictedWinRatePercent": 30.21,
+          "roiPercent": -71.39,
+          "avgClvPercent": 0.29,
+          "roiCi95": [
+            -141.37,
+            -1.42
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -5.24,
+            5.83
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "141": {
+      "leagueId": 141,
+      "leagueName": "La Liga 2",
+      "matchesCount": 1372,
+      "brierScore1X2": 0.6266,
+      "bookmakerBrierScore1X2": 0.6208,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0434,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0531,
+          "observedFrequency": 0.0256,
+          "sampleCount": 39
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1751,
+          "observedFrequency": 0.1647,
+          "sampleCount": 170
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2703,
+          "observedFrequency": 0.2637,
+          "sampleCount": 1532
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3365,
+          "observedFrequency": 0.3228,
+          "sampleCount": 1493
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4468,
+          "observedFrequency": 0.4884,
+          "sampleCount": 645
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5321,
+          "observedFrequency": 0.5573,
+          "sampleCount": 192
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6414,
+          "observedFrequency": 0.7059,
+          "sampleCount": 17
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7518,
+          "observedFrequency": 0.8571,
+          "sampleCount": 14
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8455,
+          "observedFrequency": 0.7273,
+          "sampleCount": 11
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9054,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "144": {
+      "leagueId": 144,
+      "leagueName": "Jupiler Pro League",
+      "matchesCount": 926,
+      "brierScore1X2": 0.592,
+      "bookmakerBrierScore1X2": 0.5828,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0215,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0551,
+          "observedFrequency": 0.1724,
+          "sampleCount": 145
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1691,
+          "observedFrequency": 0.141,
+          "sampleCount": 468
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2477,
+          "observedFrequency": 0.2738,
+          "sampleCount": 913
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3601,
+          "observedFrequency": 0.3248,
+          "sampleCount": 508
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4423,
+          "observedFrequency": 0.4481,
+          "sampleCount": 270
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5535,
+          "observedFrequency": 0.5245,
+          "sampleCount": 143
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6421,
+          "observedFrequency": 0.6355,
+          "sampleCount": 203
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7344,
+          "observedFrequency": 0.7467,
+          "sampleCount": 75
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8443,
+          "observedFrequency": 0.7105,
+          "sampleCount": 38
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9131,
+          "observedFrequency": 0.8,
+          "sampleCount": 15
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "179": {
+      "leagueId": 179,
+      "leagueName": "Premiership",
+      "matchesCount": 683,
+      "brierScore1X2": 0.549,
+      "bookmakerBrierScore1X2": 0.5386,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9358,
+      "simulatedRoiPercent": -4.31,
+      "roiCi95": [
+        -18.55,
+        9.93
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0.1,
+        "positiveClvRatePercent": 46.89,
+        "ci95": [
+          -0.85,
+          1.05
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 273,
+      "winRate": 39.56,
+      "maxDrawdownPercent": 30.43,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.072,
+          "observedFrequency": 0.0667,
+          "sampleCount": 60
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.153,
+          "observedFrequency": 0.1051,
+          "sampleCount": 257
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2646,
+          "observedFrequency": 0.23,
+          "sampleCount": 761
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.348,
+          "observedFrequency": 0.3361,
+          "sampleCount": 488
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4494,
+          "observedFrequency": 0.523,
+          "sampleCount": 239
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5467,
+          "observedFrequency": 0.641,
+          "sampleCount": 78
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6462,
+          "observedFrequency": 0.8209,
+          "sampleCount": 67
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7413,
+          "observedFrequency": 0.8272,
+          "sampleCount": 81
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8152,
+          "observedFrequency": 0.9412,
+          "sampleCount": 17
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9091,
+          "observedFrequency": 0,
+          "sampleCount": 1
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 7,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 75.8,
+          "roiPercent": 43.43,
+          "avgClvPercent": 1.23,
+          "roiCi95": [
+            40.76,
+            46.09
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -2.87,
+            5.34
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 62,
+          "winRatePercent": 46.77,
+          "predictedWinRatePercent": 60.66,
+          "roiPercent": -15.25,
+          "avgClvPercent": 1.8,
+          "roiCi95": [
+            -37.89,
+            7.39
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0.15,
+            3.45
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 122,
+          "winRatePercent": 46.72,
+          "predictedWinRatePercent": 47,
+          "roiPercent": 8.83,
+          "avgClvPercent": -0.74,
+          "roiCi95": [
+            -11.89,
+            29.56
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -2.24,
+            0.77
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 77,
+          "winRatePercent": 19.48,
+          "predictedWinRatePercent": 29.5,
+          "roiPercent": -29.3,
+          "avgClvPercent": 0.36,
+          "roiCi95": [
+            -62.07,
+            3.47
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.44,
+            2.15
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 5,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 21.32,
+          "roiPercent": -100,
+          "avgClvPercent": -6.18,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -16.09,
+            3.73
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "180": {
+      "leagueId": 180,
+      "leagueName": "Championship",
+      "matchesCount": 533,
+      "brierScore1X2": 0.6291,
+      "bookmakerBrierScore1X2": 0.6225,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0455,
+      "simulatedRoiPercent": -5.72,
+      "roiCi95": [
+        -21.29,
+        9.84
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 1.36,
+        "positiveClvRatePercent": 53.18,
+        "ci95": [
+          0.59,
+          2.13
+        ],
+        "isSignificant": true
+      },
+      "totalBetsPlaced": 314,
+      "winRate": 35.67,
+      "maxDrawdownPercent": 31.13,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1735,
+          "observedFrequency": 0.1373,
+          "sampleCount": 51
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2693,
+          "observedFrequency": 0.2563,
+          "sampleCount": 679
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3457,
+          "observedFrequency": 0.3459,
+          "sampleCount": 558
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.449,
+          "observedFrequency": 0.4678,
+          "sampleCount": 233
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5414,
+          "observedFrequency": 0.6,
+          "sampleCount": 65
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.652,
+          "observedFrequency": 0.8182,
+          "sampleCount": 11
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7118,
+          "observedFrequency": 1,
+          "sampleCount": 2
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 73,
+          "winRatePercent": 49.32,
+          "predictedWinRatePercent": 59.76,
+          "roiPercent": -10.65,
+          "avgClvPercent": 3.15,
+          "roiCi95": [
+            -31.7,
+            10.41
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            1.4,
+            4.9
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 78,
+          "winRatePercent": 39.74,
+          "predictedWinRatePercent": 48.84,
+          "roiPercent": -8.91,
+          "avgClvPercent": 0.47,
+          "roiCi95": [
+            -33.95,
+            16.13
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -1.04,
+            1.98
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 160,
+          "winRatePercent": 26.88,
+          "predictedWinRatePercent": 29.98,
+          "roiPercent": -0.77,
+          "avgClvPercent": 1.02,
+          "roiCi95": [
+            -26.07,
+            24.53
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.01,
+            2.05
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 3,
+          "winRatePercent": 66.67,
+          "predictedWinRatePercent": 20.99,
+          "roiPercent": 246.36,
+          "avgClvPercent": -1.35,
+          "roiCi95": [
+            -91.61,
+            584.32
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -3.06,
+            0.35
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "181": {
+      "leagueId": 181,
+      "leagueName": "League 1",
+      "matchesCount": 532,
+      "brierScore1X2": 0.6015,
+      "bookmakerBrierScore1X2": 0.5901,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0048,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0455,
+          "observedFrequency": 0,
+          "sampleCount": 6
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1683,
+          "observedFrequency": 0.0971,
+          "sampleCount": 103
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2671,
+          "observedFrequency": 0.2229,
+          "sampleCount": 682
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.35,
+          "observedFrequency": 0.3629,
+          "sampleCount": 463
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4452,
+          "observedFrequency": 0.5442,
+          "sampleCount": 226
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5453,
+          "observedFrequency": 0.6719,
+          "sampleCount": 64
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6418,
+          "observedFrequency": 0.6905,
+          "sampleCount": 42
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7192,
+          "observedFrequency": 0.7143,
+          "sampleCount": 7
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.871,
+          "observedFrequency": 0.5,
+          "sampleCount": 2
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9472,
+          "observedFrequency": 1,
+          "sampleCount": 1
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "182": {
+      "leagueId": 182,
+      "leagueName": "League 2",
+      "matchesCount": 534,
+      "brierScore1X2": 0.6425,
+      "bookmakerBrierScore1X2": 0.6421,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0639,
+      "simulatedRoiPercent": 0.29,
+      "roiCi95": [
+        -15.82,
+        16.4
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 1.94,
+        "positiveClvRatePercent": 51.15,
+        "ci95": [
+          0.84,
+          3.05
+        ],
+        "isSignificant": true
+      },
+      "totalBetsPlaced": 217,
+      "winRate": 45.16,
+      "maxDrawdownPercent": 35.98,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1761,
+          "observedFrequency": 0.3333,
+          "sampleCount": 12
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2716,
+          "observedFrequency": 0.2443,
+          "sampleCount": 696
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3493,
+          "observedFrequency": 0.3618,
+          "sampleCount": 597
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4409,
+          "observedFrequency": 0.4868,
+          "sampleCount": 265
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.53,
+          "observedFrequency": 0.3704,
+          "sampleCount": 27
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6363,
+          "observedFrequency": 1,
+          "sampleCount": 5
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 93,
+          "winRatePercent": 51.61,
+          "predictedWinRatePercent": 59.29,
+          "roiPercent": -5.17,
+          "avgClvPercent": 1.47,
+          "roiCi95": [
+            -24.04,
+            13.71
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0.23,
+            2.71
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 75,
+          "winRatePercent": 46.67,
+          "predictedWinRatePercent": 49.06,
+          "roiPercent": 7.18,
+          "avgClvPercent": 2.44,
+          "roiCi95": [
+            -18.61,
+            32.96
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0.49,
+            4.38
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 46,
+          "winRatePercent": 32.61,
+          "predictedWinRatePercent": 30.14,
+          "roiPercent": 7.48,
+          "avgClvPercent": 2.38,
+          "roiCi95": [
+            -42.82,
+            57.79
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            -0.88,
+            5.63
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 3,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 20.99,
+          "roiPercent": -100,
+          "avgClvPercent": -2.36,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -12.41,
+            7.69
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "197": {
+      "leagueId": 197,
+      "leagueName": "Super League",
+      "matchesCount": 709,
+      "brierScore1X2": 0.5602,
+      "bookmakerBrierScore1X2": 0.5511,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.947,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0843,
+          "observedFrequency": 0,
+          "sampleCount": 22
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1602,
+          "observedFrequency": 0.0955,
+          "sampleCount": 314
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2639,
+          "observedFrequency": 0.2591,
+          "sampleCount": 799
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.345,
+          "observedFrequency": 0.3427,
+          "sampleCount": 461
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4436,
+          "observedFrequency": 0.4073,
+          "sampleCount": 248
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5565,
+          "observedFrequency": 0.6911,
+          "sampleCount": 123
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6486,
+          "observedFrequency": 0.7798,
+          "sampleCount": 109
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7358,
+          "observedFrequency": 0.8333,
+          "sampleCount": 48
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8305,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "203": {
+      "leagueId": 203,
+      "leagueName": "Super Lig",
+      "matchesCount": 1056,
+      "brierScore1X2": 0.5575,
+      "bookmakerBrierScore1X2": 0.5417,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.9501,
+      "simulatedRoiPercent": 32.15,
+      "roiCi95": [
+        -57.93,
+        122.24
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": -4.38,
+        "positiveClvRatePercent": 33.33,
+        "ci95": [
+          -10.82,
+          2.05
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 6,
+      "winRate": 50,
+      "maxDrawdownPercent": 0.9,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0414,
+          "observedFrequency": 0.0748,
+          "sampleCount": 147
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1614,
+          "observedFrequency": 0.1353,
+          "sampleCount": 266
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2548,
+          "observedFrequency": 0.2258,
+          "sampleCount": 1417
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3488,
+          "observedFrequency": 0.3325,
+          "sampleCount": 388
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4528,
+          "observedFrequency": 0.4668,
+          "sampleCount": 422
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5379,
+          "observedFrequency": 0.6149,
+          "sampleCount": 335
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6389,
+          "observedFrequency": 0.7561,
+          "sampleCount": 82
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7463,
+          "observedFrequency": 0.8286,
+          "sampleCount": 70
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8406,
+          "observedFrequency": 0.8947,
+          "sampleCount": 38
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9085,
+          "observedFrequency": 1,
+          "sampleCount": 3
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 1,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 77.66,
+          "roiPercent": 44,
+          "avgClvPercent": 2.86,
+          "roiCi95": [
+            44,
+            44
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            2.86,
+            2.86
+          ],
+          "isClvSignificant": true
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 2,
+          "winRatePercent": 100,
+          "predictedWinRatePercent": 47.89,
+          "roiPercent": 123.78,
+          "avgClvPercent": -3,
+          "roiCi95": [
+            104.18,
+            143.38
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -8.88,
+            2.88
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 2,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 24.2,
+          "roiPercent": -100,
+          "avgClvPercent": -7.16,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -27.41,
+            13.09
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 1,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 22.3,
+          "roiPercent": -100,
+          "avgClvPercent": -8.85,
+          "roiCi95": [
+            -100,
+            -100
+          ],
+          "isRoiSignificant": true,
+          "clvCi95": [
+            -8.85,
+            -8.85
+          ],
+          "isClvSignificant": true
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "207": {
+      "leagueId": 207,
+      "leagueName": "Super League",
+      "matchesCount": 636,
+      "brierScore1X2": 0.6213,
+      "bookmakerBrierScore1X2": 0.6191,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0343,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1736,
+          "observedFrequency": 0.1096,
+          "sampleCount": 73
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2628,
+          "observedFrequency": 0.2589,
+          "sampleCount": 900
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3502,
+          "observedFrequency": 0.3354,
+          "sampleCount": 495
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4507,
+          "observedFrequency": 0.4598,
+          "sampleCount": 311
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5399,
+          "observedFrequency": 0.6484,
+          "sampleCount": 91
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6367,
+          "observedFrequency": 0.7105,
+          "sampleCount": 38
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "218": {
+      "leagueId": 218,
+      "leagueName": "Bundesliga",
+      "matchesCount": 579,
+      "brierScore1X2": 0.6001,
+      "bookmakerBrierScore1X2": 0.5965,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0031,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0699,
+          "observedFrequency": 0,
+          "sampleCount": 5
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1653,
+          "observedFrequency": 0.0667,
+          "sampleCount": 135
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2606,
+          "observedFrequency": 0.2618,
+          "sampleCount": 783
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3459,
+          "observedFrequency": 0.3324,
+          "sampleCount": 370
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4484,
+          "observedFrequency": 0.4552,
+          "sampleCount": 268
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5449,
+          "observedFrequency": 0.625,
+          "sampleCount": 104
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6342,
+          "observedFrequency": 0.7593,
+          "sampleCount": 54
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7343,
+          "observedFrequency": 0.7778,
+          "sampleCount": 18
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "244": {
+      "leagueId": 244,
+      "leagueName": "Veikkausliiga",
+      "matchesCount": 501,
+      "brierScore1X2": 0.6,
+      "bookmakerBrierScore1X2": 0.5908,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0045,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1739,
+          "observedFrequency": 0.1765,
+          "sampleCount": 68
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2612,
+          "observedFrequency": 0.2087,
+          "sampleCount": 714
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3479,
+          "observedFrequency": 0.341,
+          "sampleCount": 349
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4507,
+          "observedFrequency": 0.5591,
+          "sampleCount": 254
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5428,
+          "observedFrequency": 0.6889,
+          "sampleCount": 90
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6356,
+          "observedFrequency": 0.6154,
+          "sampleCount": 26
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7129,
+          "observedFrequency": 0.5,
+          "sampleCount": 2
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "253": {
+      "leagueId": 253,
+      "leagueName": "MLS",
+      "matchesCount": 1530,
+      "brierScore1X2": 0.6248,
+      "bookmakerBrierScore1X2": 0.6158,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0394,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1828,
+          "observedFrequency": 0,
+          "sampleCount": 1
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2564,
+          "observedFrequency": 0.251,
+          "sampleCount": 2602
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3437,
+          "observedFrequency": 0.3484,
+          "sampleCount": 709
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4489,
+          "observedFrequency": 0.4108,
+          "sampleCount": 701
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5273,
+          "observedFrequency": 0.592,
+          "sampleCount": 576
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6082,
+          "observedFrequency": 1,
+          "sampleCount": 1
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "262": {
+      "leagueId": 262,
+      "leagueName": "Liga MX",
+      "matchesCount": 1022,
+      "brierScore1X2": 0.6056,
+      "bookmakerBrierScore1X2": 0.5918,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0127,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0658,
+          "observedFrequency": 0.0667,
+          "sampleCount": 15
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1696,
+          "observedFrequency": 0.1364,
+          "sampleCount": 66
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2617,
+          "observedFrequency": 0.2308,
+          "sampleCount": 1612
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3413,
+          "observedFrequency": 0.3385,
+          "sampleCount": 520
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4502,
+          "observedFrequency": 0.4808,
+          "sampleCount": 572
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5276,
+          "observedFrequency": 0.6545,
+          "sampleCount": 246
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.638,
+          "observedFrequency": 0.8,
+          "sampleCount": 30
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7099,
+          "observedFrequency": 0.6667,
+          "sampleCount": 3
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0.9486,
+          "observedFrequency": 1,
+          "sampleCount": 2
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "283": {
+      "leagueId": 283,
+      "leagueName": "SuperLiga",
+      "matchesCount": 950,
+      "brierScore1X2": 0.6194,
+      "bookmakerBrierScore1X2": 0.6112,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 1.0303,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0419,
+          "observedFrequency": 0,
+          "sampleCount": 11
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1668,
+          "observedFrequency": 0.15,
+          "sampleCount": 140
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.2656,
+          "observedFrequency": 0.2664,
+          "sampleCount": 1434
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3297,
+          "observedFrequency": 0.3081,
+          "sampleCount": 422
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4374,
+          "observedFrequency": 0.4383,
+          "sampleCount": 575
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5417,
+          "observedFrequency": 0.5787,
+          "sampleCount": 178
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.6331,
+          "observedFrequency": 0.6962,
+          "sampleCount": 79
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7539,
+          "observedFrequency": 0.6364,
+          "sampleCount": 11
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    "357": {
+      "leagueId": 357,
+      "leagueName": "Premier Division",
+      "matchesCount": 539,
+      "brierScore1X2": 0.5968,
+      "bookmakerBrierScore1X2": 0.5899,
+      "beatsBookmakerBrier": false,
+      "logLoss1X2": 0.997,
+      "simulatedRoiPercent": 0,
+      "roiCi95": [
+        0,
+        0
+      ],
+      "isRoiSignificant": false,
+      "clvMetrics": {
+        "avgClvPercent": 0,
+        "positiveClvRatePercent": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "isSignificant": false
+      },
+      "totalBetsPlaced": 0,
+      "winRate": 0,
+      "maxDrawdownPercent": 0,
+      "calibrationCurve": [
+        {
+          "decile": 1,
+          "binStart": 0,
+          "binEnd": 0.1,
+          "predictedAvgProb": 0.0715,
+          "observedFrequency": 0,
+          "sampleCount": 16
+        },
+        {
+          "decile": 2,
+          "binStart": 0.1,
+          "binEnd": 0.2,
+          "predictedAvgProb": 0.1643,
+          "observedFrequency": 0.1077,
+          "sampleCount": 130
+        },
+        {
+          "decile": 3,
+          "binStart": 0.2,
+          "binEnd": 0.30000000000000004,
+          "predictedAvgProb": 0.263,
+          "observedFrequency": 0.2464,
+          "sampleCount": 690
+        },
+        {
+          "decile": 4,
+          "binStart": 0.30000000000000004,
+          "binEnd": 0.4,
+          "predictedAvgProb": 0.3422,
+          "observedFrequency": 0.3463,
+          "sampleCount": 387
+        },
+        {
+          "decile": 5,
+          "binStart": 0.4,
+          "binEnd": 0.5,
+          "predictedAvgProb": 0.4556,
+          "observedFrequency": 0.4957,
+          "sampleCount": 230
+        },
+        {
+          "decile": 6,
+          "binStart": 0.5,
+          "binEnd": 0.6000000000000001,
+          "predictedAvgProb": 0.5404,
+          "observedFrequency": 0.602,
+          "sampleCount": 98
+        },
+        {
+          "decile": 7,
+          "binStart": 0.6000000000000001,
+          "binEnd": 0.7000000000000001,
+          "predictedAvgProb": 0.649,
+          "observedFrequency": 0.6596,
+          "sampleCount": 47
+        },
+        {
+          "decile": 8,
+          "binStart": 0.7000000000000001,
+          "binEnd": 0.8,
+          "predictedAvgProb": 0.7315,
+          "observedFrequency": 0.9333,
+          "sampleCount": 15
+        },
+        {
+          "decile": 9,
+          "binStart": 0.8,
+          "binEnd": 0.9,
+          "predictedAvgProb": 0.8404,
+          "observedFrequency": 0.75,
+          "sampleCount": 4
+        },
+        {
+          "decile": 10,
+          "binStart": 0.9,
+          "binEnd": 1,
+          "predictedAvgProb": 0,
+          "observedFrequency": 0,
+          "sampleCount": 0
+        }
+      ],
+      "oddsBands": [
+        {
+          "band": "1.01-1.50",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "1.50-2.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "2.00-3.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "3.00-5.00",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        },
+        {
+          "band": "5.00+",
+          "betsCount": 0,
+          "winRatePercent": 0,
+          "predictedWinRatePercent": 0,
+          "roiPercent": 0,
+          "avgClvPercent": 0,
+          "roiCi95": [
+            0,
+            0
+          ],
+          "isRoiSignificant": false,
+          "clvCi95": [
+            0,
+            0
+          ],
+          "isClvSignificant": false
+        }
+      ],
+      "heldOutSeasons": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    }
+  }
+}

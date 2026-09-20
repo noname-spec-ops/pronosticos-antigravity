@@ -1,0 +1,381 @@
+{
+  "calibratedAt": "2026-09-18T13:33:48.129Z",
+  "globalHalfLifeDays": 120,
+  "globalRho": -0.13,
+  "globalLambda3": 0.08,
+  "globalDrawInflationDelta": 1.05,
+  "globalPoissonWeight": 0.6,
+  "globalEloWeight": 0.4,
+  "leagueParams": {
+    "JPN1": {
+      "leagueCode": "JPN1",
+      "leagueName": "J1 League",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 798
+    },
+    "IRL1": {
+      "leagueCode": "IRL1",
+      "leagueName": "Premier Division",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 489
+    },
+    "USA": {
+      "leagueCode": "USA",
+      "leagueName": "MLS",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.03,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 1356
+    },
+    "SWE1": {
+      "leagueCode": "SWE1",
+      "leagueName": "Allsvenskan",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 618
+    },
+    "FIN1": {
+      "leagueCode": "FIN1",
+      "leagueName": "Veikkausliiga",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 454
+    },
+    "NOR1": {
+      "leagueCode": "NOR1",
+      "leagueName": "Eliteserien",
+      "rho": -0.13,
+      "lambda3": 0.12,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 609
+    },
+    "BRA1": {
+      "leagueCode": "BRA1",
+      "leagueName": "Serie A",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 994
+    },
+    "ARG1": {
+      "leagueCode": "ARG1",
+      "leagueName": "Liga Profesional",
+      "rho": -0.13,
+      "lambda3": 0.08,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 1190
+    },
+    "RO1": {
+      "leagueCode": "RO1",
+      "leagueName": "SuperLiga",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 675
+    },
+    "F2": {
+      "leagueCode": "F2",
+      "leagueName": "Ligue 2",
+      "rho": -0.13,
+      "lambda3": 0.12,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 702
+    },
+    "B1": {
+      "leagueCode": "B1",
+      "leagueName": "Jupiler Pro League",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 640
+    },
+    "MEX1": {
+      "leagueCode": "MEX1",
+      "leagueName": "Liga MX",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 722
+    },
+    "PL1": {
+      "leagueCode": "PL1",
+      "leagueName": "Ekstraklasa",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.06,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 648
+    },
+    "DEN1": {
+      "leagueCode": "DEN1",
+      "leagueName": "Superliga",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.03,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 405
+    },
+    "D2": {
+      "leagueCode": "D2",
+      "leagueName": "2. Bundesliga",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 620
+    },
+    "E1": {
+      "leagueCode": "E1",
+      "leagueName": "Championship",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 1151
+    },
+    "E2": {
+      "leagueCode": "E2",
+      "leagueName": "League 1",
+      "rho": -0.13,
+      "lambda3": 0.12,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 1134
+    },
+    "E3": {
+      "leagueCode": "E3",
+      "leagueName": "League 2",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 1136
+    },
+    "AUT1": {
+      "leagueCode": "AUT1",
+      "leagueName": "Bundesliga",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.03,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 395
+    },
+    "F1": {
+      "leagueCode": "F1",
+      "leagueName": "Ligue 1",
+      "rho": -0.13,
+      "lambda3": 0.16,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 691
+    },
+    "P1": {
+      "leagueCode": "P1",
+      "leagueName": "Primeira Liga",
+      "rho": -0.13,
+      "lambda3": 0.12,
+      "drawInflationDelta": 1.15,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 632
+    },
+    "E0": {
+      "leagueCode": "E0",
+      "leagueName": "Premier League",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 768
+    },
+    "SP1": {
+      "leagueCode": "SP1",
+      "leagueName": "La Liga",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1.03,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 789
+    },
+    "SP2": {
+      "leagueCode": "SP2",
+      "leagueName": "La Liga 2",
+      "rho": -0.13,
+      "lambda3": 0.08,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 939
+    },
+    "T1": {
+      "leagueCode": "T1",
+      "leagueName": "Super Lig",
+      "rho": -0.13,
+      "lambda3": 0.12,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 701
+    },
+    "D1": {
+      "leagueCode": "D1",
+      "leagueName": "Bundesliga",
+      "rho": -0.13,
+      "lambda3": 0.16,
+      "drawInflationDelta": 1.03,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 607
+    },
+    "N1": {
+      "leagueCode": "N1",
+      "leagueName": "Eredivisie",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.03,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 634
+    },
+    "EC": {
+      "leagueCode": "EC",
+      "leagueName": "National League",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 1112
+    },
+    "I2": {
+      "leagueCode": "I2",
+      "leagueName": "Serie B",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.12,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 759
+    },
+    "SC0": {
+      "leagueCode": "SC0",
+      "leagueName": "Premiership",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 464
+    },
+    "SC2": {
+      "leagueCode": "SC2",
+      "leagueName": "League 1",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.09,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 362
+    },
+    "SC3": {
+      "leagueCode": "SC3",
+      "leagueName": "League 2",
+      "rho": -0.13,
+      "lambda3": 0.16,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 367
+    },
+    "SUI1": {
+      "leagueCode": "SUI1",
+      "leagueName": "Super League",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.09,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 428
+    },
+    "I1": {
+      "leagueCode": "I1",
+      "leagueName": "Serie A",
+      "rho": -0.13,
+      "lambda3": 0.12,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 767
+    },
+    "SC1": {
+      "leagueCode": "SC1",
+      "leagueName": "Championship",
+      "rho": -0.13,
+      "lambda3": 0.2,
+      "drawInflationDelta": 1.12,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 359
+    },
+    "G1": {
+      "leagueCode": "G1",
+      "leagueName": "Super League",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1.06,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 474
+    },
+    "UCL": {
+      "leagueCode": "UCL",
+      "leagueName": "UEFA Champions League",
+      "rho": -0.13,
+      "lambda3": 0,
+      "drawInflationDelta": 1,
+      "poissonWeight": 0.6,
+      "eloWeight": 0.4,
+      "sampleSize": 170
+    }
+  }
+}
