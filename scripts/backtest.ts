@@ -34,6 +34,7 @@ import { generateBivariatePoissonMatrix, applyDrawInflation } from '../engine/bi
 import type { CalibratedParamsBundle } from './calibrate';
 import { LEAGUE_CODE_TO_ID } from '../lib/leagueCodes';
 import { MODEL_CONFIG } from '../engine/config';
+import { appendRun } from './experimentLog';
 
 interface BetSimulation {
   matchId: string;
@@ -848,6 +849,14 @@ export function runBacktest(): GlobalModelHealth {
 
   const outputPath = path.join(fixturesDir, 'backtest_metrics.json');
   fs.writeFileSync(outputPath, JSON.stringify(globalHealth, null, 2), 'utf8');
+
+  // Append this run to the experiment history so parameter changes can be
+  // compared against previous runs (`npm run compare`).
+  const loggedRun = appendRun(globalHealth);
+  console.log(
+    `\n[EXPERIMENT LOG] rulare inregistrata in data/backtest_history.jsonl ` +
+    `(git ${loggedRun.gitSha ?? 'n/a'}${loggedRun.gitDirty ? '*' : ''}, config ${loggedRun.configHash})`
+  );
 
   // PRINT COMPREHENSIVE AUDIT REPORT
   console.log('================================================================');

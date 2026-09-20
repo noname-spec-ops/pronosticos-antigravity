@@ -59,3 +59,7 @@ Thumbs.db
 
 # staging area for files Claude could not delete (safe to remove manually)
 /_to_delete/
+
+# istoricul experimentelor: pastrat in git (mic, o linie pe rulare)
+# dar nu si notele de la Obsidian despre workspace
+notes/.obsidian/workspace*.json

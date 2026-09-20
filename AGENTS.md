@@ -20,6 +20,7 @@ Rules for any AI agent working in this repository. Read this before editing.
 | Calibrate (MLE) | `npm run calibrate` |
 | Train residual model | `npm run train:residual` |
 | Out-of-sample backtest | `npm run backtest` |
+| Compare backtest runs | `npm run compare` (`-- diff` for the config diff) |
 | Weekly report | `npm run report` |
 
 ## Map
@@ -32,6 +33,8 @@ Rules for any AI agent working in this repository. Read this before editing.
 - `data/` — generated artefacts. Do not hand-edit; fix the generating script.
 - `fixtures/` — demo dataset + backtest metrics.
 - `BOT/` — standalone bots (sniper, telegram, UI).
+- `notes/` — Obsidian vault, versioned with the code. Reasoning behind modelling
+  decisions goes in `notes/decizii/`; metrics do not (they are logged automatically).
 
 ## Invariants — do not break these
 1. **Zero data leakage.** A prediction for a match at time T uses only data with
@@ -49,6 +52,19 @@ Rules for any AI agent working in this repository. Read this before editing.
 8. **Secrets stay in `.env.local`**, which is gitignored. Never commit a key.
 9. **Kickoff times are stored in UTC**, rendered via `lib/localDate.ts`. A timezone
    bug here creates silent data leakage.
+
+## Experiment log
+Every `npm run backtest` appends a row to `data/backtest_history.jsonl`: git SHA,
+a hash of MODEL_CONFIG, and the headline metrics. `npm run compare` prints the last
+runs and the delta of the newest against the one before it, and warns when ROI rises
+while Brier worsens — the usual signature of overfitting a small sample. Label a run
+with `BACKTEST_NOTE="rho sweep 0.11"` before running it.
+
+## Pre-commit hook
+`.git/hooks/pre-commit` refuses a commit that stages a secret (quoted key-shaped
+literal, vendor-prefixed token, or a real `.env` file) or that fails `npm test`.
+`SKIP_TESTS=1` skips only the tests; `git commit --no-verify` skips everything and
+should be a last resort, not a habit.
 
 ## Definition of done
 `npm test` passes · `npm run lint` passes · if engine or data changed, `npm run backtest`
