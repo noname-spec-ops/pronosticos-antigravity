@@ -21,7 +21,8 @@
     "bot:sniper": "tsx BOT/live_sniper_bot.ts",
     "bot:telegram": "tsx BOT/telegram_bot.ts",
     "fetch:fbref": "python scripts/python/fetch_fbref.py",
-    "ingest:extra": "tsx scripts/ingestExtraLeagues.ts"
+    "ingest:extra": "tsx scripts/ingestExtraLeagues.ts",
+    "picks": "tsx scripts/getDailyPicks.ts"
   },
   "dependencies": {
     "@opentelemetry/api": "^1.9.1",

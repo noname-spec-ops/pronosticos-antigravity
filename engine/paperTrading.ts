@@ -1,3 +1,6 @@
+import type { Fixture } from '../types/football';
+import { isSniperPick, getBestBalancedPick, getHighestProbabilityPick } from './marketEvaluator';
+
 export interface PaperBet {
   id: string;
   fixtureId: number;
@@ -420,3 +423,203 @@ export function getInitialPaperBets(): PaperBet[] {
     },
   ];
 }
+
+/**
+ * Resolves whether a pick won or lost given actual final home and away scores.
+ */
+export function evaluateBetOutcome(
+  pickText: string,
+  homeScore: number,
+  awayScore: number,
+  homeTeamName?: string,
+  awayTeamName?: string
+): 'WON' | 'LOST' | 'VOID' {
+  const norm = pickText.toLowerCase().trim();
+  const totalGoals = homeScore + awayScore;
+
+  // 1. Over/Under Markets
+  if (norm.includes('peste 0.5') || norm.includes('over 0.5')) return totalGoals >= 1 ? 'WON' : 'LOST';
+  if (norm.includes('sub 0.5') || norm.includes('under 0.5')) return totalGoals === 0 ? 'WON' : 'LOST';
+  if (norm.includes('peste 1.5') || norm.includes('over 1.5')) return totalGoals >= 2 ? 'WON' : 'LOST';
+  if (norm.includes('sub 1.5') || norm.includes('under 1.5')) return totalGoals <= 1 ? 'WON' : 'LOST';
+  if (norm.includes('peste 2.5') || norm.includes('over 2.5') || norm.includes('🎯')) return totalGoals >= 3 ? 'WON' : 'LOST';
+  if (norm.includes('sub 2.5') || norm.includes('under 2.5')) return totalGoals <= 2 ? 'WON' : 'LOST';
+  if (norm.includes('peste 3.5') || norm.includes('over 3.5')) return totalGoals >= 4 ? 'WON' : 'LOST';
+  if (norm.includes('sub 3.5') || norm.includes('under 3.5')) return totalGoals <= 3 ? 'WON' : 'LOST';
+  if (norm.includes('peste 4.5') || norm.includes('over 4.5')) return totalGoals >= 5 ? 'WON' : 'LOST';
+  if (norm.includes('sub 4.5') || norm.includes('under 4.5')) return totalGoals <= 4 ? 'WON' : 'LOST';
+
+  // 2. Both Teams To Score (GG / NG)
+  if (norm.includes('ambele marchează: da') || norm.startsWith('gg') || norm.includes('ambele inscriu')) {
+    return (homeScore > 0 && awayScore > 0) ? 'WON' : 'LOST';
+  }
+  if (norm.includes('ambele marchează: nu') || norm.startsWith('ng')) {
+    return (homeScore === 0 || awayScore === 0) ? 'WON' : 'LOST';
+  }
+
+  // 3. Double Chance (1X, X2, 12)
+  if (norm.startsWith('1x') || norm.includes('1x (')) return homeScore >= awayScore ? 'WON' : 'LOST';
+  if (norm.startsWith('x2') || norm.includes('x2 (')) return awayScore >= homeScore ? 'WON' : 'LOST';
+  if (norm.startsWith('12') || norm.includes('12 (')) return homeScore !== awayScore ? 'WON' : 'LOST';
+
+  // 4. Draw No Bet (DNB)
+  if (norm.includes('dnb 1') || norm.includes('1 dnb')) {
+    if (homeScore === awayScore) return 'VOID';
+    return homeScore > awayScore ? 'WON' : 'LOST';
+  }
+  if (norm.includes('dnb 2') || norm.includes('2 dnb')) {
+    if (homeScore === awayScore) return 'VOID';
+    return awayScore > homeScore ? 'WON' : 'LOST';
+  }
+
+  // 5. Exact Score (e.g. "Scor Exact 2-1", "2-1")
+  const exactMatch = norm.match(/(\d+)\s*[-:]\s*(\d+)/);
+  if (exactMatch && norm.includes('scor exact')) {
+    const predH = parseInt(exactMatch[1], 10);
+    const predA = parseInt(exactMatch[2], 10);
+    return (homeScore === predH && awayScore === predA) ? 'WON' : 'LOST';
+  }
+
+  // 6. 1X2 Standard (1, X, 2)
+  if (norm.startsWith('1 ') || norm === '1' || norm.includes('victorie gazde')) {
+    return homeScore > awayScore ? 'WON' : 'LOST';
+  }
+  if (norm.startsWith('2 ') || norm === '2' || norm.includes('victorie oaspeti')) {
+    return awayScore > homeScore ? 'WON' : 'LOST';
+  }
+  if (norm.startsWith('x ') || norm === 'x' || norm.includes('egal')) {
+    return homeScore === awayScore ? 'WON' : 'LOST';
+  }
+
+  // Fallback
+  return 'VOID';
+}
+
+/**
+ * Automatically syncs qualified AI prediction bets (Sniper, Best Balanced, Safe)
+ * from a list of fixtures into the paper bets collection and settles finished matches.
+ */
+export function syncFixturesToPaperBets(
+  fixtures: Fixture[],
+  existingBets: PaperBet[] = []
+): PaperBet[] {
+  const betsMap = new Map<string, PaperBet>();
+
+  // Index existing bets
+  for (const bet of existingBets) {
+    betsMap.set(bet.id, { ...bet });
+  }
+
+  for (const f of fixtures) {
+    if (!f || !f.id) continue;
+
+    const isSniper = isSniperPick(f);
+    const bestCand = getBestBalancedPick(f);
+    const safestCand = getHighestProbabilityPick(f, 1.15);
+
+    // Collect candidates to consider
+    const candidatesToTrack: Array<{
+      id: string;
+      category: 'SNIPER' | 'VALUE' | 'COMBO' | 'MANUAL';
+      pick: string;
+      marketType: string;
+      odd: number;
+      prob: number;
+      edge: number;
+      stake: number;
+    }> = [];
+
+    if (isSniper) {
+      candidatesToTrack.push({
+        id: `pb-${f.id}-sniper`,
+        category: 'SNIPER',
+        pick: '🎯 Peste 2.5 Goluri',
+        marketType: 'OU_25',
+        odd: f.odds?.overUnder?.find((o) => o.line === 2.5)?.over || 1.85,
+        prob: f.prediction?.overUnderProbabilities?.find((o) => o.line === 2.5)?.over || 0.60,
+        edge: bestCand?.edgePercent || 10,
+        stake: 2.5,
+      });
+    } else if (safestCand && safestCand.probPercent >= 70 && safestCand.odd >= 1.20) {
+      candidatesToTrack.push({
+        id: `pb-${f.id}-safe`,
+        category: 'VALUE',
+        pick: safestCand.label,
+        marketType: safestCand.category,
+        odd: safestCand.odd,
+        prob: safestCand.probability,
+        edge: safestCand.edgePercent,
+        stake: parseFloat(safestCand.stakeUnits) || 2.0,
+      });
+    } else if (bestCand && bestCand.probPercent >= 60 && bestCand.odd >= 1.35) {
+      candidatesToTrack.push({
+        id: `pb-${f.id}-best`,
+        category: 'VALUE',
+        pick: bestCand.label,
+        marketType: bestCand.category,
+        odd: bestCand.odd,
+        prob: bestCand.probability,
+        edge: bestCand.edgePercent,
+        stake: parseFloat(bestCand.stakeUnits) || 1.5,
+      });
+    }
+
+    const homeScore = f.score?.fulltime?.home ?? f.score?.current?.home;
+    const awayScore = f.score?.fulltime?.away ?? f.score?.current?.away;
+    const hasScore = homeScore !== null && homeScore !== undefined && awayScore !== null && awayScore !== undefined;
+    const isFinished = ['FT', 'AET', 'PEN'].includes(f.status) && hasScore;
+
+    for (const c of candidatesToTrack) {
+      let bet = betsMap.get(c.id);
+
+      if (!bet) {
+        bet = {
+          id: c.id,
+          fixtureId: f.id,
+          matchName: `${f.homeTeam.name} vs ${f.awayTeam.name}`,
+          leagueName: f.league.name,
+          marketType: c.marketType,
+          pick: c.pick,
+          placedOdds: c.odd,
+          closingOdds: c.odd,
+          modelProb: c.prob,
+          edgePercent: c.edge,
+          clvPercent: 0,
+          stakeUnits: c.stake,
+          placedAt: f.date,
+          status: 'PENDING',
+          category: c.category,
+          isSharpBeating: false,
+        };
+      }
+
+      // If finished, calculate real outcome and pnl
+      if (isFinished && (bet.status === 'PENDING' || !bet.settledAt)) {
+        const outcome = evaluateBetOutcome(
+          bet.pick,
+          homeScore as number,
+          awayScore as number,
+          f.homeTeam.name,
+          f.awayTeam.name
+        );
+        bet.status = outcome;
+        bet.settledAt = f.date;
+        if (outcome === 'WON') {
+          bet.pnlUnits = Number((bet.stakeUnits * (bet.placedOdds - 1)).toFixed(2));
+        } else if (outcome === 'LOST') {
+          bet.pnlUnits = -bet.stakeUnits;
+        } else {
+          bet.pnlUnits = 0;
+        }
+      }
+
+      betsMap.set(c.id, bet);
+    }
+  }
+
+  // Return sorted by placedAt (newest first)
+  const result = Array.from(betsMap.values());
+  result.sort((a, b) => (b.placedAt || '').localeCompare(a.placedAt || ''));
+  return result;
+}
+

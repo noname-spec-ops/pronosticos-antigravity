@@ -17,9 +17,11 @@ import {
   ArrowDownRight,
   Calculator,
 } from 'lucide-react';
+import type { Fixture } from '@/types/football';
 import {
   calculatePaperTradingSummary,
   getInitialPaperBets,
+  syncFixturesToPaperBets,
   type PaperBet,
   type PaperTradingSummary,
 } from '@/engine/paperTrading';
@@ -27,16 +29,33 @@ import {
 interface PaperTradingModalProps {
   isOpen: boolean;
   onClose: () => void;
+  fixtures?: Fixture[];
 }
 
-export default function PaperTradingModal({ isOpen, onClose }: PaperTradingModalProps) {
+export default function PaperTradingModal({ isOpen, onClose, fixtures = [] }: PaperTradingModalProps) {
   const [bets, setBets] = useState<PaperBet[]>(() => {
     try {
       const stored = localStorage.getItem('op_paper_bets');
-      if (stored) return JSON.parse(stored);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
     } catch {}
     return getInitialPaperBets();
   });
+
+  // Automatically sync incoming fixtures & settle finished matches into the paper bets journal
+  React.useEffect(() => {
+    if (fixtures && fixtures.length > 0) {
+      setBets((prev) => {
+        const synced = syncFixturesToPaperBets(fixtures, prev);
+        try {
+          localStorage.setItem('op_paper_bets', JSON.stringify(synced));
+        } catch {}
+        return synced;
+      });
+    }
+  }, [fixtures]);
 
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('ALL');
 
@@ -51,9 +70,10 @@ export default function PaperTradingModal({ isOpen, onClose }: PaperTradingModal
 
   const handleResetPaperBankroll = () => {
     const initial = getInitialPaperBets();
-    setBets(initial);
+    const synced = fixtures.length > 0 ? syncFixturesToPaperBets(fixtures, initial) : initial;
+    setBets(synced);
     try {
-      localStorage.setItem('op_paper_bets', JSON.stringify(initial));
+      localStorage.setItem('op_paper_bets', JSON.stringify(synced));
     } catch {}
   };
 

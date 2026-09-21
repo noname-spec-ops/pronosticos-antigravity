@@ -1,10 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BarChart2, CheckCircle2, Flame, Radio, Search, Star, Zap } from 'lucide-react';
+import { BarChart2, CheckCircle2, Flame, Radio, Search, Star, Zap, ShieldCheck } from 'lucide-react';
 import type { Fixture } from '@/types/football';
+import {
+  getAllMarketCandidates,
+  getHighestProbabilityPick,
+  getBestBalancedPick,
+  isSniperPick,
+  type MarketCategory,
+} from '@/engine/marketEvaluator';
 
-export type MarketTab = 'all' | 'sniper' | '1x2' | 'ou' | 'gg_ng' | 'btts' | 'ah';
+export type MarketTab = 'all' | 'safest' | 'sniper' | '1x2' | 'dc' | 'ou15' | 'ou' | 'btts' | 'exact_score';
 
 interface MatchesTableProps {
   fixtures: Fixture[];
@@ -62,201 +69,73 @@ export default function MatchesTable({
     }
   }, [selectedDate]);
 
-  // Determine if a fixture qualifies as an Ultra Sniper Sweet Spot (Over 2.5 in verified leagues @ 1.60-2.20).
-  // Requires a real quoted Over 2.5 price — a fixture without odds can never qualify.
-  const isSniperPick = (f: Fixture) => {
-    const pred = f.prediction;
-    if (!pred) return false;
-    const pOver = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.over;
-    const oddOver = f.odds?.overUnder?.find((o) => o.line === 2.5)?.over;
-    if (pOver === undefined || oddOver === undefined) return false;
-    const edge = ((pOver * oddOver) - 1) * 100;
-
-    // High-scoring leagues: Bundesliga (78), Eredivisie (88), Jupiler (144), PL (39), Champ (40), etc.
-    const isTargetLeague = [78, 88, 144, 39, 40, 179, 140, 135].includes(f.league.id);
-    return isTargetLeague && oddOver >= 1.60 && oddOver <= 2.20 && (pOver >= 0.54 || edge >= 3.5);
-  };
-
   // Filter fixtures according to market tab
   const filteredFixtures = fixtures.filter((f) => {
     if (activeMarketTab === 'sniper') return isSniperPick(f);
-    if (activeMarketTab === 'all') return true;
-    if (activeMarketTab === '1x2') return true;
-    if (activeMarketTab === 'ou') return true;
-    if (activeMarketTab === 'gg_ng' || activeMarketTab === 'btts') return true;
-    if (activeMarketTab === 'ah') return true;
     return true;
   });
 
-  // Calculate market pick label, odd, probability, and edge for a fixture
+  // Calculate market pick label, odd, probability, and edge for a fixture across all markets
   const getMatchPickDetails = (f: Fixture) => {
-    const pred = f.prediction;
-    const odds = f.odds;
-    const sniperQualified = isSniperPick(f);
+    const candidates = getAllMarketCandidates(f);
+    if (candidates.length === 0) return null;
 
-    // 1. If match has a verified value bet (EV+), prioritize the best value bet
-    if (pred?.valueBets && pred.valueBets.length > 0) {
-      const topVb = pred.valueBets[0];
-      let pType: '1' | '2' | 'X' | 'over' | 'under' | 'combo' | 'btts' = '1';
-      const sel = topVb.selection || '';
-      if (sel.includes('(1)') || sel === '1') pType = '1';
-      else if (sel.includes('(2)') || sel === '2') pType = '2';
-      else if (sel.includes('(X)') || sel === 'X') pType = 'X';
-      else if (sel.toLowerCase().includes('over') || sel.toLowerCase().includes('peste')) pType = 'over';
-      else if (sel.toLowerCase().includes('under') || sel.toLowerCase().includes('sub')) pType = 'under';
-      else if (sel.toLowerCase().includes('btts') || sel.toLowerCase().includes('gg')) pType = 'btts';
-      else pType = 'combo';
+    let selectedCand: typeof candidates[0] | null = null;
 
-      let cleanPickText = sel;
-      if (sel.includes('(1)')) cleanPickText = '1';
-      else if (sel.includes('(2)')) cleanPickText = '2';
-      else if (sel.includes('(X)')) cleanPickText = 'X';
-
-      const edge = Number(topVb.edgePercent.toFixed(1));
-      const stakeUnits = edge >= 8 ? '3u' : edge >= 5 ? '2.5u' : '1.5u';
-
-      return {
-        pickText: cleanPickText,
-        pickType: pType,
-        odd: Number(topVb.bookmakerOdds.toFixed(2)),
-        probPercent: Math.round(topVb.modelProb * 100),
-        edge,
-        stakeUnits,
-        isSniper: sniperQualified,
-      };
+    if (activeMarketTab === 'exact_score') {
+      const exacts = candidates.filter((c) => c.category === 'exact_score');
+      exacts.sort((a, b) => b.probability - a.probability);
+      selectedCand = exacts[0] || null;
+    } else if (activeMarketTab === 'ou15') {
+      const ou15s = candidates.filter((c) => c.category === 'ou_15');
+      ou15s.sort((a, b) => b.probability - a.probability);
+      selectedCand = ou15s[0] || null;
+    } else if (activeMarketTab === 'ou') {
+      const ou25s = candidates.filter((c) => c.category === 'ou_25');
+      ou25s.sort((a, b) => b.probability - a.probability);
+      selectedCand = ou25s[0] || null;
+    } else if (activeMarketTab === '1x2') {
+      const ones = candidates.filter((c) => c.category === '1x2');
+      ones.sort((a, b) => b.probability - a.probability);
+      selectedCand = ones[0] || null;
+    } else if (activeMarketTab === 'dc') {
+      const dcs = candidates.filter((c) => c.category === 'dc');
+      dcs.sort((a, b) => b.probability - a.probability);
+      selectedCand = dcs[0] || null;
+    } else if (activeMarketTab === 'btts') {
+      const bttss = candidates.filter((c) => c.category === 'btts');
+      bttss.sort((a, b) => b.probability - a.probability);
+      selectedCand = bttss[0] || null;
+    } else if (activeMarketTab === 'safest') {
+      // Pick the candidate with the highest win probability from the candidate pool
+      selectedCand = getHighestProbabilityPick(f, 1.15);
+    } else {
+      // 'all' or 'sniper'
+      selectedCand = getBestBalancedPick(f);
     }
 
-    // 2. If qualified as Sniper Over 2.5 (isSniperPick already guarantees a real quoted price)
-    if (sniperQualified && pred) {
-      const pOver25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)!.over;
-      const oddOver = odds!.overUnder!.find((o) => o.line === 2.5)!.over;
-      return {
-        pickText: '🎯 Peste 2.5',
-        pickType: 'over' as const,
-        odd: Number(oddOver.toFixed(2)),
-        probPercent: Math.round(pOver25 * 100),
-        edge: Number((((pOver25 * oddOver) - 1) * 100).toFixed(1)),
-        stakeUnits: '2.5u',
-        isSniper: true,
-      };
-    }
+    if (!selectedCand) return null;
 
-    // 3. Dynamic selection based on Poisson & Dixon-Coles model probabilities.
-    //    Every candidate must be priced against a REAL quoted odd. A market with no
-    //    quote is simply not a candidate — we never substitute an invented price.
-    if (pred && odds) {
-      const pHome = pred.probabilities1X2.home;
-      const pDraw = pred.probabilities1X2.draw;
-      const pAway = pred.probabilities1X2.away;
-      const pOver25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.over;
-      const pUnder25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.under;
-      const pBtts = pred.bttsProbabilities.yes;
+    let pType: '1' | '2' | 'X' | 'over' | 'under' | 'combo' | 'btts' | 'exact' = '1';
+    if (selectedCand.category === 'exact_score') pType = 'exact';
+    else if (selectedCand.category === 'ou_15' || selectedCand.category === 'ou_25' || selectedCand.category === 'ou_35') {
+      pType = selectedCand.marketKey.startsWith('over') ? 'over' : 'under';
+    } else if (selectedCand.category === 'btts') pType = 'btts';
+    else if (selectedCand.category === 'dc' || selectedCand.category === 'combo') pType = 'combo';
+    else if (selectedCand.marketKey === 'home') pType = '1';
+    else if (selectedCand.marketKey === 'away') pType = '2';
+    else if (selectedCand.marketKey === 'draw') pType = 'X';
 
-      const oddHome = odds.match1X2?.home;
-      const oddAway = odds.match1X2?.away;
-      const oddDraw = odds.match1X2?.draw;
-      const oddOver = odds.overUnder?.find((o) => o.line === 2.5)?.over;
-      const oddUnder = odds.overUnder?.find((o) => o.line === 2.5)?.under;
-      const oddBtts = odds.btts?.yes;
-
-      type Candidate = {
-        text: string;
-        type: '1' | '2' | 'X' | 'over' | 'under' | 'combo' | 'btts';
-        prob: number;
-        odd: number;
-        edge: number;
-      };
-
-      const candidates: Candidate[] = [];
-      const addCandidate = (
-        text: string,
-        type: Candidate['type'],
-        prob: number | undefined,
-        odd: number | undefined
-      ) => {
-        if (prob === undefined || odd === undefined || odd <= 1) return;
-        candidates.push({ text, type, prob, odd, edge: ((prob * odd) - 1) * 100 });
-      };
-
-      addCandidate('1', '1', pHome, oddHome);
-      addCandidate('2', '2', pAway, oddAway);
-      addCandidate('X', 'X', pDraw, oddDraw);
-      addCandidate('Peste 2.5', 'over', pOver25, oddOver);
-      addCandidate('Sub 2.5', 'under', pUnder25, oddUnder);
-      addCandidate('GG', 'btts', pBtts, oddBtts);
-
-      if (candidates.length > 0) {
-        // Rank strictly by expected value. A pick is only worth surfacing if it beats the price.
-        candidates.sort((a, b) => b.edge - a.edge);
-
-        const best = candidates[0];
-        const edge = Number(best.edge.toFixed(1));
-        const stakeUnits = edge >= 8 ? '3u' : edge >= 5 ? '2u' : edge > 0 ? '1.5u' : '1.0u';
-
-        return {
-          pickText: best.text,
-          pickType: best.type,
-          odd: Number(best.odd.toFixed(2)),
-          probPercent: Math.round(best.prob * 100),
-          edge,
-          stakeUnits,
-          isSniper: false,
-          isFairEstimate: false,
-        };
-      }
-    }
-
-    // 4. Mathematical Model Prediction fallback: when bookmaker odds are pending or not yet quoted,
-    // show the quantitative model's highest-probability outcome and fair decimal odds.
-    if (pred) {
-      const pHome = pred.probabilities1X2.home;
-      const pDraw = pred.probabilities1X2.draw;
-      const pAway = pred.probabilities1X2.away;
-      const pOver25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.over ?? 0;
-      const pUnder25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.under ?? 0;
-
-      let pickText = '1';
-      let pickType: '1' | '2' | 'X' | 'over' | 'under' | 'combo' | 'btts' = '1';
-      let bestProb = pHome;
-
-      if (pOver25 >= 0.60 && pOver25 >= pHome && pOver25 >= pAway) {
-        pickText = 'Peste 2.5';
-        pickType = 'over';
-        bestProb = pOver25;
-      } else if (pUnder25 >= 0.60 && pUnder25 >= pHome && pUnder25 >= pAway) {
-        pickText = 'Sub 2.5';
-        pickType = 'under';
-        bestProb = pUnder25;
-      } else if (pHome >= pAway && pHome >= pDraw) {
-        pickText = '1';
-        pickType = '1';
-        bestProb = pHome;
-      } else if (pAway >= pHome && pAway >= pDraw) {
-        pickText = '2';
-        pickType = '2';
-        bestProb = pAway;
-      } else {
-        pickText = 'X';
-        pickType = 'X';
-        bestProb = pDraw;
-      }
-
-      const fairOdd = Number((1 / Math.max(0.01, bestProb)).toFixed(2));
-
-      return {
-        pickText,
-        pickType,
-        odd: fairOdd,
-        probPercent: Math.round(bestProb * 100),
-        edge: 0,
-        stakeUnits: '1.0u',
-        isSniper: false,
-        isFairEstimate: true,
-      };
-    }
-
-    // 5. No model output: show nothing
-    return null;
+    return {
+      pickText: selectedCand.label,
+      pickType: pType,
+      odd: selectedCand.odd,
+      probPercent: selectedCand.probPercent,
+      edge: selectedCand.edgePercent,
+      stakeUnits: selectedCand.stakeUnits,
+      isSniper: selectedCand.isSniper,
+      isFairEstimate: !selectedCand.isRealOdd,
+    };
   };
 
   const sniperCount = fixtures.filter(isSniperPick).length;
@@ -321,15 +200,83 @@ export default function MatchesTable({
             </span>
           </button>
 
+          {/* 🌟 Safest Highest-Probability Pick */}
+          <button
+            onClick={() => setActiveMarketTab('safest')}
+            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap flex items-center gap-1.5 text-[11px] ${
+              activeMarketTab === 'safest'
+                ? 'bg-gradient-to-r from-emerald-500/20 to-cyberEmerald/20 border border-cyberEmerald text-cyberEmerald font-bold shadow-[0_0_12px_rgba(0,255,157,0.3)]'
+                : 'bg-[#0d1522] border border-emerald-500/30 text-emerald-400/90 hover:text-cyberEmerald hover:border-cyberEmerald/60'
+            }`}
+          >
+            <span>🌟</span>
+            <span className="font-bold">Șanse Maxime (Safe)</span>
+          </button>
+
           <button
             onClick={() => setActiveMarketTab('all')}
             className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
               activeMarketTab === 'all'
-                ? 'bg-cyberEmerald/20 border border-cyberEmerald text-cyberEmerald font-bold shadow-[0_0_12px_rgba(0,255,157,0.25)]'
+                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
                 : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
             }`}
           >
             Toate ({fixtures.length})
+          </button>
+
+          <button
+            onClick={() => setActiveMarketTab('ou15')}
+            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
+              activeMarketTab === 'ou15'
+                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
+                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+            }`}
+          >
+            Peste/Sub 1.5
+          </button>
+
+          <button
+            onClick={() => setActiveMarketTab('ou')}
+            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
+              activeMarketTab === 'ou'
+                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
+                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+            }`}
+          >
+            Peste/Sub 2.5
+          </button>
+
+          <button
+            onClick={() => setActiveMarketTab('dc')}
+            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
+              activeMarketTab === 'dc'
+                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
+                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+            }`}
+          >
+            Șansă Dublă (1X/X2)
+          </button>
+
+          <button
+            onClick={() => setActiveMarketTab('btts')}
+            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
+              activeMarketTab === 'btts'
+                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
+                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+            }`}
+          >
+            GG/NG
+          </button>
+
+          <button
+            onClick={() => setActiveMarketTab('exact_score')}
+            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
+              activeMarketTab === 'exact_score'
+                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
+                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+            }`}
+          >
+            Scor Exact
           </button>
 
           <button
@@ -341,50 +288,6 @@ export default function MatchesTable({
             }`}
           >
             1X2
-          </button>
-
-          <button
-            onClick={() => setActiveMarketTab('ou')}
-            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
-              activeMarketTab === 'ou'
-                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
-                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
-            }`}
-          >
-            Peste/Sub
-          </button>
-
-          <button
-            onClick={() => setActiveMarketTab('gg_ng')}
-            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
-              activeMarketTab === 'gg_ng'
-                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
-                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
-            }`}
-          >
-            GG/NG
-          </button>
-
-          <button
-            onClick={() => setActiveMarketTab('btts')}
-            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
-              activeMarketTab === 'btts'
-                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
-                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
-            }`}
-          >
-            Ambele marchează
-          </button>
-
-          <button
-            onClick={() => setActiveMarketTab('ah')}
-            className={`px-3 py-1.5 rounded-xl transition-all whitespace-nowrap text-[11px] ${
-              activeMarketTab === 'ah'
-                ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_12px_rgba(0,240,255,0.25)]'
-                : 'bg-[#0d1522] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
-            }`}
-          >
-            Handicap
           </button>
         </div>
       </div>
@@ -412,6 +315,9 @@ export default function MatchesTable({
               const isFav = favorites.includes(f.id);
               const isLive = ['1H', 'HT', '2H', 'ET', 'P'].includes(f.status);
               const isFinished = ['FT', 'AET', 'PEN'].includes(f.status);
+              const homeScore = f.score?.fulltime?.home ?? f.score?.current?.home;
+              const awayScore = f.score?.fulltime?.away ?? f.score?.current?.away;
+              const hasScore = homeScore !== null && homeScore !== undefined && awayScore !== null && awayScore !== undefined;
               const pick = getMatchPickDetails(f);
 
               const leagueShort =
@@ -489,7 +395,20 @@ export default function MatchesTable({
                       >
                         {f.homeTeam.name}
                       </span>
-                      <span className="text-slate-500 font-mono text-[10px] shrink-0">vs</span>
+                      {hasScore ? (
+                        <span
+                          className={`px-2 py-0.5 rounded-md font-mono font-black text-xs shrink-0 shadow-sm ${
+                            isFinished
+                              ? 'bg-[#0b1422] border border-cyberEmerald/50 text-cyberEmerald shadow-[0_0_8px_rgba(0,255,157,0.25)]'
+                              : 'bg-cyberRose/20 border border-cyberRose/60 text-cyberRose animate-pulse'
+                          }`}
+                          title={isFinished ? `Scor final: ${homeScore} - ${awayScore}` : `Scor în direct: ${homeScore} - ${awayScore}`}
+                        >
+                          {homeScore} - {awayScore}
+                        </span>
+                      ) : (
+                        <span className="text-slate-500 font-mono text-[10px] shrink-0">vs</span>
+                      )}
                       <span
                         onClick={(e) => {
                           e.stopPropagation();
@@ -533,8 +452,12 @@ export default function MatchesTable({
                     ) : (
                       <span
                         className={`inline-block px-2.5 py-0.5 rounded-lg font-bold text-[11px] shadow-sm font-mono ${
-                          pick.pickType === 'over'
+                          pick.pickType === 'exact'
+                            ? 'bg-purple-500/20 border border-purple-400 text-purple-200 shadow-[0_0_8px_rgba(168,85,247,0.3)]'
+                            : pick.pickType === 'over'
                             ? 'bg-cyberEmerald/20 border border-cyberEmerald text-cyberEmerald'
+                            : pick.pickType === 'under'
+                            ? 'bg-blue-500/20 border border-blue-400 text-blue-200'
                             : pick.pickType === 'btts'
                             ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan'
                             : pick.pickType === 'combo'
@@ -635,11 +558,23 @@ export default function MatchesTable({
                           <Radio className="h-2.5 w-2.5" />
                           {f.status === 'HT' ? 'Pauză' : `${f.elapsedMinute}'`}
                         </span>
+                        {hasScore && (
+                          <span className="font-mono text-[10px] font-black text-white">
+                            {homeScore}:{awayScore}
+                          </span>
+                        )}
                       </div>
                     ) : isFinished ? (
-                      <span className="inline-block rounded-md bg-slate-800/80 border border-slate-700/60 px-2 py-0.5 font-mono text-[9px] font-bold text-slate-400">
-                        Final
-                      </span>
+                      <div className="flex flex-col items-center gap-0.5">
+                        <span className="inline-block rounded-md bg-slate-800/90 border border-slate-700/80 px-2 py-0.5 font-mono text-[9px] font-bold text-slate-300">
+                          Final
+                        </span>
+                        {hasScore && (
+                          <span className="font-mono text-[10px] font-black text-cyberEmerald tracking-wider drop-shadow-[0_0_4px_rgba(0,255,157,0.4)]">
+                            {homeScore}:{awayScore}
+                          </span>
+                        )}
+                      </div>
                     ) : (
                       <span className="inline-block rounded-md bg-[#0c1320] border border-slate-800 px-2 py-0.5 font-mono text-[9px] text-slate-400">
                         Pre

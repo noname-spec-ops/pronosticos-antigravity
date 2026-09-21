@@ -142,7 +142,11 @@ export default function MatchModal({ fixture, onClose }: MatchModalProps) {
 
   const pred = currentFixture.prediction;
   const odds = currentFixture.odds;
-  const isLive = ['1H', 'HT', '2H', 'ET', 'P'].includes(currentFixture.status);
+  const isFinished = ['FT', 'AET', 'PEN'].includes(currentFixture.status);
+  const isLive = ['1H', 'HT', '2H', 'ET', 'P', 'LIVE'].includes(currentFixture.status);
+  const homeScore = currentFixture.score?.fulltime?.home ?? currentFixture.score?.current?.home;
+  const awayScore = currentFixture.score?.fulltime?.away ?? currentFixture.score?.current?.away;
+  const hasScore = homeScore !== null && homeScore !== undefined && awayScore !== null && awayScore !== undefined;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 backdrop-blur-md overflow-y-auto">
@@ -211,9 +215,16 @@ export default function MatchModal({ fixture, onClose }: MatchModalProps) {
 
             {/* Score / Status */}
             <div className="space-y-1.5">
-              {currentFixture.score.current.home !== null && currentFixture.score.current.away !== null ? (
-                <div className="font-mono text-3xl sm:text-5xl font-black text-white tracking-wider drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]">
-                  {currentFixture.score.current.home} : {currentFixture.score.current.away}
+              {hasScore ? (
+                <div>
+                  <div className="font-mono text-3xl sm:text-5xl font-black text-white tracking-wider drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]">
+                    {homeScore} : {awayScore}
+                  </div>
+                  {currentFixture.score?.halftime?.home !== null && currentFixture.score?.halftime?.away !== null && (
+                    <div className="text-[11px] font-mono text-slate-400 mt-0.5">
+                      (Pauză: {currentFixture.score.halftime.home} - {currentFixture.score.halftime.away})
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="font-mono text-2xl sm:text-3xl font-black text-cyberCyan drop-shadow-[0_0_10px_#00f0ff]">
@@ -226,8 +237,10 @@ export default function MatchModal({ fixture, onClose }: MatchModalProps) {
                   <span className="rounded-full bg-cyberRose/20 border border-cyberRose/60 px-3 py-1 text-xs font-bold text-cyberRose animate-pulse font-mono shadow-[0_0_10px_rgba(255,0,85,0.4)]">
                     {currentFixture.status === 'HT' ? 'Pauză' : `Minutul ${currentFixture.elapsedMinute}'`}
                   </span>
-                ) : currentFixture.status === 'FT' ? (
-                  <span className="text-xs font-semibold text-slate-400 font-mono">Final de Meci</span>
+                ) : isFinished ? (
+                  <span className="inline-block rounded-full bg-cyberEmerald/15 border border-cyberEmerald/50 px-3 py-0.5 text-xs font-bold text-cyberEmerald font-mono shadow-[0_0_8px_rgba(0,255,157,0.2)]">
+                    Final de Meci {hasScore ? `(${homeScore} - ${awayScore})` : ''}
+                  </span>
                 ) : (
                   <span className="text-xs font-medium text-slate-400 font-mono">Urmează</span>
                 )}

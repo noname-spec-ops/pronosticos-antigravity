@@ -9,12 +9,18 @@ import {
   TrendingUp,
   PlusCircle,
   CheckCircle2,
-  Newspaper,
   Shield,
   Activity,
   Flame,
 } from 'lucide-react';
 import type { Fixture } from '@/types/football';
+
+import {
+  getAllMarketCandidates,
+  getHighestProbabilityPick,
+  getBestBalancedPick,
+  getTopExactScoresForFixture,
+} from '@/engine/marketEvaluator';
 
 interface SelectedMatchAnalysisProps {
   fixture: Fixture | null;
@@ -29,7 +35,7 @@ export default function SelectedMatchAnalysis({
   onAddToTicket,
   onSelectTeam,
 }: SelectedMatchAnalysisProps) {
-  const [activeTab, setActiveTab] = useState<'stats' | 'h2h' | 'form' | 'lineups' | 'news' | 'momentum' | 'tactics'>('stats');
+  const [activeTab, setActiveTab] = useState<'stats' | 'h2h' | 'form' | 'lineups' | 'momentum' | 'tactics'>('stats');
   const [isAdded, setIsAdded] = useState(false);
 
   if (!fixture) {
@@ -47,99 +53,18 @@ export default function SelectedMatchAnalysis({
   const formHome = fixture.formHome;
   const formAway = fixture.formAway;
 
-  // Best pick computation from the quant model.
-  // 1. Prioritize verified Value Bets (+EV against quoted bookmaker prices).
-  // 2. Evaluate model probabilities against available market quotes.
-  // 3. Fallback to the top mathematical probability outcome (zero-vig fair estimate) when market quotes are pending.
-  let pickName: string | null = null;
-  let pickProb = 0;
-  let pickOdd: number | null = null;
-  let pickEdge: number | null = null;
-  let confidenceBars = 0;
-  let isFairEstimate = false;
+  // Evaluate all market candidates across 1X2, Over/Under (1.5, 2.5, 3.5), DC, BTTS, Exact Score
+  const allCandidates = getAllMarketCandidates(fixture);
+  const bestCand = getBestBalancedPick(fixture);
+  const safestCand = getHighestProbabilityPick(fixture, 1.15);
+  const topExactScores = getTopExactScoresForFixture(fixture, 6);
 
-  if (pred?.valueBets && pred.valueBets.length > 0) {
-    const topVb = pred.valueBets[0];
-    pickName = topVb.selection;
-    pickProb = Math.round(topVb.modelProb * 100);
-    pickOdd = topVb.bookmakerOdds;
-    pickEdge = Number(topVb.edgePercent.toFixed(1));
-    confidenceBars = pickProb >= 70 ? 5 : pickProb >= 60 ? 4 : 3;
-    isFairEstimate = false;
-  } else if (pred && odds) {
-    const pHome = pred.probabilities1X2.home;
-    const pAway = pred.probabilities1X2.away;
-    const pOver25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.over;
-    const pUnder25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.under;
-    const pBtts = pred.bttsProbabilities.yes;
-
-    const oddHome = odds.match1X2?.home;
-    const oddAway = odds.match1X2?.away;
-    const oddOver = odds.overUnder?.find((o) => o.line === 2.5)?.over;
-    const oddUnder = odds.overUnder?.find((o) => o.line === 2.5)?.under;
-    const oddBtts = odds.btts?.yes;
-
-    if (pHome >= 0.52 && oddHome !== undefined) {
-      pickName = `${fixture.homeTeam.name} (1)`;
-      pickProb = Math.round(pHome * 100);
-      pickOdd = oddHome;
-    } else if (pAway >= 0.50 && oddAway !== undefined) {
-      pickName = `${fixture.awayTeam.name} (2)`;
-      pickProb = Math.round(pAway * 100);
-      pickOdd = oddAway;
-    } else if (pOver25 !== undefined && pOver25 >= 0.55 && oddOver !== undefined) {
-      pickName = 'Peste 2.5 Goluri';
-      pickProb = Math.round(pOver25 * 100);
-      pickOdd = oddOver;
-    } else if (pUnder25 !== undefined && pUnder25 >= 0.58 && oddUnder !== undefined) {
-      pickName = 'Sub 2.5 Goluri';
-      pickProb = Math.round(pUnder25 * 100);
-      pickOdd = oddUnder;
-    } else if (pBtts >= 0.56 && oddBtts !== undefined) {
-      pickName = 'Ambele Marchează (GG)';
-      pickProb = Math.round(pBtts * 100);
-      pickOdd = oddBtts;
-    }
-
-    if (pickOdd !== null) {
-      pickEdge = Number((((pickProb / 100) * pickOdd - 1) * 100).toFixed(1));
-      confidenceBars = pickProb >= 72 ? 5 : pickProb >= 60 ? 4 : 3;
-      isFairEstimate = false;
-    }
-  }
-
-  // Fallback to top Dixon-Coles / Poisson model probability when market quotes are pending
-  if (pred && pickName === null) {
-    const pHome = pred.probabilities1X2.home;
-    const pDraw = pred.probabilities1X2.draw;
-    const pAway = pred.probabilities1X2.away;
-    const pOver25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.over ?? 0;
-    const pUnder25 = pred.overUnderProbabilities.find((o) => o.line === 2.5)?.under ?? 0;
-
-    let bestProb = pHome;
-    if (pOver25 >= 0.60 && pOver25 >= pHome && pOver25 >= pAway) {
-      pickName = 'Peste 2.5 Goluri';
-      bestProb = pOver25;
-    } else if (pUnder25 >= 0.60 && pUnder25 >= pHome && pUnder25 >= pAway) {
-      pickName = 'Sub 2.5 Goluri';
-      bestProb = pUnder25;
-    } else if (pHome >= pAway && pHome >= pDraw) {
-      pickName = `${fixture.homeTeam.name} (1)`;
-      bestProb = pHome;
-    } else if (pAway >= pHome && pAway >= pDraw) {
-      pickName = `${fixture.awayTeam.name} (2)`;
-      bestProb = pAway;
-    } else {
-      pickName = 'Egalitate (X)';
-      bestProb = pDraw;
-    }
-
-    pickProb = Math.round(bestProb * 100);
-    pickOdd = Number((1 / Math.max(0.01, bestProb)).toFixed(2));
-    pickEdge = 0;
-    confidenceBars = pickProb >= 70 ? 5 : pickProb >= 60 ? 4 : 3;
-    isFairEstimate = true;
-  }
+  const pickName = bestCand?.label ?? null;
+  const pickProb = bestCand?.probPercent ?? 0;
+  const pickOdd = bestCand?.odd ?? null;
+  const pickEdge = bestCand?.edgePercent ?? null;
+  const confidenceBars = pickProb >= 75 ? 5 : pickProb >= 60 ? 4 : 3;
+  const isFairEstimate = bestCand ? !bestCand.isRealOdd : false;
 
   const handleAdd = () => {
     if (!onAddToTicket || pickName === null || pickOdd === null) return;
@@ -147,6 +72,12 @@ export default function SelectedMatchAnalysis({
     onAddToTicket(fixture, pickName, pickOdd);
     setTimeout(() => setIsAdded(false), 2000);
   };
+
+  const isFinished = ['FT', 'AET', 'PEN'].includes(fixture.status);
+  const isLive = ['1H', 'HT', '2H', 'ET', 'P', 'LIVE'].includes(fixture.status);
+  const homeScore = fixture.score?.fulltime?.home ?? fixture.score?.current?.home;
+  const awayScore = fixture.score?.fulltime?.away ?? fixture.score?.current?.away;
+  const hasScore = homeScore !== null && homeScore !== undefined && awayScore !== null && awayScore !== undefined;
 
   return (
     <div className="rounded-2xl border border-cyberCyan/20 bg-[#070c14]/90 backdrop-blur-xl p-4 sm:p-5 shadow-cyber-card space-y-4 relative overflow-hidden group/analysis">
@@ -184,7 +115,17 @@ export default function SelectedMatchAnalysis({
               >
                 {fixture.homeTeam.name}
               </span>
-              <span className="text-slate-500 font-mono text-xs font-normal">vs</span>
+              {hasScore ? (
+                <span className={`px-2.5 py-0.5 rounded-lg font-mono font-black text-xs sm:text-sm border shadow-sm ${
+                  isFinished
+                    ? 'bg-cyberEmerald/15 border-cyberEmerald/50 text-cyberEmerald shadow-[0_0_8px_rgba(0,255,157,0.2)]'
+                    : 'bg-cyberRose/20 border-cyberRose/60 text-cyberRose animate-pulse'
+                }`}>
+                  {homeScore} - {awayScore}
+                </span>
+              ) : (
+                <span className="text-slate-500 font-mono text-xs font-normal">vs</span>
+              )}
               <span
                 onClick={() => onSelectTeam?.(fixture.awayTeam.name)}
                 title={`Vezi profilul ${fixture.awayTeam.name}`}
@@ -193,11 +134,37 @@ export default function SelectedMatchAnalysis({
                 {fixture.awayTeam.name}
               </span>
             </h4>
-            <div className="text-[11px] text-slate-400 font-mono">
-              {fixture.league.country}: {fixture.league.name} — {new Date(fixture.date).toLocaleDateString([], { day: '2-digit', month: 'short', year: 'numeric' })}, {new Date(fixture.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+            <div className="text-[11px] text-slate-400 font-mono flex items-center gap-2 flex-wrap">
+              <span>{fixture.league.country}: {fixture.league.name} — {new Date(fixture.date).toLocaleDateString([], { day: '2-digit', month: 'short', year: 'numeric' })}, {new Date(fixture.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+              {isFinished && (
+                <span className="px-2 py-0.2 rounded bg-slate-800 border border-slate-700 text-slate-200 font-bold text-[10px] font-mono">
+                  FINAL {hasScore ? `(${homeScore} - ${awayScore})` : ''}
+                </span>
+              )}
+              {isLive && (
+                <span className="px-2 py-0.2 rounded bg-cyberRose/20 border border-cyberRose/50 text-cyberRose font-bold text-[10px] font-mono animate-pulse">
+                  LIVE {fixture.status === 'HT' ? 'PAUZĂ' : `${fixture.elapsedMinute}'`}
+                </span>
+              )}
             </div>
           </div>
         </div>
+
+        {hasScore && (
+          <div className="flex flex-col items-center justify-center px-3.5 py-1.5 rounded-xl bg-[#09121f] border border-cyberEmerald/40 shadow-sm font-mono">
+            <span className="text-[9px] uppercase tracking-wider text-slate-400">
+              {isFinished ? 'Scor Final' : 'Scor Live'}
+            </span>
+            <span className="text-lg sm:text-xl font-black text-cyberEmerald drop-shadow-[0_0_8px_rgba(0,255,157,0.3)]">
+              {homeScore} : {awayScore}
+            </span>
+            {fixture.score?.halftime?.home !== null && fixture.score?.halftime?.away !== null && (
+              <span className="text-[9px] text-slate-500">
+                (Pauză: {fixture.score.halftime.home}-{fixture.score.halftime.away})
+              </span>
+            )}
+          </div>
+        )}
 
         {pred?.cornersPrediction && (
           <div className="hidden sm:flex items-center gap-1.5 text-xs font-mono bg-[#09101c] border border-cyberAmber/30 px-3 py-1.5 rounded-xl shadow-sm">
@@ -266,16 +233,7 @@ export default function SelectedMatchAnalysis({
           Echipe probabile
         </button>
 
-        <button
-          onClick={() => setActiveTab('news')}
-          className={`px-3 py-1.5 rounded-xl transition-all ${
-            activeTab === 'news'
-              ? 'bg-cyberCyan/20 border border-cyberCyan text-cyberCyan font-bold shadow-[0_0_10px_rgba(0,240,255,0.25)]'
-              : 'bg-[#0b121e] border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700'
-          }`}
-        >
-          Știri
-        </button>
+
 
         {/* 📐 Tactical Tracking, xT & Positional Geometry (2026 Sharp) */}
         <button
@@ -705,138 +663,6 @@ export default function SelectedMatchAnalysis({
                 </div>
               </div>
             </div>
-          ) : activeTab === 'news' ? (
-            /* 📰 News & Psychological Motivation Context Tab */
-            <div className="space-y-3">
-              {/* 1. Motivation & Urgency Radar Card */}
-              <div className="rounded-xl bg-[#141b26] p-3.5 border border-purple-500/40 shadow-sm space-y-3">
-                <div className="flex items-center justify-between text-xs font-bold">
-                  <span className="flex items-center gap-1.5 text-purple-300">
-                    <Sparkles className="h-4 w-4 text-purple-400" />
-                    <span>RADAR MOTIVAȚIE & FACTOR PSIHOLOGIC</span>
-                  </span>
-                  {pred?.motivationAnalysis?.isDerby ? (
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950 border border-red-700 text-red-300 font-bold flex items-center gap-1">
-                      <span>🔥</span>
-                      <span>{pred.motivationAnalysis.derbyName || 'Meci de Mare Rivalitate'}</span>
-                    </span>
-                  ) : (
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950 border border-purple-800 text-purple-300">
-                      {pred?.motivationAnalysis?.summary ? pred.motivationAnalysis.summary.slice(0, 32) + '...' : 'Context Competițional'}
-                    </span>
-                  )}
-                </div>
-
-                {/* Motivation Scores & Urgency Gauges */}
-                <div className="grid grid-cols-2 gap-3">
-                  {/* Home Motivation */}
-                  <div className="rounded-lg bg-[#0e141f] p-2.5 border border-gray-800 space-y-1.5">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="font-bold text-emerald-400 truncate">{fixture.homeTeam.name}</span>
-                      <span className="font-mono font-black text-emerald-300 text-sm">
-                        {pred?.motivationAnalysis?.homeMotivationScore ?? 85}%
-                      </span>
-                    </div>
-
-                    <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-emerald-500 to-green-400 rounded-full"
-                        style={{ width: `${pred?.motivationAnalysis?.homeMotivationScore ?? 85}%` }}
-                      />
-                    </div>
-
-                    <div className="flex justify-between items-center text-[10px] font-mono text-gray-400">
-                      <span>Miză: <strong className="text-gray-200 uppercase">{pred?.motivationAnalysis?.homeStakesType?.replace('_', ' ') || 'STANDARD'}</strong></span>
-                      <span className={`px-1 rounded text-[9px] font-bold ${
-                        pred?.motivationAnalysis?.urgencyLevelHome === 'extreme'
-                          ? 'bg-red-950 text-red-300'
-                          : pred?.motivationAnalysis?.urgencyLevelHome === 'high'
-                          ? 'bg-amber-950 text-amber-300'
-                          : 'bg-emerald-950 text-emerald-300'
-                      }`}>
-                        Urgență {pred?.motivationAnalysis?.urgencyLevelHome || 'medie'}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Away Motivation */}
-                  <div className="rounded-lg bg-[#0e141f] p-2.5 border border-gray-800 space-y-1.5">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="font-bold text-blue-400 truncate">{fixture.awayTeam.name}</span>
-                      <span className="font-mono font-black text-blue-300 text-sm">
-                        {pred?.motivationAnalysis?.awayMotivationScore ?? 75}%
-                      </span>
-                    </div>
-
-                    <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-400 rounded-full"
-                        style={{ width: `${pred?.motivationAnalysis?.awayMotivationScore ?? 75}%` }}
-                      />
-                    </div>
-
-                    <div className="flex justify-between items-center text-[10px] font-mono text-gray-400">
-                      <span>Miză: <strong className="text-gray-200 uppercase">{pred?.motivationAnalysis?.awayStakesType?.replace('_', ' ') || 'STANDARD'}</strong></span>
-                      <span className={`px-1 rounded text-[9px] font-bold ${
-                        pred?.motivationAnalysis?.urgencyLevelAway === 'extreme'
-                          ? 'bg-red-950 text-red-300'
-                          : pred?.motivationAnalysis?.urgencyLevelAway === 'high'
-                          ? 'bg-amber-950 text-amber-300'
-                          : 'bg-blue-950 text-blue-300'
-                      }`}>
-                        Urgență {pred?.motivationAnalysis?.urgencyLevelAway || 'medie'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-[10px] text-purple-300/80 bg-purple-950/40 p-2 rounded-lg border border-purple-900/40">
-                  🧠 <em>{pred?.motivationAnalysis?.summary || 'Nivelul de determinare influențează dinamica duelurilor fizice și efortul de pressing.'}</em>
-                </div>
-              </div>
-
-              {/* 2. Contextual Intelligence & Locker Room News */}
-              <div className="space-y-2">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1.5">
-                  <Newspaper className="h-3.5 w-3.5 text-blue-400" />
-                  <span>Flux de Informații & Analiză Tactică</span>
-                </div>
-
-                {pred?.motivationAnalysis?.newsItems && pred.motivationAnalysis.newsItems.length > 0 ? (
-                  pred.motivationAnalysis.newsItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className={`rounded-xl p-3 space-y-1.5 border text-xs shadow-sm bg-[#141b26] ${
-                        item.tone === 'urgent'
-                          ? 'border-red-500/50 bg-gradient-to-r from-[#1a1215] to-[#141b26]'
-                          : item.tone === 'positive'
-                          ? 'border-emerald-500/40 bg-gradient-to-r from-[#101c18] to-[#141b26]'
-                          : item.tone === 'warning'
-                          ? 'border-amber-500/40 bg-gradient-to-r from-[#1c1810] to-[#141b26]'
-                          : 'border-flashBorder/40'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-gray-100 text-xs flex items-center gap-1.5">
-                          <span>{item.title}</span>
-                        </span>
-                        <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-black/40 border border-gray-700 text-gray-300">
-                          {item.type}
-                        </span>
-                      </div>
-                      <div className="text-[11px] text-gray-300 leading-relaxed">{item.summary}</div>
-                      <div className="text-[10px] text-cyan-300/90 font-mono pt-1 border-t border-gray-800/60">
-                        ⚡ {item.impact}
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="rounded-xl bg-[#141b26] p-3 border border-gray-800 text-xs text-flashMuted">
-                    Nu sunt evenimente critice raportate pentru acest meci.
-                  </div>
-                )}
-              </div>
-            </div>
           ) : activeTab === 'tactics' && !pred?.tacticalTracking ? (
             <div className="rounded-xl border border-slate-700/60 bg-slate-900/50 p-4 space-y-2">
               <h3 className="font-bold text-sm text-slate-200">Date tactice indisponibile</h3>
@@ -1165,6 +991,58 @@ export default function SelectedMatchAnalysis({
                   </div>
                 </div>
               )}
+              {/* 🌟 Safest Highest-Probability Pick Box */}
+              {safestCand && safestCand.id !== bestCand?.id && (
+                <div className="pt-2 border-t border-emerald-500/30">
+                  <div className="rounded-xl bg-emerald-950/40 border border-emerald-500/40 p-2.5 text-[10px] space-y-1">
+                    <div className="font-bold text-emerald-300 flex items-center justify-between font-mono">
+                      <span className="flex items-center gap-1">
+                        <span>🌟</span>
+                        <span>ȘANSE MAXIME (SAFE):</span>
+                      </span>
+                      <span className="text-emerald-400 font-black">{safestCand.probPercent}%</span>
+                    </div>
+                    <div className="flex justify-between items-center text-slate-200">
+                      <span className="font-semibold">{safestCand.label}</span>
+                      <span className="font-mono text-emerald-300 font-bold">@{safestCand.odd.toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 🎯 Top Exact Scores from 2D Matrix */}
+              {topExactScores.length > 0 && (
+                <div className="pt-2 border-t border-purple-500/30">
+                  <div className="rounded-xl bg-purple-950/30 border border-purple-500/40 p-2.5 space-y-1.5">
+                    <div className="font-bold text-purple-300 text-[10px] flex items-center justify-between font-mono">
+                      <span>🔢 TOP SCORURI EXACTE:</span>
+                      <span className="text-[9px] text-purple-400">Dixon-Coles Matrix</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-1 font-mono text-[10px] text-center">
+                      {topExactScores.slice(0, 6).map((es, idx) => (
+                        <div key={idx} className="rounded bg-[#0d131f] border border-purple-500/30 p-1">
+                          <div className="font-black text-white">{es.homeGoals} - {es.awayGoals}</div>
+                          <div className="text-[9px] text-purple-300 font-bold">{(es.probability * 100).toFixed(0)}% (@{es.fairOdds.toFixed(1)})</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 📋 Quick Market Overview */}
+              <div className="pt-2 border-t border-slate-800 space-y-1 text-[10px] font-mono">
+                <div className="text-slate-400 font-bold uppercase tracking-wider text-[9px]">Toate Piețele (Probabilități):</div>
+                <div className="grid grid-cols-2 gap-1 text-slate-300">
+                  {allCandidates.filter(c => ['ou_15', 'ou_25', 'dc', 'btts'].includes(c.category) && (c.marketKey.startsWith('over_1') || c.marketKey === '1x' || c.marketKey === 'btts_yes' || c.marketKey.startsWith('over_2'))).slice(0, 4).map((c, idx) => (
+                    <div key={idx} className="flex justify-between bg-[#0a101b] px-2 py-1 rounded border border-slate-800">
+                      <span className="text-slate-400 truncate max-w-[70px]">{c.shortLabel}:</span>
+                      <span className="text-cyberEmerald font-bold">{c.probPercent}% (@{c.odd.toFixed(2)})</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <div className="pt-2 border-t border-slate-800/80 text-[9px] text-slate-400 leading-tight">
                 🛡️ <em>Estimare statistică pe baza datelor istorice încărcate. Nu reprezintă o garanție de câștig.</em>
               </div>

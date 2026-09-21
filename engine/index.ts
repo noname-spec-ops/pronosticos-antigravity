@@ -29,7 +29,7 @@ import { computeTacticalTracking } from './tacticalTracking';
 import { calibrateProbabilities1X2 } from './calibration';
 import { calibrationStore } from '../lib/calibrationStore';
 import { leagueHealthStore } from '../lib/leagueHealthStore';
-import { predictResidualCorrection } from './residualModel';
+import { predictResidualCorrection, computeAlphaProbabilities } from './residualModel';
 
 import type {
   Fixture,
@@ -62,6 +62,7 @@ export * from './calibration';
 export * from './bivariatePoisson';
 export * from './driftMonitor';
 export * from './weeklyReport';
+export * from './marketEvaluator';
 
 export interface PredictionEngineInput {
   fixture: Fixture;
@@ -211,8 +212,35 @@ export function runMatchPredictionPipeline(input: PredictionEngineInput): ModelP
     }
   }
 
+  // 8b. Apply Machine Learning Residual Model corrections (Ridge Regression weights)
+  let correctedRaw1X2 = rawProbabilities1X2;
+  try {
+    const homeFormAvg = fixture.homeAwayStatsHome?.scoredAvg ?? ((fixture.formHome?.goalsScored ?? 6) / 5);
+    const awayFormAvg = fixture.homeAwayStatsAway?.scoredAvg ?? ((fixture.formAway?.goalsScored ?? 5) / 5);
+    const residualFeatures = {
+      lambdaDiff: finalLambdaHome - finalLambdaAway,
+      eloDiffNormalized: (homeElo - awayElo) / 400.0,
+      restDaysDelta: Math.max(-7, Math.min(7, homeFatigue.restDays - awayFatigue.restDays)),
+      travelDistanceKm1000: Math.min(4.0, travelMetrics.distanceKm / 1000),
+      formXgDiff: homeFormAvg - awayFormAvg,
+      steamMomentum: 0,
+      marketDisagreement: devigged1X2 ? Math.abs(rawProbabilities1X2.home - devigged1X2.home) : 0,
+      leagueHomeAdvantage: 0.44,
+    };
+    const alphaRes = computeAlphaProbabilities(rawProbabilities1X2, residualFeatures);
+    if (alphaRes && alphaRes.isAlphaConfirmed) {
+      correctedRaw1X2 = {
+        home: alphaRes.home,
+        draw: alphaRes.draw,
+        away: alphaRes.away,
+      };
+    }
+  } catch {
+    // Fallback to pure Poisson-Dixon-Coles
+  }
+
   const blendedMarket1X2 = blendWithMarketPrior(
-    rawProbabilities1X2,
+    correctedRaw1X2,
     devigged1X2,
     MODEL_CONFIG.MARKET_PRIOR.MODEL_WEIGHT
   );
@@ -225,7 +253,7 @@ export function runMatchPredictionPipeline(input: PredictionEngineInput): ModelP
   //     curve shows the raw model running 6-13 percentage points overconfident,
   //     and Kelly sizing on an overconfident probability systematically overstakes.
   const probabilities1X2 = calibrateProbabilities1X2(blendedMarket1X2.probabilities1X2, calibrationMap);
-  const calibratedModelProbs = calibrateProbabilities1X2(rawProbabilities1X2, calibrationMap);
+  const calibratedModelProbs = calibrateProbabilities1X2(correctedRaw1X2, calibrationMap);
   const isProbabilityCalibrated = calibrationMap !== null;
 
   // 10. Predict cards using Negative Binomial (elevated rivalry factor in Derbies)

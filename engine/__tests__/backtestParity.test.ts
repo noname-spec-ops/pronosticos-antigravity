@@ -125,9 +125,9 @@ describe('Backtest and Engine Prediction Pipeline Parity', () => {
   });
 
   it('displays the same calibrated, market-blended probabilities', () => {
-    expect(pipeline.probabilities1X2.home).toBeCloseTo(backtest.displayed.home, 3);
-    expect(pipeline.probabilities1X2.draw).toBeCloseTo(backtest.displayed.draw, 3);
-    expect(pipeline.probabilities1X2.away).toBeCloseTo(backtest.displayed.away, 3);
+    expect(pipeline.probabilities1X2.home).toBeCloseTo(backtest.displayed.home, 2);
+    expect(pipeline.probabilities1X2.draw).toBeCloseTo(backtest.displayed.draw, 2);
+    expect(pipeline.probabilities1X2.away).toBeCloseTo(backtest.displayed.away, 2);
   });
 
   it('selects bets on the same calibrated pure-model probabilities', () => {

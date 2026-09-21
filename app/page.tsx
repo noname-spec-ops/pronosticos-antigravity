@@ -6,7 +6,7 @@ import TopKpiBar from '@/components/TopKpiBar';
 import LeftSidebar from '@/components/LeftSidebar';
 import MatchesTable from '@/components/MatchesTable';
 import SelectedMatchAnalysis from '@/components/SelectedMatchAnalysis';
-import InjuriesNewsStrip from '@/components/InjuriesNewsStrip';
+
 import RightIntelligenceSidebar from '@/components/RightIntelligenceSidebar';
 import MatchModal from '@/components/MatchModal';
 import TeamProfileModal from '@/components/TeamProfileModal';
@@ -59,10 +59,10 @@ export default function HomePage() {
   };
 
   // Fetch fixtures when selectedDate changes
-  const fetchFixtures = async () => {
+  const fetchFixtures = async (signal?: AbortSignal) => {
     setIsLoading(true);
     try {
-      const res = await fetch(`/api/fixtures?date=${selectedDate}`);
+      const res = await fetch(`/api/fixtures?date=${selectedDate}`, { signal });
       if (res.ok) {
         const data = await res.json();
         const list: Fixture[] = data.fixtures || [];
@@ -74,17 +74,25 @@ export default function HomePage() {
           setSelectedFixture(list[0]);
         }
       }
-    } catch (err) {
-      console.error('Failed to load fixtures:', err);
+    } catch (err: any) {
+      if (err?.name !== 'AbortError') {
+        console.warn('[FlashStat] Nu s-au putut încărca meciurile (reîncercare automată la următorul ciclu):', err?.message || err);
+      }
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchFixtures();
-    const timer = setInterval(fetchFixtures, 60000);
-    return () => clearInterval(timer);
+    const controller = new AbortController();
+    fetchFixtures(controller.signal);
+    const timer = setInterval(() => {
+      fetchFixtures();
+    }, 60000);
+    return () => {
+      controller.abort();
+      clearInterval(timer);
+    };
   }, [selectedDate]);
 
   // Ensure an active selected fixture is always populated
@@ -371,8 +379,7 @@ export default function HomePage() {
               onSelectTeam={(teamName) => setSelectedTeamForProfile(teamName)}
             />
 
-            {/* Breaking News & Injuries Strip */}
-            <InjuriesNewsStrip />
+
           </section>
 
           {/* Right Intelligence Sidebar */}
@@ -436,6 +443,7 @@ export default function HomePage() {
         <PaperTradingModal
           isOpen={isPaperTradingOpen}
           onClose={() => setIsPaperTradingOpen(false)}
+          fixtures={fixtures}
         />
       )}
 

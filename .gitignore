@@ -62,4 +62,6 @@ Thumbs.db
 
 # istoricul experimentelor: pastrat in git (mic, o linie pe rulare)
 # dar nu si notele de la Obsidian despre workspace
-notes/.obsidian/workspace*.json
+.obsidian/
+notes/.obsidian/
+

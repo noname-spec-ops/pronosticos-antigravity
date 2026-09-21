@@ -10,11 +10,7 @@ import {
   ShieldCheck,
   Ticket,
   History,
-  Calculator,
-  BarChart3,
-  Bell,
   Search,
-  Newspaper,
   ChevronRight,
   Zap,
 } from 'lucide-react';
@@ -273,38 +269,6 @@ export default function LeftSidebar({
           >
             <Zap className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
             <span className="text-amber-300">⚡ Steam Scanner Live</span>
-          </button>
-
-          <button
-            onClick={() => onOpenTool?.('kelly')}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-slate-300 hover:bg-[#121c2e] hover:text-emerald-400 transition duration-150 text-left"
-          >
-            <Calculator className="h-3.5 w-3.5 text-emerald-400" />
-            <span>Calculator Miză Kelly</span>
-          </button>
-
-          <button
-            onClick={() => onOpenTool?.('compare')}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-slate-300 hover:bg-[#121c2e] hover:text-cyan-400 transition duration-150 text-left"
-          >
-            <BarChart3 className="h-3.5 w-3.5 text-cyan-400" />
-            <span>Compară Consens Sharp</span>
-          </button>
-
-          <button
-            onClick={() => onOpenTool?.('alerts')}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-slate-300 hover:bg-[#121c2e] hover:text-amber-400 transition duration-150 text-left"
-          >
-            <Bell className="h-3.5 w-3.5 text-amber-400" />
-            <span>Alertă Dropping Odds</span>
-          </button>
-
-          <button
-            onClick={() => onOpenTool?.('news')}
-            className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-xl text-slate-300 hover:bg-[#121c2e] hover:text-purple-400 transition duration-150 text-left"
-          >
-            <Newspaper className="h-3.5 w-3.5 text-purple-400" />
-            <span>Știri & Formații Live</span>
           </button>
         </div>
       </div>
