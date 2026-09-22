@@ -82,7 +82,19 @@ export function dedupeFixtures(fixtures: SourcedFixture[], dateStr: string): Fix
   for (const f of fixtures) {
     if (!f.homeTeam?.name || !f.awayTeam?.name) continue;
     if (f.homeTeam.name === 'Home' || f.awayTeam.name === 'Away') continue;
-    if (!String(f.date).startsWith(dateStr)) continue;
+    const dStr = String(f.date);
+    const isUtcMatch = dStr.startsWith(dateStr);
+    let isLocalMatch = false;
+    try {
+      const parsed = new Date(f.date);
+      if (!isNaN(parsed.getTime())) {
+        const localDay = parsed.toLocaleDateString('en-CA');
+        const utcDay = parsed.toISOString().slice(0, 10);
+        isLocalMatch = (localDay === dateStr || utcDay === dateStr);
+      }
+    } catch {}
+
+    if (!isUtcMatch && !isLocalMatch) continue;
 
     const key = fixtureKey(f);
     const existing = byKey.get(key);
@@ -560,7 +572,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v8:${dateStr}`;
+    const cacheKey = `fixtures:v9:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
