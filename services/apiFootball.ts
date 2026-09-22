@@ -12,6 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 import defaultMatchesData from '../fixtures/matches.json';
+import dailyScheduleData from '../data/daily_schedule.json';
 import { apiFootballRateLimiter } from '../lib/rateLimiter';
 import { serverCache } from '../lib/cache';
 import { refereeStore } from '../lib/refereeStore';
@@ -600,7 +601,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v13:${dateStr}`;
+    const cacheKey = `fixtures:v14:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
@@ -676,15 +677,11 @@ export class ApiFootballService {
             console.warn('[ApiFootballService] Tier 5 OpenLigaDB failed:', err.message);
           }
 
-          // Tier 6: Bundled authentic daily schedule (fallback for serverless/cloud environments)
+          // Tier 6: Bundled authentic daily schedule (statically bundled for Vercel/serverless environments)
           try {
-            const schedulePath = path.resolve(process.cwd(), 'data', 'daily_schedule.json');
-            if (fs.existsSync(schedulePath)) {
-              const fileData = JSON.parse(fs.readFileSync(schedulePath, 'utf-8'));
-              if (Array.isArray(fileData)) {
-                allFixtures.push(...fileData.map((f: any) => ({ ...f, providerPriority: 6 })));
-                console.info(`[ApiFootballService] Tier 6 Bundled Schedule: ${fileData.length} fixtures.`);
-              }
+            if (Array.isArray(dailyScheduleData) && dailyScheduleData.length > 0) {
+              allFixtures.push(...(dailyScheduleData as any[]).map((f: any) => ({ ...f, providerPriority: 6 })));
+              console.info(`[ApiFootballService] Tier 6 Bundled Schedule: ${dailyScheduleData.length} fixtures.`);
             }
           } catch (err: any) {
             console.warn('[ApiFootballService] Tier 6 Bundled Schedule failed:', err.message);
