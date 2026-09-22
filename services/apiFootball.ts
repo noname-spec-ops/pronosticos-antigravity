@@ -290,10 +290,13 @@ export class ApiFootballService {
               const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${lg.code}/scoreboard?dates=${yyyymmdd}`;
               const res = await fetchWithTimeout(url, {
                 headers: {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                  'Accept': 'application/json',
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+                  'Accept': 'application/json, text/plain, */*',
+                  'Accept-Language': 'en-US,en;q=0.9',
+                  'Referer': 'https://www.espn.com/',
+                  'Origin': 'https://www.espn.com',
                 },
-              }, 7000);
+              }, 8000);
               if (!res.ok) {
                 attempts--;
                 continue;
@@ -459,10 +462,20 @@ export class ApiFootballService {
    */
   async getTheSportsDbFixtures(dateStr: string): Promise<Fixture[]> {
     try {
-      const res = await fetchWithTimeout(`https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=${dateStr}&s=Soccer`);
-      if (!res.ok) return [];
-      const json = await res.json();
-      const events = json.events || [];
+      const datesToFetch = [dateStr, shiftLocalISO(dateStr, -1), shiftLocalISO(dateStr, 1)];
+      const rawEvents: any[] = [];
+      await Promise.all(
+        datesToFetch.map(async (d) => {
+          try {
+            const res = await fetchWithTimeout(`https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=${d}&s=Soccer`, {}, 6000);
+            if (!res.ok) return;
+            const json = await res.json();
+            if (Array.isArray(json.events)) {
+              rawEvents.push(...json.events);
+            }
+          } catch {}
+        })
+      );
 
       const parseScore = (v: any): number | null => {
         if (v === null || v === undefined || v === '') return null;
@@ -482,41 +495,43 @@ export class ApiFootballService {
         return 'NS';
       };
 
-      return events
-        // A stable id is required; a random one collides with real ids and makes
-        // dedup non-deterministic across requests.
+      return rawEvents
         .filter((ev: any) => ev.idEvent)
-        .map((ev: any) => ({
-        id: parseInt(ev.idEvent, 10),
-        date: `${ev.dateEvent}T${ev.strTime || '18:00:00'}Z`,
-        timestamp: Math.floor(new Date(`${ev.dateEvent}T${ev.strTime || '18:00:00'}Z`).getTime() / 1000),
-        status: mapStatus(ev.strStatus),
-        league: {
-          id: parseInt(ev.idLeague, 10) || 500,
-          name: ev.strLeague || 'Soccer',
-          country: ev.strCountry || '',
-          flag: '⚽',
-          logo: ev.strBadge || '',
-          season: 2026,
-          round: ev.intRound ? `Etapa ${ev.intRound}` : 'Meci',
-        },
-        homeTeam: {
-          id: parseInt(ev.idHomeTeam, 10) || 1,
-          name: ev.strHomeTeam || 'Home',
-          logo: ev.strHomeTeamBadge || 'https://media.api-sports.io/football/teams/1.png',
-        },
-        awayTeam: {
-          id: parseInt(ev.idAwayTeam, 10) || 2,
-          name: ev.strAwayTeam || 'Away',
-          logo: ev.strAwayTeamBadge || 'https://media.api-sports.io/football/teams/2.png',
-        },
-        score: {
-          halftime: { home: null, away: null },
-          fulltime: { home: parseScore(ev.intHomeScore), away: parseScore(ev.intAwayScore) },
-          current: { home: parseScore(ev.intHomeScore), away: parseScore(ev.intAwayScore) },
-        },
-        h2h: this.findHistoricalH2H(ev.strHomeTeam || '', ev.strAwayTeam || ''),
-      }));
+        .map((ev: any) => {
+          const rawDate = ev.strTimestamp || `${ev.dateEvent}T${ev.strTime || '18:00:00'}`;
+          const date = rawDate.endsWith('Z') ? rawDate : `${rawDate}Z`;
+          return {
+            id: parseInt(ev.idEvent, 10),
+            date,
+            timestamp: Math.floor(new Date(date).getTime() / 1000),
+            status: mapStatus(ev.strStatus),
+            league: {
+              id: parseInt(ev.idLeague, 10) || 500,
+              name: ev.strLeague || 'Soccer',
+              country: ev.strCountry || '',
+              flag: '⚽',
+              logo: ev.strBadge || '',
+              season: 2026,
+              round: ev.intRound ? `Etapa ${ev.intRound}` : 'Meci',
+            },
+            homeTeam: {
+              id: parseInt(ev.idHomeTeam, 10) || 1,
+              name: ev.strHomeTeam || 'Home',
+              logo: ev.strHomeTeamBadge || 'https://media.api-sports.io/football/teams/1.png',
+            },
+            awayTeam: {
+              id: parseInt(ev.idAwayTeam, 10) || 2,
+              name: ev.strAwayTeam || 'Away',
+              logo: ev.strAwayTeamBadge || 'https://media.api-sports.io/football/teams/2.png',
+            },
+            score: {
+              halftime: { home: null, away: null },
+              fulltime: { home: parseScore(ev.intHomeScore), away: parseScore(ev.intAwayScore) },
+              current: { home: parseScore(ev.intHomeScore), away: parseScore(ev.intAwayScore) },
+            },
+            h2h: this.findHistoricalH2H(ev.strHomeTeam || '', ev.strAwayTeam || ''),
+          };
+        });
     } catch {
       return [];
     }
@@ -584,7 +599,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v10:${dateStr}`;
+    const cacheKey = `fixtures:v11:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
