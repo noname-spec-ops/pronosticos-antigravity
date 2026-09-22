@@ -151,8 +151,8 @@ export class LiveOddsProvider implements OddsProvider {
   private quotaWarningLogged = false;
 
   constructor() {
-    this.apiFootballKey = process.env.API_FOOTBALL_KEY;
-    this.oddsApiKey = process.env.ODDS_API_KEY;
+    this.apiFootballKey = process.env.API_FOOTBALL_KEY || '88970cfc3554ea6629b7041c643d1da3';
+    this.oddsApiKey = process.env.ODDS_API_KEY || '246703373a871b08c372444e4caf55dd';
   }
 
   private hasOddsApi(): boolean {

@@ -126,8 +126,8 @@ export class ApiFootballService {
   private historicalMatchesCache: HistoricalMatch[] | null = null;
 
   constructor() {
-    this.apiKey = process.env.API_FOOTBALL_KEY;
-    this.footballDataKey = process.env.FOOTBALL_DATA_KEY;
+    this.apiKey = process.env.API_FOOTBALL_KEY || '88970cfc3554ea6629b7041c643d1da3';
+    this.footballDataKey = process.env.FOOTBALL_DATA_KEY || '4b7b08b4db0b4b288281476ce3bfdaf6';
   }
 
   /**
