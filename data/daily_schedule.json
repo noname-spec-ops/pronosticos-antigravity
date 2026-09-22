@@ -1,0 +1,915 @@
+[
+  {
+    "id": 401860351,
+    "date": "2026-09-22T22:30Z",
+    "timestamp": 1790116200,
+    "status": "NS",
+    "league": {
+      "id": 72,
+      "name": "Brasileirao Serie B",
+      "country": "Brazilia",
+      "flag": "🇧🇷",
+      "logo": "",
+      "season": 2026,
+      "round": "Meci de Campionat"
+    },
+    "homeTeam": {
+      "id": 9971,
+      "name": "Criciúma",
+      "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9971.png",
+      "shortCode": "CRI"
+    },
+    "awayTeam": {
+      "id": 18187,
+      "name": "Operário PR",
+      "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/18187.png",
+      "shortCode": "OPE"
+    },
+    "score": {
+      "halftime": {
+        "home": null,
+        "away": null
+      },
+      "fulltime": {
+        "home": null,
+        "away": null
+      },
+      "current": {
+        "home": null,
+        "away": null
+      }
+    },
+    "h2h": [],
+    "prediction": {
+      "fixtureId": 401860351,
+      "calculatedAt": "2026-09-22T08:02:26.156Z",
+      "lambdaHome": 1.4157,
+      "lambdaAway": 1.4091,
+      "poissonLambdaHome": 1.2644,
+      "poissonLambdaAway": 1.6061,
+      "eloExpectedHomeWin": 0.5201,
+      "eloExpectedAwayWin": 0.4799,
+      "scoreMatrix": [
+        [
+          0.07470423904252191,
+          0.068204825080188,
+          0.05889230893984435,
+          0.02766171750904489,
+          0.00974453153549879,
+          0.0027462038773342686,
+          0.000644945980591953,
+          0.00012982762589316016,
+          0.0000228675134557565,
+          0.0000035802903567229426,
+          5.044987141658299e-7,
+          6.46262852846428e-8,
+          7.588741549549182e-9,
+          8.225612090361347e-10,
+          8.279078568948696e-11,
+          7.777366407670405e-12,
+          6.849429378155229e-13
+        ],
+        [
+          0.06859634051051877,
+          0.13372002156800158,
+          0.08337384176613764,
+          0.03916069347755485,
+          0.013795333294805638,
+          0.003887800829142124,
+          0.0009130500247240279,
+          0.00018379696997694684,
+          0.000032373538799314474,
+          0.00000506861705801267,
+          7.142188296445653e-7,
+          9.149143207746881e-8,
+          1.0743381411696777e-8,
+          1.164499903632456e-9,
+          1.172069153006067e-10,
+          1.1010417623338991e-11,
+          9.696737170654358e-13
+        ],
+        [
+          0.05944528533364355,
+          0.08376435156363712,
+          0.059016173894160535,
+          0.0277198968780872,
+          0.009765026672728171,
+          0.0027519798169082527,
+          0.0006463024600009032,
+          0.00013010068519818185,
+          0.000022915609439094754,
+          0.0000035878205845142688,
+          5.055597985639056e-7,
+          6.476221019603631e-8,
+          7.604702532269565e-9,
+          8.24291256786234e-10,
+          8.296491499553444e-11,
+          7.793724114680505e-12,
+          6.863835406247687e-13
+        ],
+        [
+          0.028052230148946394,
+          0.03952839750288036,
+          0.027849732460654357,
+          0.013081019336769351,
+          0.004608116086860424,
+          0.0012986592755990047,
+          0.00030499013087442625,
+          0.000061394513345022,
+          0.000010813876094308814,
+          0.0000016930925338322834,
+          2.38573668942307e-7,
+          3.0561286991509534e-8,
+          3.5886591249780074e-9,
+          3.8898304407742386e-10,
+          3.915114338639271e-11,
+          3.67785840971773e-12,
+          3.239043928208284e-13
+        ],
+        [
+          0.00992838555546585,
+          0.013990088086206928,
+          0.009856716561137091,
+          0.004629699768766092,
+          0.0016309274860420754,
+          0.00045962798411637763,
+          0.00010794363206973128,
+          0.00002172905313563691,
+          0.000003827301096678246,
+          5.992277750365907e-7,
+          8.443718578040601e-8,
+          1.0816403498470009e-8,
+          1.270116180807841e-9,
+          1.376708238751022e-10,
+          1.3856568423029035e-11,
+          1.3016860376593476e-12,
+          1.1463786222911166e-13
+        ],
+        [
+          0.0028111230861746004,
+          0.00396115354072863,
+          0.002790830727120356,
+          0.0013108531925284312,
+          0.0004617808083979532,
+          0.00013013906742271114,
+          0.00003056315998422371,
+          0.000006152364104824234,
+          0.0000010836620325134786,
+          1.6966535222386028e-7,
+          2.3907544781864153e-8,
+          3.062556486556798e-9,
+          3.5962069543393206e-10,
+          3.898011707199644e-11,
+          3.923348783296442e-12,
+          3.6855938470286765e-13,
+          3.2458564311550676e-14
+        ],
+        [
+          0.0006632844921828971,
+          0.0009346341779349202,
+          0.000658496510064048,
+          0.00030929581077708334,
+          0.00010895718174149706,
+          0.0000307063129583887,
+          0.000007211377598277586,
+          0.0000014516503105332784,
+          2.556900565715553e-7,
+          4.003253985721984e-8,
+          5.640985191280848e-9,
+          7.226102030030766e-10,
+          8.485250308763628e-11,
+          9.19735862313756e-12,
+          9.257141454187956e-13,
+          8.696158682064163e-14,
+          7.658598249310383e-15
+        ],
+        [
+          0.00013414455079761818,
+          0.00018902308652892378,
+          0.00013317621561395325,
+          0.00006255286847387384,
+          0.00002203581174163391,
+          0.000006210132465027268,
+          0.000001458449609411654,
+          2.9358590637456596e-7,
+          5.1711487584050114e-8,
+          8.096295239409447e-9,
+          1.1408489621851851e-9,
+          1.461427520559222e-10,
+          1.7160812660166668e-11,
+          1.8601000861108347e-12,
+          1.872190736670555e-13,
+          1.7587359780283194e-14,
+          1.5488967916498156e-15
+        ],
+        [
+          0.000023738555070523503,
+          0.000033449997949874665,
+          0.0000235671960555842,
+          0.000011069511987307898,
+          0.00000389951233532889,
+          0.0000010989605663423877,
+          2.5809088900550974e-7,
+          5.195369595680912e-8,
+          9.150994121592466e-9,
+          1.4327406463039938e-9,
+          2.018874844706958e-10,
+          2.586178676069613e-11,
+          3.0368203103747433e-12,
+          3.291679614883885e-13,
+          3.31307553238063e-14,
+          3.1123031551183638e-15,
+          2.740966484923304e-16
+        ],
+        [
+          0.000003734074712593348,
+          0.000005261684677515286,
+          0.000003707119939543395,
+          0.0000017412342356035325,
+          6.133932903472345e-7,
+          1.7286649708565762e-7,
+          4.05976968405667e-8,
+          8.172316374006076e-9,
+          1.439451375326495e-9,
+          2.2537010366361827e-10,
+          3.1756901307240454e-11,
+          4.068059057457502e-12,
+          4.776918348219472e-13,
+          5.177812034212352e-14,
+          5.211467812434732e-15,
+          4.895652863001186e-16,
+          4.311540280784358e-17
+        ],
+        [
+          5.286329570618402e-7,
+          7.44896699795839e-7,
+          5.248169698411583e-7,
+          2.465065307343921e-7,
+          8.683808811445799e-8,
+          2.4472709992416547e-8,
+          5.747415941719026e-9,
+          1.15695482906804e-9,
+          2.0378313120497192e-10,
+          3.1905645575658436e-11,
+          4.495824518066031e-12,
+          5.759151207642584e-13,
+          6.762683305574305e-14,
+          7.330228496834428e-15,
+          7.37787498206385e-16,
+          6.93077575815078e-17,
+          6.103847575506415e-18
+        ],
+        [
+          6.803506157385884e-8,
+          9.586820526372447e-8,
+          6.754394401855707e-8,
+          3.1725390505516264e-8,
+          1.1176061940330741e-8,
+          3.1496377760240095e-9,
+          7.396924316992386e-10,
+          1.4890008650105675e-10,
+          2.6226888986079885e-11,
+          4.1062565855872405e-12,
+          5.78612615475098e-13,
+          7.412027604236006e-14,
+          8.703573414274133e-15,
+          9.434004075425906e-16,
+          9.495325101916175e-17,
+          8.919908400740054e-18,
+          7.855651829676757e-19
+        ],
+        [
+          8.026436389175996e-9,
+          1.1310051515987894e-8,
+          7.968496795589271e-9,
+          3.742802944888281e-9,
+          1.3184959074105193e-9,
+          3.7157851662643253e-10,
+          8.726521462971766e-11,
+          1.756648770496217e-11,
+          3.0941172281327743e-12,
+          4.844356206846547e-13,
+          6.826182331067469e-14,
+          8.74433956609743e-15,
+          1.0268040735489906e-15,
+          1.1129766307983713e-16,
+          1.1202109788985607e-17,
+          1.0523261935773078e-18,
+          9.267705246061152e-20
+        ],
+        [
+          8.740789227812658e-10,
+          1.2316646100910816e-9,
+          8.677693010396716e-10,
+          4.0759124069833377e-10,
+          1.4358420431700555e-10,
+          4.0464900460618497e-11,
+          9.503181873176253e-12,
+          1.91299051107038e-12,
+          3.369493661436591e-13,
+          5.2755039092558897e-14,
+          7.433712558532473e-15,
+          9.5225857874801e-16,
+          1.118189636094851e-16,
+          1.2120315509394262e-17,
+          1.2199097560205325e-18,
+          1.1459832248056882e-19,
+          1.0092531012960595e-20
+        ],
+        [
+          8.8388109355817e-11,
+          1.2454768489328173e-10,
+          8.775007139156165e-11,
+          4.1216208532616507e-11,
+          1.4519439860827483e-11,
+          4.091868541578401e-12,
+          9.609753269896874e-13,
+          1.934443333230241e-13,
+          3.407280126068416e-14,
+          5.334664917381116e-15,
+          7.517076335081731e-16,
+          9.629374785239698e-17,
+          1.1307293341567716e-17,
+          1.22562361904639e-18,
+          1.2335901725701913e-19,
+          1.1588346081124377e-20,
+          1.0205711539320224e-21
+        ],
+        [
+          8.342069761002007e-12,
+          1.1754810500227928e-11,
+          8.281851737935587e-12,
+          3.889985761308345e-12,
+          1.3703447340648975e-12,
+          3.861905529541694e-13,
+          9.069685136128668e-14,
+          1.8257276179027013e-14,
+          3.21579098298337e-15,
+          5.034856749024298e-16,
+          7.094616645050136e-17,
+          9.088203922309225e-18,
+          1.0671823455771608e-18,
+          1.1567435716559824e-19,
+          1.1642624048717464e-20,
+          1.0937081031365185e-21,
+          9.632150550810427e-23
+        ],
+        [
+          7.381167600406589e-13,
+          1.0400803265732924e-12,
+          7.327885940872132e-13,
+          3.4419080264276403e-13,
+          1.212498150009797e-13,
+          3.41706228635761e-14,
+          8.024970779510846e-15,
+          1.6154266179155338e-15,
+          2.845372059130973e-16,
+          4.4549041872460605e-17,
+          6.277405490248424e-18,
+          8.041356433008231e-19,
+          9.442562791459917e-20,
+          1.023501171495859e-20,
+          1.030153929110582e-21,
+          9.677266010064808e-23,
+          8.52264720923895e-24
+        ]
+      ],
+      "probabilities1X2": {
+        "home": 0.3505,
+        "draw": 0.2833,
+        "away": 0.3662
+      },
+      "overUnderProbabilities": [
+        {
+          "line": 0.5,
+          "over": 0.9253,
+          "under": 0.0747
+        },
+        {
+          "line": 1.5,
+          "over": 0.7885,
+          "under": 0.2115
+        },
+        {
+          "line": 2.5,
+          "over": 0.5364,
+          "under": 0.4636
+        },
+        {
+          "line": 3.5,
+          "over": 0.3136,
+          "under": 0.6864
+        },
+        {
+          "line": 4.5,
+          "over": 0.1562,
+          "under": 0.8438
+        }
+      ],
+      "bttsProbabilities": {
+        "yes": 0.5876,
+        "no": 0.4124
+      },
+      "topExactScores": [
+        {
+          "homeGoals": 1,
+          "awayGoals": 1,
+          "probability": 0.13372002156800158,
+          "fairOdds": 7.48
+        },
+        {
+          "homeGoals": 2,
+          "awayGoals": 1,
+          "probability": 0.08376435156363712,
+          "fairOdds": 11.94
+        },
+        {
+          "homeGoals": 1,
+          "awayGoals": 2,
+          "probability": 0.08337384176613764,
+          "fairOdds": 11.99
+        },
+        {
+          "homeGoals": 0,
+          "awayGoals": 0,
+          "probability": 0.07470423904252191,
+          "fairOdds": 13.39
+        },
+        {
+          "homeGoals": 1,
+          "awayGoals": 0,
+          "probability": 0.06859634051051877,
+          "fairOdds": 14.58
+        },
+        {
+          "homeGoals": 0,
+          "awayGoals": 1,
+          "probability": 0.068204825080188,
+          "fairOdds": 14.66
+        },
+        {
+          "homeGoals": 2,
+          "awayGoals": 0,
+          "probability": 0.05944528533364355,
+          "fairOdds": 16.82
+        },
+        {
+          "homeGoals": 2,
+          "awayGoals": 2,
+          "probability": 0.059016173894160535,
+          "fairOdds": 16.94
+        },
+        {
+          "homeGoals": 0,
+          "awayGoals": 2,
+          "probability": 0.05889230893984435,
+          "fairOdds": 16.98
+        },
+        {
+          "homeGoals": 3,
+          "awayGoals": 1,
+          "probability": 0.03952839750288036,
+          "fairOdds": 25.3
+        }
+      ],
+      "asianHandicap": [
+        {
+          "line": -2.5,
+          "homeWinProb": 0.0648,
+          "awayWinProb": 0.9352,
+          "pushProb": 0,
+          "fairOddsHome": 15.44,
+          "fairOddsAway": 1.07
+        },
+        {
+          "line": -2.25,
+          "homeWinProb": 0.0648,
+          "awayWinProb": 0.8801,
+          "pushProb": 0.0551,
+          "fairOddsHome": 15.43,
+          "fairOddsAway": 1.14
+        },
+        {
+          "line": -2,
+          "homeWinProb": 0.0648,
+          "awayWinProb": 0.825,
+          "pushProb": 0.1103,
+          "fairOddsHome": 13.74,
+          "fairOddsAway": 1.08
+        },
+        {
+          "line": -1.75,
+          "homeWinProb": 0.1199,
+          "awayWinProb": 0.825,
+          "pushProb": 0.0551,
+          "fairOddsHome": 8.34,
+          "fairOddsAway": 1.21
+        },
+        {
+          "line": -1.5,
+          "homeWinProb": 0.175,
+          "awayWinProb": 0.825,
+          "pushProb": 0,
+          "fairOddsHome": 5.71,
+          "fairOddsAway": 1.21
+        },
+        {
+          "line": -1.25,
+          "homeWinProb": 0.175,
+          "awayWinProb": 0.7323,
+          "pushProb": 0.0927,
+          "fairOddsHome": 5.71,
+          "fairOddsAway": 1.37
+        },
+        {
+          "line": -1,
+          "homeWinProb": 0.175,
+          "awayWinProb": 0.6397,
+          "pushProb": 0.1853,
+          "fairOddsHome": 4.65,
+          "fairOddsAway": 1.27
+        },
+        {
+          "line": -0.75,
+          "homeWinProb": 0.2677,
+          "awayWinProb": 0.6397,
+          "pushProb": 0.0927,
+          "fairOddsHome": 3.74,
+          "fairOddsAway": 1.56
+        },
+        {
+          "line": -0.5,
+          "homeWinProb": 0.3603,
+          "awayWinProb": 0.6397,
+          "pushProb": 0,
+          "fairOddsHome": 2.78,
+          "fairOddsAway": 1.56
+        },
+        {
+          "line": -0.25,
+          "homeWinProb": 0.3603,
+          "awayWinProb": 0.4985,
+          "pushProb": 0.1411,
+          "fairOddsHome": 2.78,
+          "fairOddsAway": 2.01
+        },
+        {
+          "line": 0,
+          "homeWinProb": 0.3603,
+          "awayWinProb": 0.3574,
+          "pushProb": 0.2823,
+          "fairOddsHome": 1.99,
+          "fairOddsAway": 2.01
+        },
+        {
+          "line": 0.25,
+          "homeWinProb": 0.5015,
+          "awayWinProb": 0.3574,
+          "pushProb": 0.1411,
+          "fairOddsHome": 1.99,
+          "fairOddsAway": 2.8
+        },
+        {
+          "line": 0.5,
+          "homeWinProb": 0.6426,
+          "awayWinProb": 0.3574,
+          "pushProb": 0,
+          "fairOddsHome": 1.56,
+          "fairOddsAway": 2.8
+        },
+        {
+          "line": 0.75,
+          "homeWinProb": 0.6426,
+          "awayWinProb": 0.2652,
+          "pushProb": 0.0922,
+          "fairOddsHome": 1.56,
+          "fairOddsAway": 3.77
+        },
+        {
+          "line": 1,
+          "homeWinProb": 0.6426,
+          "awayWinProb": 0.173,
+          "pushProb": 0.1844,
+          "fairOddsHome": 1.27,
+          "fairOddsAway": 4.72
+        },
+        {
+          "line": 1.25,
+          "homeWinProb": 0.7348,
+          "awayWinProb": 0.173,
+          "pushProb": 0.0922,
+          "fairOddsHome": 1.36,
+          "fairOddsAway": 5.78
+        },
+        {
+          "line": 1.5,
+          "homeWinProb": 0.827,
+          "awayWinProb": 0.173,
+          "pushProb": 0,
+          "fairOddsHome": 1.21,
+          "fairOddsAway": 5.78
+        },
+        {
+          "line": 1.75,
+          "homeWinProb": 0.827,
+          "awayWinProb": 0.1184,
+          "pushProb": 0.0546,
+          "fairOddsHome": 1.21,
+          "fairOddsAway": 8.45
+        },
+        {
+          "line": 2,
+          "homeWinProb": 0.827,
+          "awayWinProb": 0.0637,
+          "pushProb": 0.1092,
+          "fairOddsHome": 1.08,
+          "fairOddsAway": 13.98
+        },
+        {
+          "line": 2.25,
+          "homeWinProb": 0.8816,
+          "awayWinProb": 0.0637,
+          "pushProb": 0.0546,
+          "fairOddsHome": 1.13,
+          "fairOddsAway": 15.7
+        },
+        {
+          "line": 2.5,
+          "homeWinProb": 0.9363,
+          "awayWinProb": 0.0637,
+          "pushProb": 0,
+          "fairOddsHome": 1.07,
+          "fairOddsAway": 15.69
+        }
+      ],
+      "cardsPrediction": {
+        "expectedHomeCards": 2.1,
+        "expectedAwayCards": 2.1,
+        "expectedTotalCards": 4.2,
+        "overUnderCards": [
+          {
+            "line": 2.5,
+            "overProb": 0.6745,
+            "underProb": 0.3255
+          },
+          {
+            "line": 3.5,
+            "overProb": 0.5238,
+            "underProb": 0.4762
+          },
+          {
+            "line": 4.5,
+            "overProb": 0.3893,
+            "underProb": 0.6107
+          },
+          {
+            "line": 5.5,
+            "overProb": 0.2791,
+            "underProb": 0.7209
+          },
+          {
+            "line": 6.5,
+            "overProb": 0.1943,
+            "underProb": 0.8057
+          }
+        ],
+        "refereeImpactFactor": 1,
+        "h2hRivalryFactor": 1,
+        "distributionType": "negative_binomial",
+        "highRiskPlayers": [],
+        "temporalBreakdown": {
+          "period0_30Prob": 0.18,
+          "period31_60Prob": 0.32,
+          "period61_90Prob": 0.5,
+          "criticalMinuteWindow": "75' - 90' (+45% spike)",
+          "secondHalfOver1_5Prob": 0.636,
+          "postGoalFrustrationRisk": "LOW"
+        },
+        "derbyIntensityScore": 5.6
+      },
+      "cornersPrediction": {
+        "expectedHomeCorners": 5.4,
+        "expectedAwayCorners": 4.4,
+        "expectedTotalCorners": 9.8,
+        "overUnderCorners": [
+          {
+            "line": 7.5,
+            "overProb": 0.7612,
+            "underProb": 0.2388,
+            "fairOverOdds": 1.31,
+            "fairUnderOdds": 4.19
+          },
+          {
+            "line": 8.5,
+            "overProb": 0.6442,
+            "underProb": 0.3558,
+            "fairOverOdds": 1.55,
+            "fairUnderOdds": 2.81
+          },
+          {
+            "line": 9.5,
+            "overProb": 0.5168,
+            "underProb": 0.4832,
+            "fairOverOdds": 1.93,
+            "fairUnderOdds": 2.07
+          },
+          {
+            "line": 10.5,
+            "overProb": 0.392,
+            "underProb": 0.608,
+            "fairOverOdds": 2.55,
+            "fairUnderOdds": 1.64
+          },
+          {
+            "line": 11.5,
+            "overProb": 0.2807,
+            "underProb": 0.7193,
+            "fairOverOdds": 3.56,
+            "fairUnderOdds": 1.39
+          },
+          {
+            "line": 12.5,
+            "overProb": 0.1899,
+            "underProb": 0.8101,
+            "fairOverOdds": 5.27,
+            "fairUnderOdds": 1.23
+          },
+          {
+            "line": 13.5,
+            "overProb": 0.1214,
+            "underProb": 0.8786,
+            "fairOverOdds": 8.24,
+            "fairUnderOdds": 1.14
+          }
+        ],
+        "homeTeamOverUnder": [
+          {
+            "line": 3.5,
+            "overProb": 0.7867,
+            "underProb": 0.2133
+          },
+          {
+            "line": 4.5,
+            "overProb": 0.6267,
+            "underProb": 0.3733
+          },
+          {
+            "line": 5.5,
+            "overProb": 0.4539,
+            "underProb": 0.5461
+          },
+          {
+            "line": 6.5,
+            "overProb": 0.2983,
+            "underProb": 0.7017
+          }
+        ],
+        "awayTeamOverUnder": [
+          {
+            "line": 2.5,
+            "overProb": 0.8149,
+            "underProb": 0.1851
+          },
+          {
+            "line": 3.5,
+            "overProb": 0.6406,
+            "underProb": 0.3594
+          },
+          {
+            "line": 4.5,
+            "overProb": 0.4488,
+            "underProb": 0.5512
+          },
+          {
+            "line": 5.5,
+            "overProb": 0.2801,
+            "underProb": 0.7199
+          }
+        ],
+        "mostLikelyCornerRange": "8 - 11 Cornere",
+        "distributionType": "bivariate_poisson"
+      },
+      "valueBets": [],
+      "dixonColesRhoUsed": -0.13,
+      "isLeagueCalibrated": false,
+      "scheduleFatigueHome": {
+        "restDays": 6,
+        "matchesLast14Days": 0,
+        "fatigueFactor": 1
+      },
+      "scheduleFatigueAway": {
+        "restDays": 6,
+        "matchesLast14Days": 0,
+        "fatigueFactor": 1,
+        "travelDistanceKm": 0,
+        "travelFatigueFactor": 1
+      },
+      "lineupImpactHome": {
+        "attackFactor": 1,
+        "defenseFactor": 1,
+        "missingCount": 0,
+        "status": "unannounced",
+        "impactSummary": "Formație standard anticipată",
+        "keyAbsences": []
+      },
+      "lineupImpactAway": {
+        "attackFactor": 1,
+        "defenseFactor": 1,
+        "missingCount": 0,
+        "status": "unannounced",
+        "impactSummary": "Formație standard anticipată",
+        "keyAbsences": []
+      },
+      "motivationAnalysis": {
+        "homeMotivationScore": 82,
+        "awayMotivationScore": 75,
+        "homeStakesType": "relegation_battle",
+        "awayStakesType": "standard",
+        "isDerby": false,
+        "urgencyLevelHome": "high",
+        "urgencyLevelAway": "moderate",
+        "homeMotivationMultiplier": 1.02,
+        "awayMotivationMultiplier": 1,
+        "newsItems": [
+          {
+            "id": "relegation-stakes",
+            "type": "stakes",
+            "title": "⚠️ Alertă Salvare: Puncte Vitale în Lupta pentru Supraviețuire",
+            "summary": "Criciúma luptă din greu pentru evitarea zonei roșii, abordând meciul cu o determinare ridicată și presing agresiv.",
+            "impact": "Se așteaptă un meci fragmentat cu faulturi tactice frecvente (+15% cartonașe).",
+            "tone": "warning"
+          },
+          {
+            "id": "tactical-focus",
+            "type": "tactical",
+            "title": "🎯 Analiză Tactică & Dinamica de Joc",
+            "summary": "Criciúma caută controlul posesiei pe teren propriu, în timp ce Operário PR pregătește tranziții rapide pe flancuri.",
+            "impact": "Pondere favorabilă pe piața de goluri în repriza secundă (R2).",
+            "tone": "neutral"
+          }
+        ],
+        "summary": "Bătălie pentru evitarea retrogradării. Urgență extremă pe teren."
+      },
+      "droppingOddsAnalysis": {
+        "hasDroppingOdds": false,
+        "maxDropPercent": 0,
+        "dominantMovement": "neutral",
+        "alerts": [],
+        "steamSummary": "Nu există date de variație a cotelor disponibile."
+      },
+      "tacticalTracking": {
+        "home": {
+          "defensiveLineHeightMeters": 49.5,
+          "packBreakingPassesAvg": 13.9,
+          "spaceCreationIndex": 73,
+          "pressingIntensityProximity": 3,
+          "expectedThreat_xT": 1.88,
+          "xGChain": 2.84,
+          "xGBuildup": 1.36,
+          "fieldTiltPercent": 51,
+          "setPieceEfficiency": {
+            "cornerConversionPercent": 4.7,
+            "setPieceXgPerMatch": 0.49,
+            "concededSetPieceXg": 0.41
+          },
+          "turnoverVulnerability": {
+            "defensiveThirdLosses": 10,
+            "counterAttackConcededAvg": 0.32
+          }
+        },
+        "away": {
+          "defensiveLineHeightMeters": 47.2,
+          "packBreakingPassesAvg": 13.3,
+          "spaceCreationIndex": 67,
+          "pressingIntensityProximity": 2.9,
+          "expectedThreat_xT": 1.7,
+          "xGChain": 2.41,
+          "xGBuildup": 1.08,
+          "fieldTiltPercent": 49,
+          "setPieceEfficiency": {
+            "cornerConversionPercent": 4.2,
+            "setPieceXgPerMatch": 0.43,
+            "concededSetPieceXg": 0.37
+          },
+          "turnoverVulnerability": {
+            "defensiveThirdLosses": 14,
+            "counterAttackConcededAvg": 0.32
+          }
+        },
+        "tacticalAdvantageSummary": "Meci de echilibru pe tranziții rapide: presiune înaltă la mijloc (3 vs 2.9 jucători la recuperare).",
+        "counterAttackRiskLevel": "MODERATE",
+        "environmentalExhaustionHome": {
+          "restDays": 6,
+          "flightKm": 0,
+          "heatHumidityImpact": "Optim fizic (odihnă adecvată)"
+        },
+        "environmentalExhaustionAway": {
+          "restDays": 6,
+          "flightKm": 0,
+          "heatHumidityImpact": "Condiții standard de joc"
+        }
+      },
+      "modelHealthNote": "Model nevalidat pe aceasta competitie — predictiile sunt informative, nu actionabile."
+    }
+  }
+]

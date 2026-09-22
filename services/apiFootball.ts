@@ -19,7 +19,7 @@ import { MODEL_CONFIG } from '../engine/config';
 import { matchTeamName, normalizeTeamName, teamNameSimilarity, canonicalClubKey, resolvedClubKey } from '../lib/teamMapping';
 import { strengthStore } from '../lib/strengthStore';
 import { fetchWithTimeout } from '../lib/fetchWithTimeout';
-import { todayLocalISO } from '../lib/localDate';
+import { todayLocalISO, shiftLocalISO } from '../lib/localDate';
 import type { Fixture, H2HMatch, Lineup, MatchStats, PlayerStats, HistoricalMatch } from '../types/football';
 
 const API_FOOTBALL_BASE_URL = 'https://v3.football.api-sports.io';
@@ -532,7 +532,8 @@ export class ApiFootballService {
             h2h: this.findHistoricalH2H(ev.strHomeTeam || '', ev.strAwayTeam || ''),
           };
         });
-    } catch {
+    } catch (err: any) {
+      console.error('[ApiFootballService] TSDB error:', err);
       return [];
     }
   }
@@ -599,7 +600,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v11:${dateStr}`;
+    const cacheKey = `fixtures:v12:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
