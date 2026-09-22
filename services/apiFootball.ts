@@ -278,107 +278,119 @@ export class ApiFootballService {
     ];
 
     const results: Fixture[] = [];
+    const chunkSize = 6;
 
-    await Promise.all(
-      ESPN_LEAGUES.map(async (lg) => {
-        try {
-          const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${lg.code}/scoreboard?dates=${yyyymmdd}`;
-          const res = await fetchWithTimeout(url, {
-            headers: {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-              'Accept': 'application/json',
-            },
-          });
-          if (!res.ok) return;
-          const data = await res.json();
-          const events = data.events || [];
-
-          for (const ev of events) {
-            const comp = ev.competitions?.[0];
-            if (!comp) continue;
-            const homeComp = comp.competitors?.find((c: any) => c.homeAway === 'home');
-            const awayComp = comp.competitors?.find((c: any) => c.homeAway === 'away');
-            if (!homeComp || !awayComp) continue;
-
-            const state = comp.status?.type?.state; // 'pre', 'in', 'post'
-            const shortDetail = comp.status?.type?.shortDetail || '';
-            const clock = comp.status?.clock || 0;
-
-            let status: any = 'NS';
-            let elapsedMinute: number | null = null;
-
-            if (state === 'in') {
-              // clock is 0 at kickoff, which is a real value - do not treat it as missing.
-              const clockMinutes = Math.round(clock / 60);
-              if (shortDetail.includes('HT') || shortDetail.includes('Half')) {
-                status = 'HT';
-                elapsedMinute = clockMinutes > 0 ? clockMinutes : 45;
-              } else {
-                if (shortDetail.includes('1H')) status = '1H';
-                else if (shortDetail.includes('2H')) status = '2H';
-                else if (REGEX_ET.test(shortDetail)) status = 'ET';
-                else if (REGEX_PEN.test(shortDetail)) status = 'P';
-                else status = 'LIVE';
-                elapsedMinute = clockMinutes;
-              }
-            } else if (state === 'post') {
-              status = 'FT';
-              elapsedMinute = 90;
-            } else {
-              status = 'NS';
-              elapsedMinute = null;
-            }
-
-            const homeScore = homeComp.score !== undefined ? parseInt(homeComp.score, 10) : null;
-            const awayScore = awayComp.score !== undefined ? parseInt(awayComp.score, 10) : null;
-
-            const homeTeamName = homeComp.team?.displayName || homeComp.team?.name || 'Home';
-            const awayTeamName = awayComp.team?.displayName || awayComp.team?.name || 'Away';
-
-            const espnId = parseInt(ev.id, 10);
-            if (!espnId) continue; // no stable id -> unusable for dedup/detail lookups
-
-            results.push({
-              id: espnId,
-              date: ev.date,
-              timestamp: Math.floor(new Date(ev.date).getTime() / 1000),
-              status,
-              elapsedMinute: elapsedMinute !== null ? elapsedMinute : undefined,
-              league: {
-                id: lg.id,
-                name: lg.name,
-                country: lg.country,
-                flag: lg.flag,
-                logo: ev.league?.logos?.[0]?.href || '',
-                season: 2026,
-                round: comp.round ? `Etapa ${comp.round}` : 'Meci de Campionat',
-              },
-              homeTeam: {
-                id: parseInt(homeComp.id, 10) || 1,
-                name: homeTeamName,
-                logo: homeComp.team?.logo || 'https://media.api-sports.io/football/teams/1.png',
-                shortCode: homeComp.team?.abbreviation || '',
-              },
-              awayTeam: {
-                id: parseInt(awayComp.id, 10) || 2,
-                name: awayTeamName,
-                logo: awayComp.team?.logo || 'https://media.api-sports.io/football/teams/2.png',
-                shortCode: awayComp.team?.abbreviation || '',
-              },
-              score: {
-                halftime: { home: null, away: null },
-                fulltime: { home: status === 'FT' ? homeScore : null, away: status === 'FT' ? awayScore : null },
-                current: {
-                  home: ['1H', '2H', 'HT', 'FT', 'LIVE'].includes(status) ? homeScore : null,
-                  away: ['1H', '2H', 'HT', 'FT', 'LIVE'].includes(status) ? awayScore : null,
+    for (let i = 0; i < ESPN_LEAGUES.length; i += chunkSize) {
+      const chunk = ESPN_LEAGUES.slice(i, i + chunkSize);
+      await Promise.all(
+        chunk.map(async (lg) => {
+          let attempts = 2;
+          while (attempts > 0) {
+            try {
+              const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${lg.code}/scoreboard?dates=${yyyymmdd}`;
+              const res = await fetchWithTimeout(url, {
+                headers: {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                  'Accept': 'application/json',
                 },
-              },
-              h2h: this.findHistoricalH2H(homeTeamName, awayTeamName),
-            });
+              }, 7000);
+              if (!res.ok) {
+                attempts--;
+                continue;
+              }
+              const data = await res.json();
+              const events = data.events || [];
+
+              for (const ev of events) {
+                const comp = ev.competitions?.[0];
+                if (!comp) continue;
+                const homeComp = comp.competitors?.find((c: any) => c.homeAway === 'home');
+                const awayComp = comp.competitors?.find((c: any) => c.homeAway === 'away');
+                if (!homeComp || !awayComp) continue;
+
+                const state = comp.status?.type?.state; // 'pre', 'in', 'post'
+                const shortDetail = comp.status?.type?.shortDetail || '';
+                const clock = comp.status?.clock || 0;
+
+                let status: any = 'NS';
+                let elapsedMinute: number | null = null;
+
+                if (state === 'in') {
+                  const clockMinutes = Math.round(clock / 60);
+                  if (shortDetail.includes('HT') || shortDetail.includes('Half')) {
+                    status = 'HT';
+                    elapsedMinute = clockMinutes > 0 ? clockMinutes : 45;
+                  } else {
+                    if (shortDetail.includes('1H')) status = '1H';
+                    else if (shortDetail.includes('2H')) status = '2H';
+                    else if (REGEX_ET.test(shortDetail)) status = 'ET';
+                    else if (REGEX_PEN.test(shortDetail)) status = 'P';
+                    else status = 'LIVE';
+                    elapsedMinute = clockMinutes;
+                  }
+                } else if (state === 'post') {
+                  status = 'FT';
+                  elapsedMinute = 90;
+                } else {
+                  status = 'NS';
+                  elapsedMinute = null;
+                }
+
+                const homeScore = homeComp.score !== undefined ? parseInt(homeComp.score, 10) : null;
+                const awayScore = awayComp.score !== undefined ? parseInt(awayComp.score, 10) : null;
+
+                const homeTeamName = homeComp.team?.displayName || homeComp.team?.name || 'Home';
+                const awayTeamName = awayComp.team?.displayName || awayComp.team?.name || 'Away';
+
+                const espnId = parseInt(ev.id, 10);
+                if (!espnId) continue;
+
+                results.push({
+                  id: espnId,
+                  date: ev.date,
+                  timestamp: Math.floor(new Date(ev.date).getTime() / 1000),
+                  status,
+                  elapsedMinute: elapsedMinute !== null ? elapsedMinute : undefined,
+                  league: {
+                    id: lg.id,
+                    name: lg.name,
+                    country: lg.country,
+                    flag: lg.flag,
+                    logo: ev.league?.logos?.[0]?.href || '',
+                    season: 2026,
+                    round: comp.round ? `Etapa ${comp.round}` : 'Meci de Campionat',
+                  },
+                  homeTeam: {
+                    id: parseInt(homeComp.id, 10) || 1,
+                    name: homeTeamName,
+                    logo: homeComp.team?.logo || 'https://media.api-sports.io/football/teams/1.png',
+                    shortCode: homeComp.team?.abbreviation || '',
+                  },
+                  awayTeam: {
+                    id: parseInt(awayComp.id, 10) || 2,
+                    name: awayTeamName,
+                    logo: awayComp.team?.logo || 'https://media.api-sports.io/football/teams/2.png',
+                    shortCode: awayComp.team?.abbreviation || '',
+                  },
+                  score: {
+                    halftime: { home: null, away: null },
+                    fulltime: { home: status === 'FT' ? homeScore : null, away: status === 'FT' ? awayScore : null },
+                    current: {
+                      home: ['1H', '2H', 'HT', 'FT', 'LIVE'].includes(status) ? homeScore : null,
+                      away: ['1H', '2H', 'HT', 'FT', 'LIVE'].includes(status) ? awayScore : null,
+                    },
+                  },
+                  h2h: this.findHistoricalH2H(homeTeamName, awayTeamName),
+                });
+              }
+              break;
+            } catch {
+              attempts--;
+            }
           }
-        } catch {}
-      })
-    );
+        })
+      );
+    }
 
     return results;
   }
@@ -572,7 +584,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v9:${dateStr}`;
+    const cacheKey = `fixtures:v10:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(

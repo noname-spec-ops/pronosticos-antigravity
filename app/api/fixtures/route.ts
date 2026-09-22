@@ -37,7 +37,7 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    const cacheKey = `enriched_fixtures_v9_${date}_${filter}`;
+    const cacheKey = `enriched_fixtures_v10_${date}_${filter}`;
     const cached = serverCache.get<any>(cacheKey);
     if (cached) {
       return NextResponse.json(cached);
