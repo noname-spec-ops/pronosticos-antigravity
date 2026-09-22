@@ -601,7 +601,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v14:${dateStr}`;
+    const cacheKey = `fixtures:v15:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
