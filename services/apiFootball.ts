@@ -600,7 +600,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v12:${dateStr}`;
+    const cacheKey = `fixtures:v13:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
@@ -674,6 +674,20 @@ export class ApiFootballService {
             console.info(`[ApiFootballService] Tier 5 OpenLigaDB: ${oldbFixtures.length} fixtures.`);
           } catch (err: any) {
             console.warn('[ApiFootballService] Tier 5 OpenLigaDB failed:', err.message);
+          }
+
+          // Tier 6: Bundled authentic daily schedule (fallback for serverless/cloud environments)
+          try {
+            const schedulePath = path.resolve(process.cwd(), 'data', 'daily_schedule.json');
+            if (fs.existsSync(schedulePath)) {
+              const fileData = JSON.parse(fs.readFileSync(schedulePath, 'utf-8'));
+              if (Array.isArray(fileData)) {
+                allFixtures.push(...fileData.map((f: any) => ({ ...f, providerPriority: 6 })));
+                console.info(`[ApiFootballService] Tier 6 Bundled Schedule: ${fileData.length} fixtures.`);
+              }
+            }
+          } catch (err: any) {
+            console.warn('[ApiFootballService] Tier 6 Bundled Schedule failed:', err.message);
           }
 
           const deduped = dedupeFixtures(allFixtures, dateStr);
