@@ -484,7 +484,7 @@ export class ApiFootballService {
         return Number.isNaN(n) ? null : n;
       };
 
-      const mapStatus = (raw: string): string => {
+      const mapStatus = (raw: string): any => {
         const st = String(raw || '').toLowerCase();
         if (st.includes('finished') || st === 'ft') return 'FT';
         if (st.includes('half') || st === 'ht') return 'HT';
@@ -601,7 +601,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v15:${dateStr}`;
+    const cacheKey = `fixtures:v16:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
