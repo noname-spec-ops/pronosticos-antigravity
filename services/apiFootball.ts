@@ -279,31 +279,23 @@ export class ApiFootballService {
     ];
 
     const results: Fixture[] = [];
-    const chunkSize = 6;
 
-    for (let i = 0; i < ESPN_LEAGUES.length; i += chunkSize) {
-      const chunk = ESPN_LEAGUES.slice(i, i + chunkSize);
-      await Promise.all(
-        chunk.map(async (lg) => {
-          let attempts = 2;
-          while (attempts > 0) {
-            try {
-              const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${lg.code}/scoreboard?dates=${yyyymmdd}`;
-              const res = await fetchWithTimeout(url, {
-                headers: {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-                  'Accept': 'application/json, text/plain, */*',
-                  'Accept-Language': 'en-US,en;q=0.9',
-                  'Referer': 'https://www.espn.com/',
-                  'Origin': 'https://www.espn.com',
-                },
-              }, 8000);
-              if (!res.ok) {
-                attempts--;
-                continue;
-              }
-              const data = await res.json();
-              const events = data.events || [];
+    await Promise.all(
+      ESPN_LEAGUES.map(async (lg) => {
+        try {
+          const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${lg.code}/scoreboard?dates=${yyyymmdd}`;
+          const res = await fetchWithTimeout(url, {
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+              'Accept': 'application/json, text/plain, */*',
+              'Accept-Language': 'en-US,en;q=0.9',
+              'Referer': 'https://www.espn.com/',
+              'Origin': 'https://www.espn.com',
+            },
+          }, 4500);
+          if (!res.ok) return;
+          const data = await res.json();
+          const events = data.events || [];
 
               for (const ev of events) {
                 const comp = ev.competitions?.[0];
@@ -387,14 +379,9 @@ export class ApiFootballService {
                   h2h: this.findHistoricalH2H(homeTeamName, awayTeamName),
                 });
               }
-              break;
-            } catch {
-              attempts--;
-            }
-          }
-        })
-      );
-    }
+            } catch {}
+          })
+        );
 
     return results;
   }

@@ -11,6 +11,7 @@ import { MODEL_CONFIG } from '@/engine/config';
 import type { TeamStrengthMetrics } from '@/types/football';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
