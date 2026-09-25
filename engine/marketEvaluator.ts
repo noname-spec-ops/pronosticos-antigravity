@@ -255,7 +255,7 @@ export function getBestBalancedPick(fixture: Fixture): MarketCandidate | null {
   if (fixture.prediction?.valueBets && fixture.prediction.valueBets.length > 0) {
     const topVb = fixture.prediction.valueBets[0];
     const matchCand = candidates.find(
-      (c) => c.label.includes(topVb.selection) || topVb.selection.includes(c.shortLabel)
+      (c) => c.label.includes(topVb.selection) || topVb.selection.includes(c.shortLabel) || c.marketKey === topVb.market
     );
     if (matchCand) return matchCand;
   }
@@ -264,12 +264,46 @@ export function getBestBalancedPick(fixture: Fixture): MarketCandidate | null {
   const sniper = candidates.find((c) => c.isSniper);
   if (sniper) return sniper;
 
-  // 3. Top probability from primary markets (OU 1.5/2.5, 1X2, DC, BTTS)
+  // 3. Clear favorite (Home / Away win probability >= 55% at playable odd >= 1.35)
+  const clearFavorite = candidates.find(
+    (c) => c.category === '1x2' && (c.marketKey === 'home' || c.marketKey === 'away') && c.probability >= 0.55 && c.odd >= 1.35
+  );
+  if (clearFavorite) return clearFavorite;
+
+  // 4. Over 2.5 if high-scoring match projected (prob >= 54% @ odd >= 1.55)
+  const over25 = candidates.find(
+    (c) => c.category === 'ou_25' && c.marketKey === 'over_2.5' && c.probability >= 0.54 && c.odd >= 1.55
+  );
+  if (over25) return over25;
+
+  // 5. BTTS (GG) if both teams have high scoring rate (prob >= 54% @ odd >= 1.55)
+  const bttsYes = candidates.find(
+    (c) => c.category === 'btts' && c.marketKey === 'btts_yes' && c.probability >= 0.54 && c.odd >= 1.55
+  );
+  if (bttsYes) return bttsYes;
+
+  // 6. Double Chance for strong lean in tight games (prob >= 68% @ odd >= 1.25)
+  const strongDC = candidates.find(
+    (c) => c.category === 'dc' && (c.marketKey === '1x' || c.marketKey === 'x2') && c.probability >= 0.68 && c.odd >= 1.25
+  );
+  if (strongDC) return strongDC;
+
+  // 7. Under 2.5/3.5 in defensive games (prob >= 60% @ odd >= 1.40)
+  const strongUnder = candidates.find(
+    (c) => (c.category === 'ou_25' || c.category === 'ou_35') && c.marketKey.startsWith('under') && c.probability >= 0.60 && c.odd >= 1.40
+  );
+  if (strongUnder) return strongUnder;
+
+  // 8. Ranked scoring across playable primary markets (EV weighted)
   const primaryMarkets = candidates.filter(
-    (c) => ['ou_15', 'ou_25', 'dc', '1x2', 'btts'].includes(c.category) && c.odd >= 1.20
+    (c) => ['1x2', 'ou_25', 'btts', 'dc', 'ou_15'].includes(c.category) && c.odd >= 1.22
   );
   if (primaryMarkets.length > 0) {
-    primaryMarkets.sort((a, b) => (b.probability * 1.5 + (b.edgePercent > 0 ? b.edgePercent / 100 : 0)) - (a.probability * 1.5 + (a.edgePercent > 0 ? a.edgePercent / 100 : 0)));
+    primaryMarkets.sort((a, b) => {
+      const scoreA = (a.probability * a.odd) + (a.category !== 'ou_15' ? 0.08 : 0);
+      const scoreB = (b.probability * b.odd) + (b.category !== 'ou_15' ? 0.08 : 0);
+      return scoreB - scoreA;
+    });
     return primaryMarkets[0];
   }
 
