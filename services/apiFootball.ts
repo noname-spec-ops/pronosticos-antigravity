@@ -276,6 +276,22 @@ export class ApiFootballService {
       { code: 'uefa.nations', id: 5, name: 'UEFA Nations League', country: 'Europa', flag: '🇪🇺' },
       { code: 'fifa.worldq.uefa', id: 32, name: 'Preliminarii CM (UEFA)', country: 'Europa', flag: '🌍' },
       { code: 'fifa.friendly', id: 10, name: 'Amicale Internationale', country: 'International', flag: '🌍' },
+      { code: 'uefa.euro_u21', id: 7, name: 'UEFA U21 Championship', country: 'Europa', flag: '🇪🇺' },
+      { code: 'rou.2', id: 284, name: 'Liga 2', country: 'România', flag: '🇷🇴' },
+      { code: 'eng.5', id: 43, name: 'National League', country: 'Anglia', flag: '🏴' },
+      { code: 'col.1', id: 239, name: 'Primera A', country: 'Columbia', flag: '🇨🇴' },
+      { code: 'chi.1', id: 265, name: 'Primera División', country: 'Chile', flag: '🇨🇱' },
+      { code: 'per.1', id: 281, name: 'Liga 1', country: 'Peru', flag: '🇵🇪' },
+      { code: 'ecu.1', id: 242, name: 'Liga Pro', country: 'Ecuador', flag: '🇪🇨' },
+      { code: 'uru.1', id: 271, name: 'Primera División', country: 'Uruguay', flag: '🇺🇾' },
+      { code: 'par.1', id: 250, name: 'Primera División', country: 'Paraguay', flag: '🇵🇾' },
+      { code: 'ksa.1', id: 307, name: 'Saudi Pro League', country: 'Arabia Saudită', flag: '🇸🇦' },
+      { code: 'cro.1', id: 210, name: 'HNL', country: 'Croația', flag: '🇭🇷' },
+      { code: 'srb.1', id: 286, name: 'SuperLiga', country: 'Serbia', flag: '🇷🇸' },
+      { code: 'bul.1', id: 172, name: 'First League', country: 'Bulgaria', flag: '🇧🇬' },
+      { code: 'hun.1', id: 271, name: 'NB I', country: 'Ungaria', flag: '🇭🇺' },
+      { code: 'fin.1', id: 244, name: 'Veikkausliiga', country: 'Finlanda', flag: '🇫🇮' },
+      { code: 'isl.1', id: 225, name: 'Besta deild', country: 'Islanda', flag: '🇮🇸' },
     ];
 
     const results: Fixture[] = [];
@@ -588,7 +604,7 @@ export class ApiFootballService {
    * Fetches fixtures for a given date (YYYY-MM-DD) with multi-provider SWR cascading.
    */
   async getFixturesByDate(dateStr: string): Promise<{ fixtures: Fixture[]; isDemo: boolean; isStale: boolean }> {
-    const cacheKey = `fixtures:v16:${dateStr}`;
+    const cacheKey = `fixtures:v18:${dateStr}`;
 
     try {
       const { data, isStale } = await serverCache.swr<{ fixtures: Fixture[]; isDemo: boolean }>(
