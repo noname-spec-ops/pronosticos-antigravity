@@ -8,6 +8,8 @@ import {
   User,
   Moon,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Sparkles,
   Flame,
   Radio,
@@ -17,6 +19,8 @@ import {
   MessageSquare,
   TrendingUp,
 } from 'lucide-react';
+
+import { shiftLocalISO } from '@/lib/localDate';
 
 export type MainNavTab = 'predictions' | 'live' | 'stats' | 'strategies' | 'value' | 'papertrading' | 'tickets' | 'chat';
 
@@ -187,14 +191,30 @@ export default function Header({
             )}
           </div>
 
-          {/* Date Picker Pill */}
-          <div className="flex items-center rounded-xl border border-[#1e293b] bg-[#0c1322] px-3 py-1.5 text-xs font-mono font-medium text-slate-200 shadow-sm hover:border-cyan-500/40 transition">
+          {/* Date Picker Pill with Left/Right Day Navigation */}
+          <div className="flex items-center rounded-xl border border-[#1e293b] bg-[#0c1322] px-1 py-1 text-xs font-mono font-medium text-slate-200 shadow-sm hover:border-cyan-500/40 transition">
+            <button
+              type="button"
+              onClick={() => onDateChange(shiftLocalISO(selectedDate, -1))}
+              className="p-1 hover:bg-[#152033] hover:text-cyan-400 rounded-lg text-slate-400 transition"
+              title="Ziua anterioară (-1 zi)"
+            >
+              <ChevronLeft className="h-3.5 w-3.5" />
+            </button>
             <input
               type="date"
               value={selectedDate}
               onChange={(e) => onDateChange(e.target.value)}
-              className="bg-transparent text-xs text-slate-200 focus:outline-none cursor-pointer font-mono"
+              className="bg-transparent px-1.5 py-0.5 text-xs text-slate-200 focus:outline-none cursor-pointer font-mono"
             />
+            <button
+              type="button"
+              onClick={() => onDateChange(shiftLocalISO(selectedDate, 1))}
+              className="p-1 hover:bg-[#152033] hover:text-cyan-400 rounded-lg text-slate-400 transition"
+              title="Ziua următoare (+1 zi)"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+            </button>
           </div>
 
           {/* Settings button */}
